@@ -9,23 +9,29 @@
 /* Begin PBXBuildFile section */
 		764568FF2C5EFEE400FC6865 /* SwanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764568FE2C5EFEE400FC6865 /* SwanApp.swift */; };
 		764569012C5EFEE400FC6865 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764569002C5EFEE400FC6865 /* ContentView.swift */; };
-		764569032C5EFEE400FC6865 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764569022C5EFEE400FC6865 /* Item.swift */; };
 		764569052C5EFEE600FC6865 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 764569042C5EFEE600FC6865 /* Assets.xcassets */; };
 		764569082C5EFEE600FC6865 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 764569072C5EFEE600FC6865 /* Preview Assets.xcassets */; };
 		764569132C5EFEE600FC6865 /* SwanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764569122C5EFEE600FC6865 /* SwanTests.swift */; };
-		7645691D2C5EFEE600FC6865 /* SwanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645691C2C5EFEE600FC6865 /* SwanUITests.swift */; };
-		7645691F2C5EFEE600FC6865 /* SwanUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645691E2C5EFEE600FC6865 /* SwanUITestsLaunchTests.swift */; };
+		7645692F2C5F012100FC6865 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645692E2C5F011E00FC6865 /* Logger.swift */; };
+		764569322C5F103C00FC6865 /* SUCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764569312C5F103A00FC6865 /* SUCatalog.swift */; };
+		764569342C5F105900FC6865 /* SUCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764569332C5F105800FC6865 /* SUCache.swift */; };
+		764569362C5F15A000FC6865 /* SWError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764569352C5F159F00FC6865 /* SWError.swift */; };
+		764569382C5F160500FC6865 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 764569372C5F160500FC6865 /* Localizable.xcstrings */; };
+		7645693C2C5F1D7100FC6865 /* DownloadCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645693B2C5F1D6C00FC6865 /* DownloadCatalog.swift */; };
+		764569402C5F1E2300FC6865 /* SUMacOSPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645693D2C5F1E2300FC6865 /* SUMacOSPackage.swift */; };
+		764569412C5F1E2300FC6865 /* SUProductResolved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645693E2C5F1E2300FC6865 /* SUProductResolved.swift */; };
+		764569432C5F301800FC6865 /* HardcodedCatalogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764569422C5F301800FC6865 /* HardcodedCatalogs.swift */; };
+		76A28F752C645C5800238999 /* MacOSListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A28F742C645C5200238999 /* MacOSListView.swift */; };
+		76EF317B2C66CF1F009D07DA /* Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF317A2C66CF13009D07DA /* Initialization.swift */; };
+		76EF317D2C671BD9009D07DA /* MacOSItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF317C2C671BD1009D07DA /* MacOSItemDetailView.swift */; };
+		76EF317F2C6722E5009D07DA /* FakeTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF317E2C6722E2009D07DA /* FakeTableItem.swift */; };
+		76EF31812C681DE4009D07DA /* PackagePieces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF31802C681DD9009D07DA /* PackagePieces.swift */; };
+		76EF31832C685868009D07DA /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF31822C685865009D07DA /* DownloadManager.swift */; };
+		76EF31852C685E0F009D07DA /* DownloadManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF31842C685E09009D07DA /* DownloadManagerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		7645690F2C5EFEE600FC6865 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 764568F32C5EFEE300FC6865 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 764568FA2C5EFEE400FC6865;
-			remoteInfo = Swan;
-		};
-		764569192C5EFEE600FC6865 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 764568F32C5EFEE300FC6865 /* Project object */;
 			proxyType = 1;
@@ -38,15 +44,27 @@
 		764568FB2C5EFEE400FC6865 /* Swan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		764568FE2C5EFEE400FC6865 /* SwanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwanApp.swift; sourceTree = "<group>"; };
 		764569002C5EFEE400FC6865 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		764569022C5EFEE400FC6865 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		764569042C5EFEE600FC6865 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		764569072C5EFEE600FC6865 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		764569092C5EFEE600FC6865 /* Swan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Swan.entitlements; sourceTree = "<group>"; };
 		7645690E2C5EFEE600FC6865 /* SwanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		764569122C5EFEE600FC6865 /* SwanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwanTests.swift; sourceTree = "<group>"; };
-		764569182C5EFEE600FC6865 /* SwanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7645691C2C5EFEE600FC6865 /* SwanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwanUITests.swift; sourceTree = "<group>"; };
-		7645691E2C5EFEE600FC6865 /* SwanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwanUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7645692E2C5F011E00FC6865 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		764569312C5F103A00FC6865 /* SUCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUCatalog.swift; sourceTree = "<group>"; };
+		764569332C5F105800FC6865 /* SUCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUCache.swift; sourceTree = "<group>"; };
+		764569352C5F159F00FC6865 /* SWError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWError.swift; sourceTree = "<group>"; };
+		764569372C5F160500FC6865 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		7645693B2C5F1D6C00FC6865 /* DownloadCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadCatalog.swift; sourceTree = "<group>"; };
+		7645693D2C5F1E2300FC6865 /* SUMacOSPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUMacOSPackage.swift; sourceTree = "<group>"; };
+		7645693E2C5F1E2300FC6865 /* SUProductResolved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUProductResolved.swift; sourceTree = "<group>"; };
+		764569422C5F301800FC6865 /* HardcodedCatalogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardcodedCatalogs.swift; sourceTree = "<group>"; };
+		76A28F742C645C5200238999 /* MacOSListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSListView.swift; sourceTree = "<group>"; };
+		76EF317A2C66CF13009D07DA /* Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initialization.swift; sourceTree = "<group>"; };
+		76EF317C2C671BD1009D07DA /* MacOSItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSItemDetailView.swift; sourceTree = "<group>"; };
+		76EF317E2C6722E2009D07DA /* FakeTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableItem.swift; sourceTree = "<group>"; };
+		76EF31802C681DD9009D07DA /* PackagePieces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagePieces.swift; sourceTree = "<group>"; };
+		76EF31822C685865009D07DA /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		76EF31842C685E09009D07DA /* DownloadManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManagerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,13 +82,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		764569152C5EFEE600FC6865 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -79,7 +90,6 @@
 			children = (
 				764568FD2C5EFEE400FC6865 /* Swan */,
 				764569112C5EFEE600FC6865 /* SwanTests */,
-				7645691B2C5EFEE600FC6865 /* SwanUITests */,
 				764568FC2C5EFEE400FC6865 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,7 +99,6 @@
 			children = (
 				764568FB2C5EFEE400FC6865 /* Swan.app */,
 				7645690E2C5EFEE600FC6865 /* SwanTests.xctest */,
-				764569182C5EFEE600FC6865 /* SwanUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,12 +106,16 @@
 		764568FD2C5EFEE400FC6865 /* Swan */ = {
 			isa = PBXGroup;
 			children = (
-				764568FE2C5EFEE400FC6865 /* SwanApp.swift */,
+				76EF31772C66CC23009D07DA /* Views */,
+				76A28F732C645C4D00238999 /* ViewControllers */,
+				7645693A2C5F174600FC6865 /* SwcdnFunctions */,
+				764569302C5F101C00FC6865 /* SwcdnTypes */,
+				7645692D2C5EFFF200FC6865 /* CoreCode */,
 				764569002C5EFEE400FC6865 /* ContentView.swift */,
-				764569022C5EFEE400FC6865 /* Item.swift */,
 				764569042C5EFEE600FC6865 /* Assets.xcassets */,
 				764569092C5EFEE600FC6865 /* Swan.entitlements */,
 				764569062C5EFEE600FC6865 /* Preview Content */,
+				764569372C5F160500FC6865 /* Localizable.xcstrings */,
 			);
 			path = Swan;
 			sourceTree = "<group>";
@@ -123,13 +136,63 @@
 			path = SwanTests;
 			sourceTree = "<group>";
 		};
-		7645691B2C5EFEE600FC6865 /* SwanUITests */ = {
+		7645692D2C5EFFF200FC6865 /* CoreCode */ = {
 			isa = PBXGroup;
 			children = (
-				7645691C2C5EFEE600FC6865 /* SwanUITests.swift */,
-				7645691E2C5EFEE600FC6865 /* SwanUITestsLaunchTests.swift */,
+				764569352C5F159F00FC6865 /* SWError.swift */,
+				7645692E2C5F011E00FC6865 /* Logger.swift */,
+				764568FE2C5EFEE400FC6865 /* SwanApp.swift */,
 			);
-			path = SwanUITests;
+			path = CoreCode;
+			sourceTree = "<group>";
+		};
+		764569302C5F101C00FC6865 /* SwcdnTypes */ = {
+			isa = PBXGroup;
+			children = (
+				7645693F2C5F1E2300FC6865 /* resolved */,
+				764569332C5F105800FC6865 /* SUCache.swift */,
+				764569312C5F103A00FC6865 /* SUCatalog.swift */,
+				764569422C5F301800FC6865 /* HardcodedCatalogs.swift */,
+			);
+			path = SwcdnTypes;
+			sourceTree = "<group>";
+		};
+		7645693A2C5F174600FC6865 /* SwcdnFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				76EF31822C685865009D07DA /* DownloadManager.swift */,
+				76EF317A2C66CF13009D07DA /* Initialization.swift */,
+				7645693B2C5F1D6C00FC6865 /* DownloadCatalog.swift */,
+			);
+			path = SwcdnFunctions;
+			sourceTree = "<group>";
+		};
+		7645693F2C5F1E2300FC6865 /* resolved */ = {
+			isa = PBXGroup;
+			children = (
+				7645693D2C5F1E2300FC6865 /* SUMacOSPackage.swift */,
+				7645693E2C5F1E2300FC6865 /* SUProductResolved.swift */,
+			);
+			path = resolved;
+			sourceTree = "<group>";
+		};
+		76A28F732C645C4D00238999 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				76A28F742C645C5200238999 /* MacOSListView.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		76EF31772C66CC23009D07DA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				76EF31842C685E09009D07DA /* DownloadManagerView.swift */,
+				76EF31802C681DD9009D07DA /* PackagePieces.swift */,
+				76EF317E2C6722E2009D07DA /* FakeTableItem.swift */,
+				76EF317C2C671BD1009D07DA /* MacOSItemDetailView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,24 +233,6 @@
 			productReference = 7645690E2C5EFEE600FC6865 /* SwanTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		764569172C5EFEE600FC6865 /* SwanUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 764569282C5EFEE600FC6865 /* Build configuration list for PBXNativeTarget "SwanUITests" */;
-			buildPhases = (
-				764569142C5EFEE600FC6865 /* Sources */,
-				764569152C5EFEE600FC6865 /* Frameworks */,
-				764569162C5EFEE600FC6865 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7645691A2C5EFEE600FC6865 /* PBXTargetDependency */,
-			);
-			name = SwanUITests;
-			productName = SwanUITests;
-			productReference = 764569182C5EFEE600FC6865 /* SwanUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -202,10 +247,6 @@
 						CreatedOnToolsVersion = 16.0;
 					};
 					7645690D2C5EFEE600FC6865 = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = 764568FA2C5EFEE400FC6865;
-					};
-					764569172C5EFEE600FC6865 = {
 						CreatedOnToolsVersion = 16.0;
 						TestTargetID = 764568FA2C5EFEE400FC6865;
 					};
@@ -226,7 +267,6 @@
 			targets = (
 				764568FA2C5EFEE400FC6865 /* Swan */,
 				7645690D2C5EFEE600FC6865 /* SwanTests */,
-				764569172C5EFEE600FC6865 /* SwanUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -238,17 +278,11 @@
 			files = (
 				764569082C5EFEE600FC6865 /* Preview Assets.xcassets in Resources */,
 				764569052C5EFEE600FC6865 /* Assets.xcassets in Resources */,
+				764569382C5F160500FC6865 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7645690C2C5EFEE600FC6865 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		764569162C5EFEE600FC6865 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -263,8 +297,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				764569012C5EFEE400FC6865 /* ContentView.swift in Sources */,
-				764569032C5EFEE400FC6865 /* Item.swift in Sources */,
+				764569402C5F1E2300FC6865 /* SUMacOSPackage.swift in Sources */,
+				76EF317F2C6722E5009D07DA /* FakeTableItem.swift in Sources */,
+				76EF31832C685868009D07DA /* DownloadManager.swift in Sources */,
+				76EF317B2C66CF1F009D07DA /* Initialization.swift in Sources */,
+				76EF31812C681DE4009D07DA /* PackagePieces.swift in Sources */,
+				764569412C5F1E2300FC6865 /* SUProductResolved.swift in Sources */,
+				76EF317D2C671BD9009D07DA /* MacOSItemDetailView.swift in Sources */,
+				76EF31852C685E0F009D07DA /* DownloadManagerView.swift in Sources */,
+				764569322C5F103C00FC6865 /* SUCatalog.swift in Sources */,
+				7645693C2C5F1D7100FC6865 /* DownloadCatalog.swift in Sources */,
 				764568FF2C5EFEE400FC6865 /* SwanApp.swift in Sources */,
+				764569432C5F301800FC6865 /* HardcodedCatalogs.swift in Sources */,
+				764569342C5F105900FC6865 /* SUCache.swift in Sources */,
+				764569362C5F15A000FC6865 /* SWError.swift in Sources */,
+				7645692F2C5F012100FC6865 /* Logger.swift in Sources */,
+				76A28F752C645C5800238999 /* MacOSListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,15 +324,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		764569142C5EFEE600FC6865 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7645691D2C5EFEE600FC6865 /* SwanUITests.swift in Sources */,
-				7645691F2C5EFEE600FC6865 /* SwanUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -292,11 +331,6 @@
 			isa = PBXTargetDependency;
 			target = 764568FA2C5EFEE400FC6865 /* Swan */;
 			targetProxy = 7645690F2C5EFEE600FC6865 /* PBXContainerItemProxy */;
-		};
-		7645691A2C5EFEE600FC6865 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 764568FA2C5EFEE400FC6865 /* Swan */;
-			targetProxy = 764569192C5EFEE600FC6865 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -360,6 +394,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -416,12 +451,14 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};
 		764569232C5EFEE600FC6865 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Swan/Swan.entitlements;
@@ -433,23 +470,26 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSDownloadsFolderUsageDescription = "Swan needs to use your downloads folder to download files from Apple's catalogs to.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "216k License";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.ben216k.Swan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
 		764569242C5EFEE600FC6865 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Swan/Swan.entitlements;
@@ -461,17 +501,19 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSDownloadsFolderUsageDescription = "Swan needs to use your downloads folder to download files from Apple's catalogs to.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "216k License";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.ben216k.Swan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
@@ -483,7 +525,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZAB2ZHZQFK;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.ben216k.SwanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -501,45 +543,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZAB2ZHZQFK;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.ben216k.SwanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swan.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Swan";
-			};
-			name = Release;
-		};
-		764569292C5EFEE600FC6865 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZAB2ZHZQFK;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.ben216k.SwanUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Swan;
-			};
-			name = Debug;
-		};
-		7645692A2C5EFEE600FC6865 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZAB2ZHZQFK;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.ben216k.SwanUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Swan;
 			};
 			name = Release;
 		};
@@ -569,15 +579,6 @@
 			buildConfigurations = (
 				764569262C5EFEE600FC6865 /* Debug */,
 				764569272C5EFEE600FC6865 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		764569282C5EFEE600FC6865 /* Build configuration list for PBXNativeTarget "SwanUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				764569292C5EFEE600FC6865 /* Debug */,
-				7645692A2C5EFEE600FC6865 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,0 +1,538 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+      "comment" : "leave this empty",
+      "shouldTranslate" : false
+    },
+    "%@ / %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ / %2$@"
+          }
+        }
+      }
+    },
+    "216k Labs" : {
+      "comment" : "216k Labs is a brand name, therefore should not be localized.",
+      "shouldTranslate" : false
+    },
+    "Downloads" : {
+
+    },
+    "No Current Downloads" : {
+
+    },
+    "sucatalog.type.beta" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Public Beta"
+          }
+        }
+      }
+    },
+    "sucatalog.type.release" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Release"
+          }
+        }
+      }
+    },
+    "sucatalog.type.seed" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Developer Beta"
+          }
+        }
+      }
+    },
+    "swerror.foundation.noinstallassistant" : {
+      "comment" : "You got this. :D",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No InstallAssistant.pkg links were found in the provided catalog. It may be too old (only Big Sur and newer are supported currently)."
+          }
+        }
+      }
+    },
+    "swerror.foundation.nonhttpresponse" : {
+      "comment" : "This is the kind of error that doesn't make sense to begin with, so don't worry yourself if it doesn't make any sense.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Received response was not of the HTTP type. "
+          }
+        }
+      }
+    },
+    "swerror.foundation.standardhttp" : {
+      "comment" : "400 = Success, literally anything else means something went wrong. DO NOT LOCALIZE <DATA>, it will be automatically replaced with the received status code (200, 501, etc).",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Received non-400 HTTP status code, instead received <DATA>."
+          }
+        }
+      }
+    },
+    "swerror.foundation.unknown" : {
+
+    },
+    "swerror.product.unknown" : {
+
+    },
+    "swerror.reader.invalidenglishdistributionurl" : {
+
+    },
+    "swerror.reader.noenglishdistribution" : {
+
+    },
+    "swerror.reader.nonhttpresponse" : {
+
+    },
+    "swerror.reader.regexcreation" : {
+
+    },
+    "swerror.reader.regexnoextraction" : {
+
+    },
+    "swerror.reader.regexnomatch" : {
+
+    },
+    "swerror.reader.standardhttp" : {
+
+    },
+    "swerror.reader.utf8conversion" : {
+
+    },
+    "swerror.reader.versionlessthan10" : {
+
+    },
+    "swerror.reader.versionminor" : {
+
+    },
+    "swerror.reader.versionminorintconversion" : {
+
+    },
+    "swerror.reader.versionnointconversion" : {
+
+    },
+    "swerror.reader.versionnosplit" : {
+
+    },
+    "swerror.source.unknown" : {
+      "comment" : "This is used in some few cases, typically when the error isn't something I can prepare for like from other libraries (but if I run into it, I may be able to adapt and change it to return something else)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An unknown error occurred."
+          }
+        }
+      }
+    },
+    "swui.buildnumber" : {
+      "comment" : "macOS build number (ex. \"24A5289g\"). Should be roughly that length if possible.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Build Number"
+          }
+        }
+      }
+    },
+    "swui.catalog" : {
+      "comment" : "What catalog it's in. Others in this line will be results that can show up in this section.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catalog"
+          }
+        }
+      }
+    },
+    "swui.catalog.both" : {
+      "comment" : "It's in both the developer and public beta catalogs. (but not the release)",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Both Betas"
+          }
+        }
+      }
+    },
+    "swui.catalog.dev" : {
+      "comment" : "It's just in the developer beta catalog, so it's ONLY for developers (not release or public beta)",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Developer Beta"
+          }
+        }
+      }
+    },
+    "swui.catalog.public" : {
+      "comment" : "It's just in the public beta catalog (probably won't happen, as usually PB and DB are the same).",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Public Beta"
+          }
+        }
+      }
+    },
+    "swui.catalog.release" : {
+      "comment" : "It's in a release catalog, therefore it is a non-beta version. ",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Release"
+          }
+        }
+      }
+    },
+    "swui.copy" : {
+      "comment" : "you know what copy means",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy"
+          }
+        }
+      }
+    },
+    "swui.copy.installassistantlink" : {
+      "comment" : "Probably shouldn't translate \"InstallAssistant.pkg\" since that's the name of the file. \"Copy\" and \"Link\" can be translated though.",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy InstallAssistant.pkg Link"
+          }
+        }
+      }
+    },
+    "swui.deferredsuenablementdate" : {
+      "comment" : "I don't know what this means. Take ChatGPT: \"Refers to the date when a deferred software update is scheduled to be enabled. Used in enterprise or managed environments where updates are postponed to a later date. Keep the translation concise as it’s meant for users familiar with update management terminology.\"",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deferred Enrollment"
+          }
+        }
+      }
+    },
+    "swui.extendedmetadata" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extended Metadata"
+          }
+        }
+      }
+    },
+    "swui.extendedmetadata.autoupdate" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auto Update"
+          }
+        }
+      }
+    },
+    "swui.extendedmetadata.producttype" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Product Type"
+          }
+        }
+      }
+    },
+    "swui.extendedmetadata.productversion" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Product Version"
+          }
+        }
+      }
+    },
+    "swui.fullinstallerposted" : {
+      "comment" : "In table row with post date of full installer in SWCDN catalog.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full Installer Posted"
+          }
+        }
+      }
+    },
+    "swui.identificationinformation" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Identification Information"
+          }
+        }
+      }
+    },
+    "swui.invalidproductselected" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid Product Selected"
+          }
+        }
+      }
+    },
+    "swui.macospackage.linetwo %@ %@" : {
+      "comment" : "Shown under \"macOS Whatever 20.12.1\" in the detail view. %1$@ represents the build number, %2$@ represents the post date",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Build %1$@, %2$@"
+          }
+        }
+      }
+    },
+    "swui.macospackages" : {
+      "comment" : "Referring to any product in any product in a catalog that has either a \"InstallAssistant.pkg\" or \"InstallAssistantAuto.pkg\" inside it, which contains a macOS full installer, to be used to upgrade/reinstall macOS or create a recovery USB.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "macOS Packages"
+          }
+        }
+      }
+    },
+    "swui.majorversion" : {
+      "comment" : "macOS Major Version (ex. \"macOS Monterey\", \"macOS Big Sur\"). Should be roughly that length if possible.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Major Version"
+          }
+        }
+      }
+    },
+    "swui.minorversion" : {
+      "comment" : "macOS minor version (ex. \"12.0.4\", \"10.15.7\"). Should be roughly that length if possible.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minor"
+          }
+        }
+      }
+    },
+    "swui.noitemselected" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Product Selected"
+          }
+        }
+      }
+    },
+    "swui.nonmacospackageselected" : {
+      "comment" : "Don't localize GitHub, as it's a brand name. This error is very unlikely, since it checks the product type before loading the view.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: macOS Package view loaded, but non-macOS package product selected. This is a bug, please report on GitHub."
+          }
+        }
+      }
+    },
+    "swui.package.digest" : {
+      "comment" : "SHA-256 digest for this file. ",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digest"
+          }
+        }
+      }
+    },
+    "swui.package.integritydatasize" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Integrity Data Size"
+          }
+        }
+      }
+    },
+    "swui.package.integritydataurl" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Integrity Data"
+          }
+        }
+      }
+    },
+    "swui.package.metadataurl" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metadata URL"
+          }
+        }
+      }
+    },
+    "swui.package.size" : {
+      "comment" : "File size for the main download url",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "File Size"
+          }
+        }
+      }
+    },
+    "swui.package.url" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Download URL"
+          }
+        }
+      }
+    },
+    "swui.packages" : {
+      "comment" : "Referring to the files within any given product, deemed \"Packages\" inside the catalog, despite not always being packages.",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packages"
+          }
+        }
+      }
+    },
+    "swui.postdate" : {
+      "comment" : "When the product was posted.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Post Date"
+          }
+        }
+      }
+    },
+    "swui.productid" : {
+      "comment" : "The product ID of the macOS version, kinda strange and niche. It's just how it's stored in the catalog basically. ",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Product ID"
+          }
+        }
+      }
+    },
+    "swui.refreshlist" : {
+      "comment" : "Hover tooltip text for refresh icon. ",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refresh List"
+          }
+        }
+      }
+    },
+    "swui.releasename" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Release Name"
+          }
+        }
+      }
+    },
+    "swui.search" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search"
+          }
+        }
+      }
+    },
+    "swui.showdownloads" : {
+
+    },
+    "swui.version" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version"
+          }
+        }
+      }
+    },
+    "Types" : {
+
+    }
+  },
+  "version" : "1.0"
+}

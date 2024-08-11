@@ -9,52 +9,65 @@
 import SwiftUI
 import SwiftData
 
+@MainActor
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+
+    @EnvironmentObject var downloadManager: DownloadManager
+    
+    @State var columnVisibility = NavigationSplitViewVisibility.all
+    @State var selectedProduct: String?
+    @State var listSelection: String? = "macOS"
+    @State var showDownloadManager = false
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+        NavigationSplitView(columnVisibility: $columnVisibility) {
+            VStack {
+                List(selection: $listSelection) {
+                    Section("Types") {
+                        NavigationLink(value: "macOS", label: { Text("swui.macospackages") } )
                     }
+                }.listStyle(.sidebar)
+                Spacer()
+                HStack {
+                    Text("216k Labs")
+                        .foregroundStyle(.secondary)
+                        .padding([.bottom, .horizontal], 12)
+                    Spacer()
                 }
-                .onDelete(perform: deleteItems)
             }
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-            .toolbar {
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
+        } content: {
+//            MacOSListView(selection: $selectedProduct)
+            switch listSelection {
+            case "macOS": MacOSListView(selection: $selectedProduct)
+            default: Rectangle().frame(height: 1).opacity(0.000001)
             }
         } detail: {
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+            MacOSItemDetailView(selection: $selectedProduct)
+                .navigationSplitViewColumnWidth(min: 250, ideal: 315, max: 350)
+        }.toolbar {
+            ToolbarItem(id: "downloads") {
+                Button {
+                    showDownloadManager.toggle()
+                } label: {
+                    VStack {
+                        Label("swui.showdownloads", systemImage: downloadManager.bestSFSymbol)
+                        if downloadManager.isWithinHumanableRange {
+                            ZStack(alignment: .leading) {
+                                Rectangle().frame(width: CGFloat(min(downloadManager.downloadTasks.progress * 25, 25)), height: 5).foregroundColor(.accentColor)
+                                Rectangle().frame(width: 25, height: 5).foregroundColor(.secondary)
+                            }.cornerRadius(10)
+                        }
+                    }
+                        .help("swui.showdownloads")
+                }.popover(isPresented: $showDownloadManager) {
+                    DownloadManagerView().frame(width: 350)
+                }
             }
         }
     }
+
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
