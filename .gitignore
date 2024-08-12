@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Xcode
+Swan.xcodeproj/project.xcworkspace/xcuserdata/*
+Swan.xcodeproj/xcuserdata/*
+
+# :D
