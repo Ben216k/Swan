@@ -5,25 +5,9 @@
       "comment" : "leave this empty",
       "shouldTranslate" : false
     },
-    "%@ / %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ / %2$@"
-          }
-        }
-      }
-    },
     "216k Labs" : {
       "comment" : "216k Labs is a brand name, therefore should not be localized.",
       "shouldTranslate" : false
-    },
-    "Downloads" : {
-
-    },
-    "No Current Downloads" : {
-
     },
     "sucatalog.type.beta" : {
       "localizations" : {
@@ -253,6 +237,38 @@
         }
       }
     },
+    "swui.downloadallpackages" : {
+      "comment" : "Download ALL THE PACKAGES",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Download All Packages"
+          }
+        }
+      }
+    },
+    "swui.downloads" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Downloads"
+          }
+        }
+      }
+    },
+    "swui.downloadsizes %@ / %@" : {
+      "comment" : "It's downloads, left is done so far, right is to be done. Don't change this if it doesn't make sense to change.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ / %2$@"
+          }
+        }
+      }
+    },
     "swui.extendedmetadata" : {
       "localizations" : {
         "en" : {
@@ -368,6 +384,16 @@
         }
       }
     },
+    "swui.nocurrentdownloads" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No current downloads."
+          }
+        }
+      }
+    },
     "swui.noitemselected" : {
       "localizations" : {
         "en" : {
@@ -451,9 +477,18 @@
         }
       }
     },
+    "swui.packagecount" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Package Count"
+          }
+        }
+      }
+    },
     "swui.packages" : {
       "comment" : "Referring to the files within any given product, deemed \"Packages\" inside the catalog, despite not always being packages.",
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -481,6 +516,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Product ID"
+          }
+        }
+      }
+    },
+    "swui.producttypes" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Product Types"
           }
         }
       }
@@ -518,7 +563,14 @@
       }
     },
     "swui.showdownloads" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Downloads"
+          }
+        }
+      }
     },
     "swui.version" : {
       "localizations" : {
@@ -529,9 +581,6 @@
           }
         }
       }
-    },
-    "Types" : {
-
     }
   },
   "version" : "1.0"

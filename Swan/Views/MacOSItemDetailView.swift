@@ -63,6 +63,37 @@ struct MacOSItemDetailView: View {
                 
                 
                 // MARK: - Packages
+
+                Section("swui.packages") {
+                    FakeTableItem(title: "swui.packagecount", value: "\(product.packages.count)")
+                    HStack {
+                        Text("swui.downloadallpackages")
+                            .fontWeight(.medium)
+                            .foregroundStyle(.secondary)
+                        
+                        Spacer()
+                        
+                        Button {
+                            Task {
+                                do {
+                                    let _ = try await withThrowingTaskGroup(of: Void.self) { group in
+                                        for package in product.packages {
+                                            group.addTask {
+                                                let _ = try await downloadManager.startDownload(from: URL(string: package.url)!, title: "macOS " + product.osName + " " + product.version, specific: "Build \(product.buildNumber) | \(URL(string: package.url)!.lastPathComponent)", image: product.imageName)
+                                            }
+                                        }
+                                        try await group.waitForAll()
+                                    }
+                                    // Handle successful downloads
+                                } catch {
+                                    // Handle errors
+                                }
+                            }
+                        } label: {
+                            Image(systemName: "arrow.down.circle")
+                        }.buttonStyle(.borderless)
+                    }.font(.subheadline)
+                }
                 
                 ForEach(product.packages) { package in
                     Section(header: CollapsibleHeader(package.name, isCollapsed: binding(for: package.name))) {

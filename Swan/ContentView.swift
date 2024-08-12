@@ -23,7 +23,7 @@ struct ContentView: View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
             VStack {
                 List(selection: $listSelection) {
-                    Section("Types") {
+                    Section("swui.producttypes") {
                         NavigationLink(value: "macOS", label: { Text("swui.macospackages") } )
                     }
                 }.listStyle(.sidebar)
