@@ -38,6 +38,8 @@ protocol SUProductResolved: Sendable, Identifiable where ID == String {
     
     var insideCatalogs: [String] { get }
     
+    var serverMetadata: SUServerMetadata? { get set }
+    
     var releaseType: SUCatalogType { get set }
 
     var deferredSUEnablementDate: Date? { get }
@@ -65,7 +67,7 @@ extension SUProduct {
     func resolve() async throws -> any SUProductResolved {
 
         var resolved: any SUProductResolved
-
+        
         // Check for InstallAssistant.pkg url in the packages, if it exists, it's a full macOS installer
         if packages.contains(where: { $0.url.contains("InstallAssistant.pkg") || $0.url.contains("InstallAssistantAuto.pkg") }) {
             resolved = try await SUMacOSPackage.resolve(from: self)
@@ -77,6 +79,8 @@ extension SUProduct {
             // Otherwise, it's an unknown product, which isn't supported
             throw SWError(source: "SUProduct", id: "swerror.product.unknown")
         }
+        
+        resolved.serverMetadata = try? await self.resolveServerMetadata()
 
         // Determine the release type, by getting what catalogs it's in and checking if it's in a seed/beta catalog (check for none, then beta, then seed)
         if insideCatalogs.contains(where: { !$0.contains("seed") && !$0.contains("beta") }) {

@@ -340,9 +340,28 @@
         }
       }
     },
+    "swui.copy.dump" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy Swift Dump"
+          }
+        }
+      }
+    },
+    "swui.copy.htmlservermetadata" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy HTML Description"
+          }
+        }
+      }
+    },
     "swui.copy.installassistantlink" : {
       "comment" : "Probably shouldn't translate \"InstallAssistant.pkg\" since that's the name of the file. \"Copy\" and \"Link\" can be translated though.",
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

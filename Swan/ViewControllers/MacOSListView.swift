@@ -43,13 +43,27 @@ struct MacOSListView: View {
         } rows: {
             ForEach(cache.macOSpackages) { item in
                 TableRow(item)
-//                    .contextMenu {
-//                        Button {
-//                            SwanApp.copyString(item.p)
-//                        } label: {
-//                            Text("swui.copy.installassistantlink")
-//                        }
-//                    }
+                    .contextMenu {
+                        if let iaLink = item.packages.first(where: { $0.url.contains("InstallAssistant.pkg") })?.url {
+                            Button {
+                                SwanApp.copyString(iaLink)
+                            } label: {
+                                Text("swui.copy.installassistantlink")
+                            }
+                        }
+                        Button {
+                            SwanApp.copyString("\(item)")
+                        } label: {
+                            Text("swui.copy.dump")
+                        }
+                        if let htmlDescription = item.serverMetadata?.localizations["English"]?.descriptionHTML {
+                            Button {
+                                SwanApp.copyString(htmlDescription)
+                            } label: {
+                                Text("swui.copy.htmlservermetadata")
+                            }
+                        }
+                    }
             }
         }.searchable(text: $cache.macOSpackagesSearch, prompt: "swui.search").navigationSubtitle("swui.macospackages")
     }

@@ -12,7 +12,7 @@ import SwiftUI
 // MARK: - SUSafariResolved
 
 struct SUSafariResolved: SUProductResolved {
-    
+    var serverMetadata: SUServerMetadata?
     let key: String
     let serverMetadataURL: String?
     var packages: [SUPackage]

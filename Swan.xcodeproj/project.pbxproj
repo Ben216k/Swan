@@ -32,6 +32,8 @@
 		76EF31812C681DE4009D07DA /* PackagePieces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF31802C681DD9009D07DA /* PackagePieces.swift */; };
 		76EF31832C685868009D07DA /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF31822C685865009D07DA /* DownloadManager.swift */; };
 		76EF31852C685E0F009D07DA /* DownloadManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF31842C685E09009D07DA /* DownloadManagerView.swift */; };
+		76F060192C73D865003D698B /* SUServerMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060182C73D865003D698B /* SUServerMetaData.swift */; };
+		76F0601B2C73DA3D003D698B /* SMDResolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0601A2C73DA33003D698B /* SMDResolve.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		76EF31802C681DD9009D07DA /* PackagePieces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagePieces.swift; sourceTree = "<group>"; };
 		76EF31822C685865009D07DA /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		76EF31842C685E09009D07DA /* DownloadManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManagerView.swift; sourceTree = "<group>"; };
+		76F060182C73D865003D698B /* SUServerMetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUServerMetaData.swift; sourceTree = "<group>"; };
+		76F0601A2C73DA33003D698B /* SMDResolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMDResolve.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,7 @@
 				764569332C5F105800FC6865 /* SUCache.swift */,
 				764569312C5F103A00FC6865 /* SUCatalog.swift */,
 				764569422C5F301800FC6865 /* HardcodedCatalogs.swift */,
+				76F060182C73D865003D698B /* SUServerMetaData.swift */,
 			);
 			path = SwcdnTypes;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 		7645693A2C5F174600FC6865 /* SwcdnFunctions */ = {
 			isa = PBXGroup;
 			children = (
+				76F0601A2C73DA33003D698B /* SMDResolve.swift */,
 				76EF31822C685865009D07DA /* DownloadManager.swift */,
 				76EF317A2C66CF13009D07DA /* Initialization.swift */,
 				7645693B2C5F1D6C00FC6865 /* DownloadCatalog.swift */,
@@ -313,6 +319,7 @@
 				764569402C5F1E2300FC6865 /* SUMacOSPackage.swift in Sources */,
 				76EF317F2C6722E5009D07DA /* FakeTableItem.swift in Sources */,
 				76EF31832C685868009D07DA /* DownloadManager.swift in Sources */,
+				76F060192C73D865003D698B /* SUServerMetaData.swift in Sources */,
 				760258B02C6AFDAD00D07B70 /* SWErrorTotalView.swift in Sources */,
 				76EF317B2C66CF1F009D07DA /* Initialization.swift in Sources */,
 				76EF31812C681DE4009D07DA /* PackagePieces.swift in Sources */,
@@ -329,6 +336,7 @@
 				764569362C5F15A000FC6865 /* SWError.swift in Sources */,
 				7645692F2C5F012100FC6865 /* Logger.swift in Sources */,
 				76A28F752C645C5800238999 /* MacOSListView.swift in Sources */,
+				76F0601B2C73DA3D003D698B /* SMDResolve.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

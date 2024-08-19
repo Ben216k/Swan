@@ -16,6 +16,7 @@ struct SUMacOSPackage: SUProductResolved {
     // In the actual thing lol
     let key: String
     let serverMetadataURL: String?
+    var serverMetadata: SUServerMetadata?
     var packages: [SUPackage]
     let postDate: Date
     let distributions: [String: String]
