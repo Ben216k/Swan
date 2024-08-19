@@ -46,21 +46,6 @@ struct ContentView: View {
                 case "Safari": SafariListView(selection: $selectedProduct)
                 default: Rectangle().frame(height: 1).opacity(0.000001)
                 }
-            }.toolbar {
-                ToolbarItem {
-                    Button {
-                        if cache.hasSetCaches {
-                            os_log("User requested catalog to be loaded.", log: LogCategory.mainUI.osLog, type: .default)
-                            cache.clearCatalogs()
-                            Task {
-                                await cache.beginFillingCache()
-                            }
-                        }
-                    } label: {
-                        Label("swui.refreshlist", systemImage: "arrow.clockwise")
-                            .help("swui.refreshlist")
-                    }.disabled(!cache.hasSetCaches)
-                }
             }
         } detail: {
             Group {
@@ -97,6 +82,20 @@ struct ContentView: View {
                 }.popover(isPresented: $showDownloadManager) {
                     DownloadManagerView().frame(width: 350)
                 }
+            }
+            ToolbarItem {
+                Button {
+                    if cache.hasSetCaches {
+                        os_log("User requested catalog to be loaded.", log: LogCategory.mainUI.osLog, type: .default)
+                        cache.clearCatalogs()
+                        Task {
+                            await cache.beginFillingCache()
+                        }
+                    }
+                } label: {
+                    Label("swui.refreshlist", systemImage: "arrow.clockwise")
+                        .help("swui.refreshlist")
+                }.disabled(!cache.hasSetCaches)
             }
         }
     }
