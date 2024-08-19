@@ -1,7 +1,7 @@
 // 
-//  MainList.swift - Swan
-// 
-//  Created by Ben216k on 8/7/24
+//  SafariListView.swift - Swan
+//
+//  Created by Ben216k on 8/12/24
 //  Copyright (c) Ben216k (under 216k License)
 // 
 
@@ -9,7 +9,7 @@ import SwiftUI
 import os
 
 @MainActor
-struct MacOSListView: View {
+struct SafariListView: View {
     
     @EnvironmentObject var cache: SUCache
     
@@ -18,20 +18,17 @@ struct MacOSListView: View {
     @State private var showSearchBar = false
     
     var body: some View {
-        Table(of: SUMacOSPackage.self, selection: $selection, sortOrder: $cache.macOSpackagesSortOrder) {
+        Table(of: SUSafariResolved.self, selection: $selection, sortOrder: $cache.safariSortOrder) {
             TableColumn("") { item in
-                item.image
+                Image("SafariCircle")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 35)
                     .cornerRadius(100)
             }.width(35)
-            TableColumn("swui.majorversion", value: \.osName) { item in
-                Text("macOS " + item.osName)
-            }
-            TableColumn("swui.minorversion", value: \.version)
+            TableColumn("swui.version", value: \.version)
                 .width(min: 60, ideal: 60, max: 70)
-            TableColumn("swui.buildnumber", value: \.buildNumber)
+            TableColumn("swui.macosversion", value: \.macOSVersion)
             TableColumn("swui.catalog") { item in
                 Text(item.releaseType.name)
             }
@@ -41,7 +38,7 @@ struct MacOSListView: View {
                 Text($0.postDateFormatted)
             }
         } rows: {
-            ForEach(cache.macOSpackages) { item in
+            ForEach(cache.safariPackages) { item in
                 TableRow(item)
 //                    .contextMenu {
 //                        Button {
@@ -51,20 +48,20 @@ struct MacOSListView: View {
 //                        }
 //                    }
             }
-        }.searchable(text: $cache.macOSpackagesSearch, prompt: "swui.search").toolbar {
-            ToolbarItem(id: "refresh-macos") {
+        }.searchable(text: $cache.safariSearch, prompt: "swui.search").toolbar {
+            ToolbarItem(id: "refresh-safari") {
                 Button {
                     os_log("User requested catalog to be loaded.", log: LogCategory.mainUI.osLog, type: .default)
                     cache.clearCatalogs()
                     Task {
-                        await cache.beginFillingCache()
+                        try? await cache.downloadUsedCatalogs()
                     }
                 } label: {
                     Label("swui.refreshlist", systemImage: "arrow.clockwise")
                         .help("swui.refreshlist")
                 }
             }
-        }.navigationSubtitle("swui.macospackages")
+        }.navigationSubtitle("swui.safaripackages")
     }
     
 }

@@ -12,6 +12,7 @@ import SwiftData
 @MainActor
 struct ContentView: View {
 
+    @EnvironmentObject var cache: SUCache
     @EnvironmentObject var downloadManager: DownloadManager
     
     @State var columnVisibility = NavigationSplitViewVisibility.all
@@ -25,6 +26,7 @@ struct ContentView: View {
                 List(selection: $listSelection) {
                     Section("swui.producttypes") {
                         NavigationLink(value: "macOS", label: { Text("swui.macospackages") } )
+                        NavigationLink(value: "Safari", label: { Text("swui.safaripackages") } )
                     }
                 }.listStyle(.sidebar)
                 Spacer()
@@ -39,11 +41,26 @@ struct ContentView: View {
 //            MacOSListView(selection: $selectedProduct)
             switch listSelection {
             case "macOS": MacOSListView(selection: $selectedProduct)
+            case "Safari": SafariListView(selection: $selectedProduct)
             default: Rectangle().frame(height: 1).opacity(0.000001)
             }
         } detail: {
-            MacOSItemDetailView(selection: $selectedProduct)
-                .navigationSplitViewColumnWidth(min: 250, ideal: 315, max: 350)
+            Group {
+                if let lifeSucks = cache.lifeSucks {
+                    SWErrorTotalView(error: lifeSucks)
+                } else if !cache.hasSetCaches {
+                    Text("swui.loadingcatalogs")
+                } else {
+                    switch cache.products[selectedProduct ?? "unused"]?.type {
+                    case .macOSpackage:
+                        MacOSItemDetailView(selection: $selectedProduct)
+                    case .safari:
+                        SafariItemDetailView(selection: $selectedProduct)
+                    case .none:
+                        Text("swui.noitemselected")
+                    }
+                }
+            }.navigationSplitViewColumnWidth(min: 250, ideal: 315, max: 350)
         }.toolbar {
             ToolbarItem(id: "downloads") {
                 Button {

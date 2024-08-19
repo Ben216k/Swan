@@ -30,10 +30,10 @@ extension SWError {
         // check if localized string exists
         let localizedString = NSLocalizedString(id, comment: "")
         if localizedString != id {
-            return localizedString.replacingOccurrences(of: "<DATA>", with: self.data ?? "<UNKNOWN DATA>") + " (Code: \(id), Source: \(source))"
+            return (customText ?? localizedString.replacingOccurrences(of: "<DATA>", with: self.data ?? "<UNKNOWN DATA>")) + " (Code: \(id), Source: \(source))"
         }
-
-        return customText ?? NSLocalizedString("swerror.source.unknown", comment: "") + " (Code: \(id), Source: \(source))"
+        
+        return (customText ?? NSLocalizedString("swerror.source.unknown", comment: "")) + " (Code: \(id), Source: \(source))"
     }
     
 }

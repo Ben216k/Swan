@@ -70,55 +70,181 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Received non-400 HTTP status code, instead received <DATA>."
+            "value" : "Received non-200 HTTP status code, instead received <DATA>."
           }
         }
       }
     },
     "swerror.foundation.unknown" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An unknown error occurred. <DATA>"
+          }
+        }
+      }
     },
     "swerror.product.unknown" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown product type attempted to be resolved. This may be solved in a future app version."
+          }
+        }
+      }
     },
     "swerror.reader.invalidenglishdistributionurl" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The English distribution URL is invalid. This could be Apple’s fault (a note would most likely be pinned in the GitHub issues page), or it could be a bug. "
+          }
+        }
+      }
     },
     "swerror.reader.noenglishdistribution" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There is no English distribution URL on this product, which is required to obtain additional specific information (like version and build number) on it."
+          }
+        }
+      }
     },
     "swerror.reader.nonhttpresponse" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The response that we got from an HTTP request was not an HTTP response. I don’t know how you managed this."
+          }
+        }
+      }
     },
     "swerror.reader.regexcreation" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The regex couldn’t be created because it probably wasn’t in the right format. This is a bug, please report on GitHub."
+          }
+        }
+      }
     },
     "swerror.reader.regexnoextraction" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Regex failed to extract the correct information, this may be a bug or a change in format on Apple’s behalf, please check GitHub."
+          }
+        }
+      }
     },
     "swerror.reader.regexnomatch" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Regex failed to match any information, this may be a bug or a change in format on Apple’s behalf, please check GitHub."
+          }
+        }
+      }
     },
     "swerror.reader.standardhttp" : {
-
+      "comment" : "200 = Success, literally anything else means something went wrong. DO NOT LOCALIZE <DATA>, it will be automatically replaced with the received status code (404, 501, 327, etc).",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Received non-400 HTTP status code, instead received <DATA>."
+          }
+        }
+      }
     },
     "swerror.reader.utf8conversion" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The reader could not convert the data to UTF8 text. This is unexpected, and unprecedented."
+          }
+        }
+      }
     },
     "swerror.reader.versionlessthan10" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This product has a major version less than 10. If you’re new to macOS, that was before you were born. That shouldn’t be in the catalog, especially knowing it normally only shows 10.13 and later with installers. Good job man."
+          }
+        }
+      }
     },
     "swerror.reader.versionminor" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There is no minor version, most likely meaning the regex failed."
+          }
+        }
+      }
     },
     "swerror.reader.versionminorintconversion" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There is no integer minor version, most likely meaning the regex failed."
+          }
+        }
+      }
     },
     "swerror.reader.versionnointconversion" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There is no integer version, most likely meaning the regex failed."
+          }
+        }
+      }
     },
     "swerror.reader.versionnosplit" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The version could not be split, most likely meaning the regex failed."
+          }
+        }
+      }
+    },
+    "swerror.safari.noservermetadataurl" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No server metadata url on Safari product. This should never happen."
+          }
+        }
+      }
+    },
+    "swerror.safari.noversionnumber" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No version number found in Safari product. It could be a tech preview, which isn’t currently supported."
+          }
+        }
+      }
     },
     "swerror.source.unknown" : {
       "comment" : "This is used in some few cases, typically when the error isn't something I can prepare for like from other libraries (but if I run into it, I may be able to adapt and change it to return something else)",
@@ -127,7 +253,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "An unknown error occurred."
+            "value" : "An unknown error occurred, coming from an unknown source. <DATA>"
           }
         }
       }
@@ -237,6 +363,26 @@
         }
       }
     },
+    "swui.distributions" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distributions"
+          }
+        }
+      }
+    },
+    "swui.distributionscount" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distributions Count"
+          }
+        }
+      }
+    },
     "swui.downloadallpackages" : {
       "comment" : "Download ALL THE PACKAGES",
       "localizations" : {
@@ -265,6 +411,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$@ / %2$@"
+          }
+        }
+      }
+    },
+    "swui.error.loadingcatalogs" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading swcdn catalogs failed."
           }
         }
       }
@@ -340,6 +496,16 @@
         }
       }
     },
+    "swui.loadingcatalogs" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading Catalogs"
+          }
+        }
+      }
+    },
     "swui.macospackage.linetwo %@ %@" : {
       "comment" : "Shown under \"macOS Whatever 20.12.1\" in the detail view. %1$@ represents the build number, %2$@ represents the post date",
       "localizations" : {
@@ -358,6 +524,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "macOS Packages"
+          }
+        }
+      }
+    },
+    "swui.macosversion" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "macOS Version"
           }
         }
       }
@@ -548,6 +724,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Release Name"
+          }
+        }
+      }
+    },
+    "swui.safaripackage.linetwo %@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For %1$@, %2$@"
+          }
+        }
+      }
+    },
+    "swui.safaripackages" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Safari Packages"
           }
         }
       }

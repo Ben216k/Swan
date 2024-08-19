@@ -13,6 +13,7 @@ final class SUCache: ObservableObject {
     static let shared = SUCache()
     
     @Published var hasSetCaches = false
+    @Published var lifeSucks: SWError?
     @Published var catalogs: [String: SUCatalog] = [:]
     @Published var products: [String: any SUProductResolved] = [:]
     @Published var usedCatalogs: [SUCatalogSource] = SUCatalogSource.bestKnownCatalogs
@@ -27,7 +28,11 @@ final class SUCache: ObservableObject {
     }
 
     func clearCatalogs() {
+        self.hasSetCaches = false
+        self.lifeSucks = nil
         self.catalogs = [:]
+        self.products = [:]
+        self.rejectedProducts = []
     }
     
     init() {
@@ -48,6 +53,19 @@ final class SUCache: ObservableObject {
             || $0.key.lowercased().starts(with: search)
             || String(localized: $0.releaseType.name).lowercased().contains(search)
         }.sorted(using: macOSpackagesSortOrder)
+    }
+
+    @Published var safariSortOrder = [KeyPathComparator(\SUSafariResolved.version, order: .reverse)]
+    @Published var safariSearch = ""
+    var safariPackages: [SUSafariResolved] {
+        products.values.compactMap { $0 as? SUSafariResolved }.filter{
+            let search = safariSearch.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+            return search.isEmpty
+            || $0.version.lowercased().starts(with: search)
+            || $0.key.lowercased().starts(with: search)
+            || $0.macOSVersion.lowercased().starts(with: search)
+            || String(localized: $0.releaseType.name).lowercased().contains(search)
+        }.sorted(using: safariSortOrder)
     }
     
 }

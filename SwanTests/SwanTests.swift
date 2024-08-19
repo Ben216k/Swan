@@ -91,7 +91,7 @@ struct SwanTests {
         #expect(catalog.id == "15seed", "ID mismatch for catalog: \(catalog.id)")
         #expect(catalog.catalogVersion == 2, "Catalog version mismatch for catalog: \(catalog.catalogVersion). Check for updates.")
         
-        var resolvedProducts: [SUProductResolved] = []
+        var resolvedProducts: [any SUProductResolved] = []
         for (_, product) in catalog.products {
             if let item = try? await product.resolve() {
                 resolvedProducts.append(item)
@@ -153,6 +153,27 @@ struct SwanTests {
         // ensure a product with an auto installer exists
         let autoInstallers = macOSPackages.filter { $0.packages.contains { $0.url.hasSuffix("InstallAssistantAuto.pkg") } }
         #expect(autoInstallers.count > 0, "No auto installers found")
+
+        // ensure a product with a safari package exists
+        let safariProducts = await SUCache.shared.products.compactMap { $0.value as? SUSafariResolved }
+        #expect(safariProducts.count > 0, "No safari products resolved")
+        // let safariProduct = safariProducts.first
+        // #expect(safariProduct.count > 0, "No safari products found")
+        // #expect(safariProduct.serverMetadataURL?.contains("Safari") == true, "Safari not in serverMetadataURL")
+        // #expect(safariProduct.serverMetadataURL?.contains(safariProduct.version) == true, "Safari version not in serverMetadataURL")
+        // #expect(safariProduct.serverMetadataURL?.contains(safariProduct.macOSVersion) == true, "macOS version not in serverMetadataURL")
+        // // for 
+
+        for product in safariProducts {
+            #expect(product.serverMetadataURL?.contains("Safari") == true, "Safari not in serverMetadataURL")
+            #expect(product.serverMetadataURL?.contains(product.version) == true, "Safari version not in serverMetadataURL")
+            #expect(product.serverMetadataURL?.contains(product.macOSVersion) == true, "macOS version not in serverMetadataURL")
+            guard let serverMetadataURL = URL(string: product.serverMetadataURL!) else {
+                #expect(Bool(false), "Could not create URL from serverMetadataURL")
+                continue
+            }
+            #expect(product.packages.contains { $0.url.contains(serverMetadataURL.lastPathComponent.replacingOccurrences(of: "smd", with: "pkg")) }, "Safari package not in packages???")
+        }
     }
 
 }

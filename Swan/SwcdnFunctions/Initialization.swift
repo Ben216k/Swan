@@ -15,8 +15,10 @@ extension SUCache {
         do {
             try await self.downloadUsedCatalogs()
         } catch {
-            
+            self.lifeSucks = error
+            return
         }
+        self.hasSetCaches = true
     }
     
 }
