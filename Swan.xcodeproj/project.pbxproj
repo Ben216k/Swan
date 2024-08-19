@@ -77,6 +77,7 @@
 		76EF31842C685E09009D07DA /* DownloadManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManagerView.swift; sourceTree = "<group>"; };
 		76F060182C73D865003D698B /* SUServerMetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUServerMetaData.swift; sourceTree = "<group>"; };
 		76F0601A2C73DA33003D698B /* SMDResolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMDResolve.swift; sourceTree = "<group>"; };
+		76F0601C2C73E2D3003D698B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +103,7 @@
 			children = (
 				764568FD2C5EFEE400FC6865 /* Swan */,
 				764569112C5EFEE600FC6865 /* SwanTests */,
+				76F0601C2C73E2D3003D698B /* .gitignore */,
 				764568FC2C5EFEE400FC6865 /* Products */,
 			);
 			sourceTree = "<group>";
