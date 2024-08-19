@@ -9,6 +9,12 @@
       "comment" : "216k Labs is a brand name, therefore should not be localized.",
       "shouldTranslate" : false
     },
+    "Client Platforms: %@" : {
+
+    },
+    "Server Platforms: %@" : {
+
+    },
     "sucatalog.type.beta" : {
       "localizations" : {
         "en" : {
@@ -783,6 +789,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Show Downloads"
+          }
+        }
+      }
+    },
+    "swui.smd.titleformatted %@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ - %2$@"
+          }
+        }
+      }
+    },
+    "swui.smd.url" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Server Metadata"
           }
         }
       }

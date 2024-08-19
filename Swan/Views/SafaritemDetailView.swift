@@ -46,6 +46,13 @@ struct SafariItemDetailView: View {
                     if let deferredSUEnablementDateFormattedLong = product.deferredSUEnablementDateFormattedLong {
                         FakeTableItem(title: "swui.deferredsuenablementdate", value: deferredSUEnablementDateFormattedLong)
                     }
+                    if let serverMetadataURLString = product.serverMetadataURL, let url = URL(string: serverMetadataURLString) {
+                        SMDViewTeaser(url: url, serverMetadata: product.serverMetadata) { url in
+                            Task {
+                                try? await downloadManager.startDownload(from: url, title: "Safari " + product.version, specific: "For \(product.macOSVersion) | \(url.lastPathComponent)", image: "SafariCircle")
+                            }
+                        }
+                    }
                 }
                 
                 // MARK: - Extended Metadata

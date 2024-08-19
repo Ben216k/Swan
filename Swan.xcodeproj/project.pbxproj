@@ -34,6 +34,8 @@
 		76EF31852C685E0F009D07DA /* DownloadManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF31842C685E09009D07DA /* DownloadManagerView.swift */; };
 		76F060192C73D865003D698B /* SUServerMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060182C73D865003D698B /* SUServerMetaData.swift */; };
 		76F0601B2C73DA3D003D698B /* SMDResolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0601A2C73DA33003D698B /* SMDResolve.swift */; };
+		76F0601E2C73E491003D698B /* SMDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0601D2C73E47B003D698B /* SMDView.swift */; };
+		76F060212C73E788003D698B /* HTMLRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060202C73E788003D698B /* HTMLRenderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		76F060182C73D865003D698B /* SUServerMetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUServerMetaData.swift; sourceTree = "<group>"; };
 		76F0601A2C73DA33003D698B /* SMDResolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMDResolve.swift; sourceTree = "<group>"; };
 		76F0601C2C73E2D3003D698B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		76F0601D2C73E47B003D698B /* SMDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMDView.swift; sourceTree = "<group>"; };
+		76F060202C73E788003D698B /* HTMLRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLRenderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +200,7 @@
 		76A28F732C645C4D00238999 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				76F060202C73E788003D698B /* HTMLRenderer.swift */,
 				76A28F742C645C5200238999 /* MacOSListView.swift */,
 				760258AD2C6AF93300D07B70 /* SafariListView.swift */,
 				760258AF2C6AFDA300D07B70 /* SWErrorTotalView.swift */,
@@ -206,6 +211,7 @@
 		76EF31772C66CC23009D07DA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				76F0601D2C73E47B003D698B /* SMDView.swift */,
 				76EF31842C685E09009D07DA /* DownloadManagerView.swift */,
 				76EF31802C681DD9009D07DA /* PackagePieces.swift */,
 				76EF317E2C6722E2009D07DA /* FakeTableItem.swift */,
@@ -323,6 +329,7 @@
 				76EF31832C685868009D07DA /* DownloadManager.swift in Sources */,
 				76F060192C73D865003D698B /* SUServerMetaData.swift in Sources */,
 				760258B02C6AFDAD00D07B70 /* SWErrorTotalView.swift in Sources */,
+				76F0601E2C73E491003D698B /* SMDView.swift in Sources */,
 				76EF317B2C66CF1F009D07DA /* Initialization.swift in Sources */,
 				76EF31812C681DE4009D07DA /* PackagePieces.swift in Sources */,
 				764569412C5F1E2300FC6865 /* SUProductResolved.swift in Sources */,
@@ -339,6 +346,7 @@
 				7645692F2C5F012100FC6865 /* Logger.swift in Sources */,
 				76A28F752C645C5800238999 /* MacOSListView.swift in Sources */,
 				76F0601B2C73DA3D003D698B /* SMDResolve.swift in Sources */,
+				76F060212C73E788003D698B /* HTMLRenderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

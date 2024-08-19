@@ -47,6 +47,13 @@ struct MacOSItemDetailView: View {
                     if let deferredSUEnablementDateFormattedLong = product.deferredSUEnablementDateFormattedLong {
                         FakeTableItem(title: "swui.deferredsuenablementdate", value: deferredSUEnablementDateFormattedLong)
                     }
+                    if let serverMetadataURLString = product.serverMetadataURL, let url = URL(string: serverMetadataURLString) {
+                        SMDViewTeaser(url: url, serverMetadata: product.serverMetadata) { url in
+                            Task {
+                                try? await downloadManager.startDownload(from: url, title: "macOS " + product.osName + " " + product.version, specific: "Build \(product.buildNumber) | \(url.lastPathComponent)", image: product.imageName)
+                            }
+                        }
+                    }
                 }
                 
                 // MARK: - Extended Metadata
