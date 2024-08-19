@@ -8,6 +8,7 @@
 
 import SwiftUI
 import SwiftData
+import os
 
 @MainActor
 struct ContentView: View {
@@ -39,10 +40,27 @@ struct ContentView: View {
             }
         } content: {
 //            MacOSListView(selection: $selectedProduct)
-            switch listSelection {
-            case "macOS": MacOSListView(selection: $selectedProduct)
-            case "Safari": SafariListView(selection: $selectedProduct)
-            default: Rectangle().frame(height: 1).opacity(0.000001)
+            Group {
+                switch listSelection {
+                case "macOS": MacOSListView(selection: $selectedProduct)
+                case "Safari": SafariListView(selection: $selectedProduct)
+                default: Rectangle().frame(height: 1).opacity(0.000001)
+                }
+            }.toolbar {
+                ToolbarItem {
+                    Button {
+                        if cache.hasSetCaches {
+                            os_log("User requested catalog to be loaded.", log: LogCategory.mainUI.osLog, type: .default)
+                            cache.clearCatalogs()
+                            Task {
+                                await cache.beginFillingCache()
+                            }
+                        }
+                    } label: {
+                        Label("swui.refreshlist", systemImage: "arrow.clockwise")
+                            .help("swui.refreshlist")
+                    }.disabled(!cache.hasSetCaches)
+                }
             }
         } detail: {
             Group {
@@ -83,8 +101,4 @@ struct ContentView: View {
         }
     }
 
-}
-
-#Preview {
-    ContentView()
 }

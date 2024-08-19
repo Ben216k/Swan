@@ -51,20 +51,7 @@ struct MacOSListView: View {
 //                        }
 //                    }
             }
-        }.searchable(text: $cache.macOSpackagesSearch, prompt: "swui.search").toolbar {
-            ToolbarItem(id: "refresh-macos") {
-                Button {
-                    os_log("User requested catalog to be loaded.", log: LogCategory.mainUI.osLog, type: .default)
-                    cache.clearCatalogs()
-                    Task {
-                        await cache.beginFillingCache()
-                    }
-                } label: {
-                    Label("swui.refreshlist", systemImage: "arrow.clockwise")
-                        .help("swui.refreshlist")
-                }
-            }
-        }.navigationSubtitle("swui.macospackages")
+        }.searchable(text: $cache.macOSpackagesSearch, prompt: "swui.search").navigationSubtitle("swui.macospackages")
     }
     
 }

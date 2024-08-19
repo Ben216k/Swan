@@ -48,20 +48,7 @@ struct SafariListView: View {
 //                        }
 //                    }
             }
-        }.searchable(text: $cache.safariSearch, prompt: "swui.search").toolbar {
-            ToolbarItem(id: "refresh-safari") {
-                Button {
-                    os_log("User requested catalog to be loaded.", log: LogCategory.mainUI.osLog, type: .default)
-                    cache.clearCatalogs()
-                    Task {
-                        try? await cache.downloadUsedCatalogs()
-                    }
-                } label: {
-                    Label("swui.refreshlist", systemImage: "arrow.clockwise")
-                        .help("swui.refreshlist")
-                }
-            }
-        }.navigationSubtitle("swui.safaripackages")
+        }.searchable(text: $cache.safariSearch, prompt: "swui.search").navigationSubtitle("swui.safaripackages")
     }
     
 }
