@@ -25,9 +25,10 @@ struct SUSafariResolved: SUProductResolved {
     let insideCatalogs: [String]
     var releaseType: SUCatalogType = .release
     var deferredSUEnablementDate: Date?
+    let isTechPreivew: Bool
     
     var basicName: String {
-        return "Safari"
+        return isTechPreivew ? "Safari Tech Preview" : "Safari"
     }
     
     var downloadTitleText: String {
@@ -41,7 +42,7 @@ struct SUSafariResolved: SUProductResolved {
         return Image(imageName)
     }
     var imageName: String {
-        return "SafariCircle"
+        return isTechPreivew ? "SafariPreviewCircle" : "SafariCircle"
     }
     
 }
@@ -67,25 +68,21 @@ extension SUSafariResolved {
         let versionRegex = try NSRegularExpression(pattern: "Safari(\\d+\\.\\d+(\\.\\d+)?)(\\w+)", options: [])
         let versionMatches = versionRegex.matches(in: serverMetadataURL, options: [], range: NSRange(location: 0, length: serverMetadataURL.count))
 
-        guard let versionMatch = versionMatches.first else {
-            os_log(
-                "No version number found for Safari product. Contexts:\n%@",
-                log: LogCategory.swcanReader.osLog, type: .error,
-                "Product: \(product.key)\n"
-            )
-            throw SWError(source: "SUMacOSPackage.resolve()", id: "swerror.safari.noversionnumber")
+        var version: String = "N/A"
+        var macOSVersion: String = "N/A"
+        if let versionMatch = versionMatches.first {
+            let versionRange = versionMatch.range(at: 1)
+            version = (serverMetadataURL as NSString).substring(with: versionRange)
+
+            // now we need to extract the macOS version from the serverMetadataURL, which is just the second group in the regex
+            let macOSVersionRange = versionMatch.range(at: 3)
+            
+    //        print(serverMetadataURL, version, macOSVersionRange)
+            
+            macOSVersion = (serverMetadataURL as NSString).substring(with: macOSVersionRange).replacingOccurrences(of: "Auto", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+            macOSVersion = addSpaceBeforeCapitalLetters(in: macOSVersion)
         }
 
-        let versionRange = versionMatch.range(at: 1)
-        let version = (serverMetadataURL as NSString).substring(with: versionRange)
-
-        // now we need to extract the macOS version from the serverMetadataURL, which is just the second group in the regex
-        let macOSVersionRange = versionMatch.range(at: 3)
-        
-//        print(serverMetadataURL, version, macOSVersionRange)
-        
-        var macOSVersion = (serverMetadataURL as NSString).substring(with: macOSVersionRange).replacingOccurrences(of: "Auto", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
-        macOSVersion = addSpaceBeforeCapitalLetters(in: macOSVersion)
 
         // yay, we have the version and macOS version now
 
@@ -99,7 +96,8 @@ extension SUSafariResolved {
             version: version,
             macOSVersion: macOSVersion,
             insideCatalogs: product.insideCatalogs,
-            deferredSUEnablementDate: product.deferredSUEnablementDate
+            deferredSUEnablementDate: product.deferredSUEnablementDate,
+            isTechPreivew: product.serverMetadataURL?.contains("SafariTechPreview") ?? false
         )
             
     }

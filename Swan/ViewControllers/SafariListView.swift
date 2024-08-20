@@ -20,18 +20,19 @@ struct SafariListView: View {
     var body: some View {
         Table(of: SUSafariResolved.self, selection: $selection, sortOrder: $cache.safariSortOrder) {
             TableColumn("") { item in
-                Image("SafariCircle")
+                item.image
                     .resizable()
                     .scaledToFit()
                     .frame(width: 35)
                     .cornerRadius(100)
             }.width(35)
+            TableColumn("swui.name", value: \.basicName)
             TableColumn("swui.version", value: \.version)
                 .width(min: 90, ideal: 90, max: 120)
             TableColumn("swui.macosversion", value: \.macOSVersion)
             TableColumn("swui.catalog") { item in
                 Text(item.releaseType.name)
-            }
+            }.width(min: 90, ideal: 90, max: 120)
             TableColumn("swui.productid", value: \.key)
                 .width(min: 80, ideal: 80, max: 90)
             TableColumn("swui.postdate", value: \.postDateForSorting) {

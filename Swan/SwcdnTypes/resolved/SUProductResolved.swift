@@ -84,8 +84,6 @@ extension SUProduct {
             // Check for InstallAssistant.pkg url in the packages, if it exists, it's a full macOS installer
             if packages.contains(where: { $0.url.contains("InstallAssistant.pkg") || $0.url.contains("InstallAssistantAuto.pkg") }) {
                 resolved = try await SUMacOSPackage.resolve(from: self)
-            } else if serverMetadataURL?.contains("SafariTechPreivew") == true {
-                throw SWError(source: "SUProduct", id: "swerror.product.unknown")
             } else if serverMetadataURL?.contains("Safari") == true {
                 resolved = try await SUSafariResolved.resolve(from: self)
             } else {

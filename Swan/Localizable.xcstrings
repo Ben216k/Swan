@@ -243,6 +243,7 @@
       }
     },
     "swerror.safari.noversionnumber" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

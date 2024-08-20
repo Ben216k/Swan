@@ -209,9 +209,9 @@
 			children = (
 				76F060222C742F49003D698B /* ProductDetailView.swift */,
 				76F060202C73E788003D698B /* HTMLRenderer.swift */,
+				760258AF2C6AFDA300D07B70 /* SWErrorTotalView.swift */,
 				76A28F742C645C5200238999 /* MacOSListView.swift */,
 				760258AD2C6AF93300D07B70 /* SafariListView.swift */,
-				760258AF2C6AFDA300D07B70 /* SWErrorTotalView.swift */,
 				76F0602C2C753395003D698B /* EVERYTHINGListView.swift */,
 			);
 			path = ViewControllers;
