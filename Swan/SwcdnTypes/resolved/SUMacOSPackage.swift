@@ -25,7 +25,7 @@ struct SUMacOSPackage: SUProductResolved {
     let type: SUProductType = .macOSpackage
 
     // HAVE TO FETCH FROM A SECOND LINK (in the distrubutions, just check English, cause they're all the same and the others aren't always there)
-    let version: String
+    var version: String
     let buildNumber: String
     /// The major version of the macOS release
     /// - Note: Versions prior to 11 have a major version of 10XX where XX is the minor, but technically major, version (e.g. 10.15 is 1015)

@@ -10,7 +10,6 @@
 		760258AC2C6AF1B200D07B70 /* SUSafariProductResolved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760258AB2C6AF1B200D07B70 /* SUSafariProductResolved.swift */; };
 		760258AE2C6AF93300D07B70 /* SafariListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760258AD2C6AF93300D07B70 /* SafariListView.swift */; };
 		760258B02C6AFDAD00D07B70 /* SWErrorTotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760258AF2C6AFDA300D07B70 /* SWErrorTotalView.swift */; };
-		760258B22C6B050000D07B70 /* SafaritemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760258B12C6B050000D07B70 /* SafaritemDetailView.swift */; };
 		764568FF2C5EFEE400FC6865 /* SwanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764568FE2C5EFEE400FC6865 /* SwanApp.swift */; };
 		764569012C5EFEE400FC6865 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764569002C5EFEE400FC6865 /* ContentView.swift */; };
 		764569052C5EFEE600FC6865 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 764569042C5EFEE600FC6865 /* Assets.xcassets */; };
@@ -27,7 +26,6 @@
 		764569432C5F301800FC6865 /* HardcodedCatalogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764569422C5F301800FC6865 /* HardcodedCatalogs.swift */; };
 		76A28F752C645C5800238999 /* MacOSListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A28F742C645C5200238999 /* MacOSListView.swift */; };
 		76EF317B2C66CF1F009D07DA /* Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF317A2C66CF13009D07DA /* Initialization.swift */; };
-		76EF317D2C671BD9009D07DA /* MacOSItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF317C2C671BD1009D07DA /* MacOSItemDetailView.swift */; };
 		76EF317F2C6722E5009D07DA /* FakeTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF317E2C6722E2009D07DA /* FakeTableItem.swift */; };
 		76EF31812C681DE4009D07DA /* PackagePieces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF31802C681DD9009D07DA /* PackagePieces.swift */; };
 		76EF31832C685868009D07DA /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF31822C685865009D07DA /* DownloadManager.swift */; };
@@ -36,6 +34,9 @@
 		76F0601B2C73DA3D003D698B /* SMDResolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0601A2C73DA33003D698B /* SMDResolve.swift */; };
 		76F0601E2C73E491003D698B /* SMDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0601D2C73E47B003D698B /* SMDView.swift */; };
 		76F060212C73E788003D698B /* HTMLRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060202C73E788003D698B /* HTMLRenderer.swift */; };
+		76F060232C742F4C003D698B /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060222C742F49003D698B /* ProductDetailView.swift */; };
+		76F060262C743050003D698B /* DistributionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060252C743050003D698B /* DistributionRow.swift */; };
+		76F060292C752AA3003D698B /* CollapsibleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060282C752AA3003D698B /* CollapsibleHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,6 @@
 		760258AB2C6AF1B200D07B70 /* SUSafariProductResolved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUSafariProductResolved.swift; sourceTree = "<group>"; };
 		760258AD2C6AF93300D07B70 /* SafariListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariListView.swift; sourceTree = "<group>"; };
 		760258AF2C6AFDA300D07B70 /* SWErrorTotalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWErrorTotalView.swift; sourceTree = "<group>"; };
-		760258B12C6B050000D07B70 /* SafaritemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafaritemDetailView.swift; sourceTree = "<group>"; };
 		764568FB2C5EFEE400FC6865 /* Swan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		764568FE2C5EFEE400FC6865 /* SwanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwanApp.swift; sourceTree = "<group>"; };
 		764569002C5EFEE400FC6865 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,7 +72,6 @@
 		764569422C5F301800FC6865 /* HardcodedCatalogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardcodedCatalogs.swift; sourceTree = "<group>"; };
 		76A28F742C645C5200238999 /* MacOSListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSListView.swift; sourceTree = "<group>"; };
 		76EF317A2C66CF13009D07DA /* Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initialization.swift; sourceTree = "<group>"; };
-		76EF317C2C671BD1009D07DA /* MacOSItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSItemDetailView.swift; sourceTree = "<group>"; };
 		76EF317E2C6722E2009D07DA /* FakeTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableItem.swift; sourceTree = "<group>"; };
 		76EF31802C681DD9009D07DA /* PackagePieces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagePieces.swift; sourceTree = "<group>"; };
 		76EF31822C685865009D07DA /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
@@ -82,6 +81,9 @@
 		76F0601C2C73E2D3003D698B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		76F0601D2C73E47B003D698B /* SMDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMDView.swift; sourceTree = "<group>"; };
 		76F060202C73E788003D698B /* HTMLRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLRenderer.swift; sourceTree = "<group>"; };
+		76F060222C742F49003D698B /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		76F060252C743050003D698B /* DistributionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributionRow.swift; sourceTree = "<group>"; };
+		76F060282C752AA3003D698B /* CollapsibleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 		76A28F732C645C4D00238999 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				76F060222C742F49003D698B /* ProductDetailView.swift */,
 				76F060202C73E788003D698B /* HTMLRenderer.swift */,
 				76A28F742C645C5200238999 /* MacOSListView.swift */,
 				760258AD2C6AF93300D07B70 /* SafariListView.swift */,
@@ -211,12 +214,12 @@
 		76EF31772C66CC23009D07DA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				76F060282C752AA3003D698B /* CollapsibleHeader.swift */,
+				76F060252C743050003D698B /* DistributionRow.swift */,
 				76F0601D2C73E47B003D698B /* SMDView.swift */,
 				76EF31842C685E09009D07DA /* DownloadManagerView.swift */,
 				76EF31802C681DD9009D07DA /* PackagePieces.swift */,
 				76EF317E2C6722E2009D07DA /* FakeTableItem.swift */,
-				76EF317C2C671BD1009D07DA /* MacOSItemDetailView.swift */,
-				760258B12C6B050000D07B70 /* SafaritemDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,7 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				764569012C5EFEE400FC6865 /* ContentView.swift in Sources */,
-				760258B22C6B050000D07B70 /* SafaritemDetailView.swift in Sources */,
+				76F060292C752AA3003D698B /* CollapsibleHeader.swift in Sources */,
 				764569402C5F1E2300FC6865 /* SUMacOSPackage.swift in Sources */,
 				76EF317F2C6722E5009D07DA /* FakeTableItem.swift in Sources */,
 				76EF31832C685868009D07DA /* DownloadManager.swift in Sources */,
@@ -334,17 +337,18 @@
 				76EF31812C681DE4009D07DA /* PackagePieces.swift in Sources */,
 				764569412C5F1E2300FC6865 /* SUProductResolved.swift in Sources */,
 				760258AC2C6AF1B200D07B70 /* SUSafariProductResolved.swift in Sources */,
-				76EF317D2C671BD9009D07DA /* MacOSItemDetailView.swift in Sources */,
 				760258AE2C6AF93300D07B70 /* SafariListView.swift in Sources */,
 				76EF31852C685E0F009D07DA /* DownloadManagerView.swift in Sources */,
 				764569322C5F103C00FC6865 /* SUCatalog.swift in Sources */,
 				7645693C2C5F1D7100FC6865 /* DownloadCatalog.swift in Sources */,
 				764568FF2C5EFEE400FC6865 /* SwanApp.swift in Sources */,
+				76F060262C743050003D698B /* DistributionRow.swift in Sources */,
 				764569432C5F301800FC6865 /* HardcodedCatalogs.swift in Sources */,
 				764569342C5F105900FC6865 /* SUCache.swift in Sources */,
 				764569362C5F15A000FC6865 /* SWError.swift in Sources */,
 				7645692F2C5F012100FC6865 /* Logger.swift in Sources */,
 				76A28F752C645C5800238999 /* MacOSListView.swift in Sources */,
+				76F060232C742F4C003D698B /* ProductDetailView.swift in Sources */,
 				76F0601B2C73DA3D003D698B /* SMDResolve.swift in Sources */,
 				76F060212C73E788003D698B /* HTMLRenderer.swift in Sources */,
 			);

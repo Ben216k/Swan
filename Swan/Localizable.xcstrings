@@ -492,6 +492,7 @@
     },
     "swui.fullinstallerposted" : {
       "comment" : "In table row with post date of full installer in SWCDN catalog.",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -533,6 +534,7 @@
     },
     "swui.macospackage.linetwo %@ %@" : {
       "comment" : "Shown under \"macOS Whatever 20.12.1\" in the detail view. %1$@ represents the build number, %2$@ represents the post date",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -607,6 +609,7 @@
     },
     "swui.nonmacospackageselected" : {
       "comment" : "Don't localize GitHub, as it's a brand name. This error is very unlikely, since it checks the product type before loading the view.",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -754,6 +757,7 @@
       }
     },
     "swui.safaripackage.linetwo %@ %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

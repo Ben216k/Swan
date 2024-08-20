@@ -50,6 +50,8 @@ protocol SUProductResolved: Sendable, Identifiable where ID == String {
     
     var image: Image { get }
     var imageName: String { get }
+    
+    var version: String { get set }
 }
 
 extension SUProductResolved {
@@ -88,6 +90,7 @@ extension SUProduct {
         }
         
         resolved.serverMetadata = try? await self.resolveServerMetadata()
+        resolved.version = resolved.serverMetadata?.version ?? resolved.version
 
         // Determine the release type, by getting what catalogs it's in and checking if it's in a seed/beta catalog (check for none, then beta, then seed)
         if insideCatalogs.contains(where: { !$0.contains("seed") && !$0.contains("beta") }) {

@@ -27,7 +27,7 @@ struct SafariListView: View {
                     .cornerRadius(100)
             }.width(35)
             TableColumn("swui.version", value: \.version)
-                .width(min: 60, ideal: 60, max: 70)
+                .width(min: 90, ideal: 90, max: 120)
             TableColumn("swui.macosversion", value: \.macOSVersion)
             TableColumn("swui.catalog") { item in
                 Text(item.releaseType.name)

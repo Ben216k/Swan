@@ -54,14 +54,15 @@ struct ContentView: View {
                 } else if !cache.hasSetCaches {
                     Text("swui.loadingcatalogs")
                 } else {
-                    switch cache.products[selectedProduct ?? "unused"]?.type {
-                    case .macOSpackage:
-                        MacOSItemDetailView(selection: $selectedProduct)
-                    case .safari:
-                        SafariItemDetailView(selection: $selectedProduct)
-                    case .none:
-                        Text("swui.noitemselected")
-                    }
+//                    switch cache.products[selectedProduct ?? "unused"]?.type {
+//                    case .macOSpackage:
+//                        MacOSItemDetailView(selection: $selectedProduct)
+//                    case .safari:
+//                        SafariItemDetailView(selection: $selectedProduct)
+//                    case .none:
+//                        Text("swui.noitemselected")
+//                    }
+                    ProductDetailView(selection: $selectedProduct)
                 }
             }.navigationSplitViewColumnWidth(min: 250, ideal: 315, max: 350)
         }.toolbar {
