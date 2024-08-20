@@ -38,6 +38,7 @@
 		76F060262C743050003D698B /* DistributionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060252C743050003D698B /* DistributionRow.swift */; };
 		76F060292C752AA3003D698B /* CollapsibleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060282C752AA3003D698B /* CollapsibleHeader.swift */; };
 		76F0602B2C752B73003D698B /* SUUnresolvedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0602A2C752B6D003D698B /* SUUnresolvedProduct.swift */; };
+		76F0602D2C75339D003D698B /* EVERYTHINGListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0602C2C753395003D698B /* EVERYTHINGListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		76F060252C743050003D698B /* DistributionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributionRow.swift; sourceTree = "<group>"; };
 		76F060282C752AA3003D698B /* CollapsibleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleHeader.swift; sourceTree = "<group>"; };
 		76F0602A2C752B6D003D698B /* SUUnresolvedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUUnresolvedProduct.swift; sourceTree = "<group>"; };
+		76F0602C2C753395003D698B /* EVERYTHINGListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVERYTHINGListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 				76A28F742C645C5200238999 /* MacOSListView.swift */,
 				760258AD2C6AF93300D07B70 /* SafariListView.swift */,
 				760258AF2C6AFDA300D07B70 /* SWErrorTotalView.swift */,
+				76F0602C2C753395003D698B /* EVERYTHINGListView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				76F0602B2C752B73003D698B /* SUUnresolvedProduct.swift in Sources */,
 				76EF31832C685868009D07DA /* DownloadManager.swift in Sources */,
 				76F060192C73D865003D698B /* SUServerMetaData.swift in Sources */,
+				76F0602D2C75339D003D698B /* EVERYTHINGListView.swift in Sources */,
 				760258B02C6AFDAD00D07B70 /* SWErrorTotalView.swift in Sources */,
 				76F0601E2C73E491003D698B /* SMDView.swift in Sources */,
 				76EF317B2C66CF1F009D07DA /* Initialization.swift in Sources */,

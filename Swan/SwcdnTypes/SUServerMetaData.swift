@@ -36,8 +36,8 @@ struct SUSMDLocalization: Codable, Sendable {
 }
 
 struct SUSMDPlatforms: Codable, Sendable {
-    let client: [String]
-    let server: [String]
+    let client: [String]?
+    let server: [String]?
     
     enum CodingKeys: String, CodingKey {
         case client = "client"

@@ -41,6 +41,19 @@ final class SUCache: ObservableObject {
         }
     }
     
+    @Published var everythingSortOrder = [KeyPathComparator(\SUFakedResolved.postDateForSorting, order: .reverse)]
+    @Published var everythingSearch = ""
+    var everythingProduts: [SUFakedResolved] {
+        products.values.map { SUFakedResolved($0) }.filter{
+            let search = everythingSearch.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+            return search.isEmpty
+            || $0.version.starts(with: search)
+            || $0.basicName.starts(with: search)
+            || $0.key.lowercased().starts(with: search)
+            || String(localized: $0.releaseType.name).lowercased().contains(search)
+        }.sorted(using: everythingSortOrder)
+    }
+    
     @Published var macOSpackagesSortOrder = [KeyPathComparator(\SUMacOSPackage.buildNumber, order: .reverse)]
     @Published var macOSpackagesSearch = ""
     var macOSpackages: [SUMacOSPackage] {

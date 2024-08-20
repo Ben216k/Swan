@@ -1,15 +1,15 @@
 // 
-//  SafariListView.swift - Swan
-//
-//  Created by Ben216k on 8/12/24
-//  Copyright (c) Ben216k (under 216k License)
+//  EVERYTHINGListView.swift - Swan
 // 
+//  Created by Ben216k on 8/20/24
+//  Copyright (c) Ben216k (under 216k License)
+//
 
 import SwiftUI
 import os
 
 @MainActor
-struct SafariListView: View {
+struct EVERYTHINGListView: View {
     
     @EnvironmentObject var cache: SUCache
     
@@ -18,17 +18,17 @@ struct SafariListView: View {
     @State private var showSearchBar = false
     
     var body: some View {
-        Table(of: SUSafariResolved.self, selection: $selection, sortOrder: $cache.safariSortOrder) {
+        Table(of: SUFakedResolved.self, selection: $selection, sortOrder: $cache.everythingSortOrder) {
             TableColumn("") { item in
-                Image("SafariCircle")
+                item.image
                     .resizable()
                     .scaledToFit()
                     .frame(width: 35)
                     .cornerRadius(100)
             }.width(35)
+            TableColumn("swui.name", value: \.basicName)
             TableColumn("swui.version", value: \.version)
                 .width(min: 90, ideal: 90, max: 120)
-            TableColumn("swui.macosversion", value: \.macOSVersion)
             TableColumn("swui.catalog") { item in
                 Text(item.releaseType.name)
             }
@@ -38,10 +38,10 @@ struct SafariListView: View {
                 Text($0.postDateFormatted)
             }
         } rows: {
-            ForEach(cache.safariPackages) { item in
+            ForEach(cache.everythingProduts) { item in
                 TableRow(item)
             }
-        }.searchable(text: $cache.safariSearch, prompt: "swui.search").navigationSubtitle("swui.safaripackages")
+        }.searchable(text: $cache.everythingSearch, prompt: "swui.search").navigationSubtitle("swui.safaripackages")
     }
     
 }

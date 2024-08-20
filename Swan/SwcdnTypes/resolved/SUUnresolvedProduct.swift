@@ -23,7 +23,7 @@ struct SUUnresolvedProduct: SUProductResolved {
     var deferredSUEnablementDate: Date?
     
     var basicName: String {
-        packages.biggestPackageName ?? serverMetadataURL?.urlLastPathCompenent ?? "Unknown Product"
+        serverMetadataURL?.urlLastPathCompenent?.replacingOccurrences(of: ".smd", with: "") ?? packages.biggestPackageName ?? "Unknown Product"
     }
     
     var downloadTitleText: String {
@@ -42,7 +42,7 @@ struct SUUnresolvedProduct: SUProductResolved {
 
 extension SUUnresolvedProduct {
     
-    static func resolve(from product: SUProduct) async throws -> SUUnresolvedProduct {
+    static func resolve(from product: SUProduct) async -> SUUnresolvedProduct {
         return SUUnresolvedProduct(
             key: product.key,
             serverMetadataURL: product.serverMetadataURL,

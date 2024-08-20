@@ -64,8 +64,13 @@ struct SMDFullView: View {
                 HTMLRenderer(htmlString: descriptionHTML)
                     .frame(height: 200)
             }
-            Text("Client Platforms: \(serverMetadata.platforms.client.joined(separator: ", "))")
-            Text("Server Platforms: \(serverMetadata.platforms.server.joined(separator: ", "))")
+            if let client = serverMetadata.platforms.client {
+                Text("Client Platforms: \(client.joined(separator: ", "))")
+            }
+            if let server = serverMetadata.platforms.server {
+                Text("Server Platforms: \(server.joined(separator: ", "))")
+            }
+            
         }.padding(15).frame(width: 400)
     }
     

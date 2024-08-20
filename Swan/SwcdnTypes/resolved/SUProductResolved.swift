@@ -75,26 +75,33 @@ enum SUProductType: Sendable {
 extension SUProduct {
 
     /// Resolves the product to a specific version
-    func resolve() async throws -> any SUProductResolved {
-
+    func resolve() async -> any SUProductResolved {
+        
         var resolved: any SUProductResolved
         
-        // Check for InstallAssistant.pkg url in the packages, if it exists, it's a full macOS installer
-        if packages.contains(where: { $0.url.contains("InstallAssistant.pkg") || $0.url.contains("InstallAssistantAuto.pkg") }) {
-            resolved = try await SUMacOSPackage.resolve(from: self)
-        } else if serverMetadataURL?.contains("SafariTechPreivew") == true {
-            throw SWError(source: "SUProduct", id: "swerror.product.unknown")
-        } else if serverMetadataURL?.contains("Safari") == true {
-            resolved = try await SUSafariResolved.resolve(from: self)
-        } else {
-            // Otherwise, it's an unknown product, which isn't supported
-            throw SWError(source: "SUProduct", id: "swerror.product.unknown")
+        do {
+            
+            // Check for InstallAssistant.pkg url in the packages, if it exists, it's a full macOS installer
+            if packages.contains(where: { $0.url.contains("InstallAssistant.pkg") || $0.url.contains("InstallAssistantAuto.pkg") }) {
+                resolved = try await SUMacOSPackage.resolve(from: self)
+            } else if serverMetadataURL?.contains("SafariTechPreivew") == true {
+                throw SWError(source: "SUProduct", id: "swerror.product.unknown")
+            } else if serverMetadataURL?.contains("Safari") == true {
+                resolved = try await SUSafariResolved.resolve(from: self)
+            } else {
+                // Otherwise, it's an unknown product, which isn't supported
+                throw SWError(source: "SUProduct", id: "swerror.product.unknown")
+            }
+            
+        } catch {
+            
+            resolved = await SUUnresolvedProduct.resolve(from: self)
+            
         }
         
         resolved.serverMetadata = try? await self.resolveServerMetadata()
         resolved.version = resolved.serverMetadata?.version ?? resolved.version
-
-        // Determine the release type, by getting what catalogs it's in and checking if it's in a seed/beta catalog (check for none, then beta, then seed)
+        
         if insideCatalogs.contains(where: { !$0.contains("seed") && !$0.contains("beta") }) {
             resolved.releaseType = .release
         } else if insideCatalogs.contains(where: { $0.contains("beta") }) {
@@ -102,7 +109,7 @@ extension SUProduct {
         } else {
             resolved.releaseType = .seed
         }
-
+        
         // Sort packages alphabetically by name, with bias for names starting with "InstallAssistant"
         resolved.packages.sort { (package1, package2) in
             if package1.name.starts(with: "InstallAssistant") && !package2.name.starts(with: "InstallAssistant") {
@@ -113,7 +120,7 @@ extension SUProduct {
                 return package1.name < package2.name
             }
         }
-
+        
         return resolved
     }
 
@@ -148,5 +155,50 @@ extension SUProductResolved {
         formatter.dateStyle = .long
         formatter.timeStyle = .short
         return formatter.string(from: date)
+    }
+}
+
+// MARK: - SUFakedResolved
+
+/// Since protocols can't conform to Identifiable, we need a faked resolved product when trying to use the generic as a type.
+/// This takes any SUProductResolved and fakes it as a SUFakedResolved.
+struct SUFakedResolved: SUProductResolved {    
+    
+    var _underlying: any SUProductResolved
+
+    var key: String { _underlying.key }
+    var serverMetadataURL: String? { _underlying.serverMetadataURL }
+    var packages: [SUPackage] {
+        get { _underlying.packages }
+        set { _underlying.packages = newValue }
+    }
+    var postDate: Date { _underlying.postDate }
+    var distributions: [String: String] { _underlying.distributions }
+    var extendedMetaInfo: SUExtendedMetadata? { _underlying.extendedMetaInfo }
+    var type: SUProductType { _underlying.type }
+    var insideCatalogs: [String] { _underlying.insideCatalogs }
+    var serverMetadata: SUServerMetadata? {
+        get { _underlying.serverMetadata }
+        set { _underlying.serverMetadata = newValue }
+    }
+    var releaseType: SUCatalogType {
+        get { _underlying.releaseType }
+        set { _underlying.releaseType = newValue }
+    }
+    var deferredSUEnablementDate: Date? { _underlying.deferredSUEnablementDate }
+    var downloadTitleText: String { _underlying.downloadTitleText }
+    var downloadSubtitleText: String { _underlying.downloadSubtitleText }
+    var image: Image { _underlying.image }
+    var imageName: String { _underlying.imageName }
+    var version: String {
+        get { _underlying.version }
+        set { _underlying.version = newValue }
+    }
+    var basicName: String { _underlying.basicName }
+
+    var id: String { _underlying.id }
+
+    init(_ underlying: any SUProductResolved) {
+        self._underlying = underlying
     }
 }

@@ -264,6 +264,16 @@
         }
       }
     },
+    "swui.allproducts" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All Products"
+          }
+        }
+      }
+    },
     "swui.buildnumber" : {
       "comment" : "macOS build number (ex. \"24A5289g\"). Should be roughly that length if possible.",
       "localizations" : {
@@ -583,6 +593,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Minor"
+          }
+        }
+      }
+    },
+    "swui.name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name"
           }
         }
       }

@@ -26,6 +26,7 @@ struct ContentView: View {
             VStack {
                 List(selection: $listSelection) {
                     Section("swui.producttypes") {
+                        NavigationLink(value: "All", label: { Text("swui.allproducts") } )
                         NavigationLink(value: "macOS", label: { Text("swui.macospackages") } )
                         NavigationLink(value: "Safari", label: { Text("swui.safaripackages") } )
                     }
@@ -42,6 +43,7 @@ struct ContentView: View {
 //            MacOSListView(selection: $selectedProduct)
             Group {
                 switch listSelection {
+                case "All": EVERYTHINGListView(selection: $selectedProduct)
                 case "macOS": MacOSListView(selection: $selectedProduct)
                 case "Safari": SafariListView(selection: $selectedProduct)
                 default: Rectangle().frame(height: 1).opacity(0.000001)
