@@ -37,6 +37,7 @@
 		76F060232C742F4C003D698B /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060222C742F49003D698B /* ProductDetailView.swift */; };
 		76F060262C743050003D698B /* DistributionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060252C743050003D698B /* DistributionRow.swift */; };
 		76F060292C752AA3003D698B /* CollapsibleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060282C752AA3003D698B /* CollapsibleHeader.swift */; };
+		76F0602B2C752B73003D698B /* SUUnresolvedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0602A2C752B6D003D698B /* SUUnresolvedProduct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		76F060222C742F49003D698B /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		76F060252C743050003D698B /* DistributionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributionRow.swift; sourceTree = "<group>"; };
 		76F060282C752AA3003D698B /* CollapsibleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleHeader.swift; sourceTree = "<group>"; };
+		76F0602A2C752B6D003D698B /* SUUnresolvedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUUnresolvedProduct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 		7645693F2C5F1E2300FC6865 /* resolved */ = {
 			isa = PBXGroup;
 			children = (
+				76F0602A2C752B6D003D698B /* SUUnresolvedProduct.swift */,
 				760258AB2C6AF1B200D07B70 /* SUSafariProductResolved.swift */,
 				7645693D2C5F1E2300FC6865 /* SUMacOSPackage.swift */,
 				7645693E2C5F1E2300FC6865 /* SUProductResolved.swift */,
@@ -329,6 +332,7 @@
 				76F060292C752AA3003D698B /* CollapsibleHeader.swift in Sources */,
 				764569402C5F1E2300FC6865 /* SUMacOSPackage.swift in Sources */,
 				76EF317F2C6722E5009D07DA /* FakeTableItem.swift in Sources */,
+				76F0602B2C752B73003D698B /* SUUnresolvedProduct.swift in Sources */,
 				76EF31832C685868009D07DA /* DownloadManager.swift in Sources */,
 				76F060192C73D865003D698B /* SUServerMetaData.swift in Sources */,
 				760258B02C6AFDAD00D07B70 /* SWErrorTotalView.swift in Sources */,

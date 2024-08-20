@@ -12,7 +12,6 @@ import SwiftUI
 // MARK: - SUMacOSPackage
 
 struct SUMacOSPackage: SUProductResolved {
-    
 
     // In the actual thing lol
     let key: String
@@ -35,6 +34,10 @@ struct SUMacOSPackage: SUProductResolved {
     var releaseType: SUCatalogType = .release
 
     let deferredSUEnablementDate: Date?
+    
+    var basicName: String {
+        return "macOS " + self.osName
+    }
     
     var downloadTitleText: String {
         return "macOS " + self.osName + " " + self.version

@@ -26,6 +26,10 @@ struct SUSafariResolved: SUProductResolved {
     var releaseType: SUCatalogType = .release
     var deferredSUEnablementDate: Date?
     
+    var basicName: String {
+        return "Safari"
+    }
+    
     var downloadTitleText: String {
         return "Safari " + self.version
     }

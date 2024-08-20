@@ -52,6 +52,7 @@ protocol SUProductResolved: Sendable, Identifiable where ID == String {
     var imageName: String { get }
     
     var version: String { get set }
+    var basicName: String { get }
 }
 
 extension SUProductResolved {
@@ -66,6 +67,7 @@ enum SUProductType: Sendable {
     /// macOS releases with full installers, basically anything later than macOS 11.
     case macOSpackage
     case safari
+    case unknown
 }
 
 // MARK: - Resolving a Product

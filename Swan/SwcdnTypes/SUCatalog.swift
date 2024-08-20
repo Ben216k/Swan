@@ -261,3 +261,18 @@ enum SUCatalogType: String, Codable, Sendable {
         }
     }
 }
+
+// Extend SUPackage to find biggest package and the lastPathComponent of the URL
+extension Array where Element == SUPackage {
+    var biggestPackage: SUPackage? {
+        self.max { $0.size < $1.size }
+    }
+    var biggestPackageSize: Int {
+        biggestPackage?.size ?? 0
+    }
+    var biggestPackageName: String? {
+        // make url from string
+        guard let url = biggestPackage?.url else { return nil }
+        return URL(string: url)?.lastPathComponent
+    }
+}
