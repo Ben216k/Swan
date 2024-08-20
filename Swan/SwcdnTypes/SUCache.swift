@@ -48,7 +48,7 @@ final class SUCache: ObservableObject {
             let search = everythingSearch.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
             return search.isEmpty
             || $0.version.starts(with: search)
-            || $0.basicName.starts(with: search)
+            || $0.basicName.lowercased().contains(search)
             || $0.key.lowercased().starts(with: search)
             || String(localized: $0.releaseType.name).lowercased().contains(search)
         }.sorted(using: everythingSortOrder)
@@ -74,6 +74,7 @@ final class SUCache: ObservableObject {
         products.values.compactMap { $0 as? SUSafariResolved }.filter{
             let search = safariSearch.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
             return search.isEmpty
+            || $0.basicName.lowercased().contains(search)
             || $0.version.lowercased().starts(with: search)
             || $0.key.lowercased().starts(with: search)
             || $0.macOSVersion.lowercased().starts(with: search)
