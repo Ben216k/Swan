@@ -26,6 +26,20 @@ struct SUSafariResolved: SUProductResolved {
     var releaseType: SUCatalogType = .release
     var deferredSUEnablementDate: Date?
     
+    var downloadTitleText: String {
+        return "Safari " + self.version
+    }
+    var downloadSubtitleText: String {
+        return "For \(self.macOSVersion)"
+    }
+    
+    var image: Image {
+        return Image(imageName)
+    }
+    var imageName: String {
+        return "SafariCircle"
+    }
+    
 }
 
 // MARK: - Resolving the Safari full product

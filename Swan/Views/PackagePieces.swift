@@ -9,8 +9,10 @@ import SwiftUI
 
 struct PackagePieces: View {
     
+    @EnvironmentObject var downloadManager: DownloadManager
+        
+    let product: any SUProductResolved
     let package: SUPackage
-    let downloadURL: (URL) -> ()
     
     var body: some View {
         Group {
@@ -122,5 +124,11 @@ struct PackagePieces: View {
             }
         }
         .font(.subheadline)
+    }
+    
+    func downloadURL(_ url: URL) {
+        Task {
+            try? await downloadManager.startDownload(from: url, title: product.downloadTitleText, specific: "\(product.downloadSubtitleText) | \(url.lastPathComponent)", image: product.imageName)
+        }
     }
 }

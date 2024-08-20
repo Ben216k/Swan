@@ -138,11 +138,7 @@ struct MacOSItemDetailView: View {
                 ForEach(product.packages) { package in
                     Section(header: CollapsibleHeader(package.name, isCollapsed: binding(for: package.name))) {
                         if uncollapsedSections.contains(package.name) {
-                            PackagePieces(package: package) { (url) in
-                                Task {
-                                    try? await downloadManager.startDownload(from: url, title: "macOS " + product.osName + " " + product.version, specific: "Build \(product.buildNumber) | \(url.lastPathComponent)", image: product.imageName)
-                                }
-                            }
+                            PackagePieces(product: product, package: package)
                         }
                     }
                 }

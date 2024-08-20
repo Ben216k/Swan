@@ -104,12 +104,7 @@ struct SafariItemDetailView: View {
                 ForEach(product.packages) { package in
                     Section(header: CollapsibleHeader(package.name, isCollapsed: binding(for: package.name))) {
                         if !collapsedSections.contains(package.name) {
-                            PackagePieces(package: package) { (url) in
-                                Task {
-//                                    try? await downloadManager.startDownload(from: url, title: "macOS " + product.osName + " " + product.version, specific: "Build \(product.buildNumber) | \(url.lastPathComponent)", image: product.imageName)
-                                    try? await downloadManager.startDownload(from: URL(string: package.url)!, title: "Safari " + product.version, specific: "For \(product.macOSVersion) | \(URL(string: package.url)!.lastPathComponent)", image: "SafariCircle")
-                                }
-                            }
+                            PackagePieces(product: product, package: package)
                         }
                     }
                 }

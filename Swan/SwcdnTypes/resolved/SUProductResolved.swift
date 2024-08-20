@@ -6,6 +6,7 @@
 // 
 
 import Foundation
+import SwiftUI
 
 // To do this, we will use multiple structs for the different types of products, all of which conform to the SUProductResolved protocol.
 
@@ -43,6 +44,12 @@ protocol SUProductResolved: Sendable, Identifiable where ID == String {
     var releaseType: SUCatalogType { get set }
 
     var deferredSUEnablementDate: Date? { get }
+    
+    var downloadTitleText: String { get }
+    var downloadSubtitleText: String { get }
+    
+    var image: Image { get }
+    var imageName: String { get }
 }
 
 extension SUProductResolved {

@@ -12,6 +12,7 @@ import SwiftUI
 // MARK: - SUMacOSPackage
 
 struct SUMacOSPackage: SUProductResolved {
+    
 
     // In the actual thing lol
     let key: String
@@ -34,6 +35,21 @@ struct SUMacOSPackage: SUProductResolved {
     var releaseType: SUCatalogType = .release
 
     let deferredSUEnablementDate: Date?
+    
+    var downloadTitleText: String {
+        return "macOS " + self.osName + " " + self.version
+    }
+    var downloadSubtitleText: String {
+        return "Build \(self.buildNumber)"
+    }
+    
+    var image: Image {
+        return Image(imageName)
+    }
+    
+    var imageName: String {
+        return self.osName.replacingOccurrences(of: " ", with: "") + "Circle"
+    }
 
 }
 
@@ -228,14 +244,6 @@ extension SUMacOSPackage {
 extension SUMacOSPackage: Identifiable {
     
     var id: String { key }
-    
-    var image: Image {
-        return Image(imageName)
-    }
-    
-    var imageName: String {
-        return self.osName.replacingOccurrences(of: " ", with: "") + "Circle"
-    }
 
     // Post Date string for sorting, should just be an int as a string time since epoch
     var postDateForSorting: String {
