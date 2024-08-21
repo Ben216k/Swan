@@ -161,6 +161,9 @@
         }
       }
     },
+    "swerror.reader.regexNoMatch" : {
+
+    },
     "swerror.reader.standardhttp" : {
       "comment" : "200 = Success, literally anything else means something went wrong. DO NOT LOCALIZE <DATA>, it will be automatically replaced with the received status code (404, 501, 327, etc).",
       "localizations" : {
@@ -231,6 +234,9 @@
           }
         }
       }
+    },
+    "swerror.reader.versionRangeNil" : {
+
     },
     "swerror.safari.noservermetadataurl" : {
       "localizations" : {

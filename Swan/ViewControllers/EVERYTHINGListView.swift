@@ -28,7 +28,7 @@ struct EVERYTHINGListView: View {
             }.width(35)
             TableColumn("swui.name", value: \.basicName)
             TableColumn("swui.version", value: \.version)
-                .width(min: 90, ideal: 90, max: 120)
+                .width(min: 90, ideal: 100, max: 140)
             TableColumn("swui.catalog") { item in
                 Text(item.releaseType.name)
             }

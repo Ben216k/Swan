@@ -39,6 +39,7 @@
 		76F060292C752AA3003D698B /* CollapsibleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060282C752AA3003D698B /* CollapsibleHeader.swift */; };
 		76F0602B2C752B73003D698B /* SUUnresolvedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0602A2C752B6D003D698B /* SUUnresolvedProduct.swift */; };
 		76F0602D2C75339D003D698B /* EVERYTHINGListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0602C2C753395003D698B /* EVERYTHINGListView.swift */; };
+		76F0602F2C769AA9003D698B /* SUBridgeOSProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0602E2C769A9D003D698B /* SUBridgeOSProduct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		76F060282C752AA3003D698B /* CollapsibleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleHeader.swift; sourceTree = "<group>"; };
 		76F0602A2C752B6D003D698B /* SUUnresolvedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUUnresolvedProduct.swift; sourceTree = "<group>"; };
 		76F0602C2C753395003D698B /* EVERYTHINGListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVERYTHINGListView.swift; sourceTree = "<group>"; };
+		76F0602E2C769A9D003D698B /* SUBridgeOSProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUBridgeOSProduct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 		7645693F2C5F1E2300FC6865 /* resolved */ = {
 			isa = PBXGroup;
 			children = (
+				76F0602E2C769A9D003D698B /* SUBridgeOSProduct.swift */,
 				76F0602A2C752B6D003D698B /* SUUnresolvedProduct.swift */,
 				760258AB2C6AF1B200D07B70 /* SUSafariProductResolved.swift */,
 				7645693D2C5F1E2300FC6865 /* SUMacOSPackage.swift */,
@@ -338,6 +341,7 @@
 				76F0602B2C752B73003D698B /* SUUnresolvedProduct.swift in Sources */,
 				76EF31832C685868009D07DA /* DownloadManager.swift in Sources */,
 				76F060192C73D865003D698B /* SUServerMetaData.swift in Sources */,
+				76F0602F2C769AA9003D698B /* SUBridgeOSProduct.swift in Sources */,
 				76F0602D2C75339D003D698B /* EVERYTHINGListView.swift in Sources */,
 				760258B02C6AFDAD00D07B70 /* SWErrorTotalView.swift in Sources */,
 				76F0601E2C73E491003D698B /* SMDView.swift in Sources */,

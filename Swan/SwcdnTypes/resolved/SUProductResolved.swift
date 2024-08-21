@@ -53,10 +53,12 @@ protocol SUProductResolved: Sendable, Identifiable where ID == String {
     
     var version: String { get set }
     var basicName: String { get }
+    var noOverrideVersion: Bool { get }
 }
 
 extension SUProductResolved {
     var id: String { key }
+    var noOverrideVersion: Bool { false }
 }
 
 // MARK: - SUProductType
@@ -86,6 +88,8 @@ extension SUProduct {
                 resolved = try await SUMacOSPackage.resolve(from: self)
             } else if serverMetadataURL?.contains("Safari") == true {
                 resolved = try await SUSafariResolved.resolve(from: self)
+            } else if extendedMetaInfo?.productType == "bridgeOS" {
+                resolved = await SUBridgeOSProduct.resolve(from: self)
             } else {
                 // Otherwise, it's an unknown product, which isn't supported
                 throw SWError(source: "SUProduct", id: "swerror.product.unknown")
@@ -98,7 +102,9 @@ extension SUProduct {
         }
         
         resolved.serverMetadata = try? await self.resolveServerMetadata()
-        resolved.version = resolved.serverMetadata?.version ?? resolved.version
+        if !resolved.noOverrideVersion || resolved.version == "N/A" {
+            resolved.version = resolved.serverMetadata?.version ?? resolved.version
+        }
         
         if insideCatalogs.contains(where: { !$0.contains("seed") && !$0.contains("beta") }) {
             resolved.releaseType = .release
