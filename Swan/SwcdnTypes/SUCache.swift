@@ -42,10 +42,10 @@ final class SUCache: ObservableObject {
     }
     
     @Published var everythingSortOrder = [KeyPathComparator(\SUFakedResolved.postDateForSorting, order: .reverse)]
-    @Published var everythingSearch = ""
+    @Published var search = ""
     var everythingProduts: [SUFakedResolved] {
         products.values.map { SUFakedResolved($0) }.filter{
-            let search = everythingSearch.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+            let search = search.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
             return search.isEmpty
             || $0.version.starts(with: search)
             || $0.basicName.lowercased().contains(search)
@@ -55,10 +55,9 @@ final class SUCache: ObservableObject {
     }
     
     @Published var macOSpackagesSortOrder = [KeyPathComparator(\SUMacOSPackage.buildNumber, order: .reverse)]
-    @Published var macOSpackagesSearch = ""
     var macOSpackages: [SUMacOSPackage] {
         products.values.compactMap { $0 as? SUMacOSPackage }.filter{
-            let search = macOSpackagesSearch.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+            let search = search.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
             return search.isEmpty
             || $0.osName.lowercased().starts(with: search)
             || $0.version.starts(with: search)
@@ -69,10 +68,9 @@ final class SUCache: ObservableObject {
     }
 
     @Published var safariSortOrder = [KeyPathComparator(\SUSafariResolved.version, order: .reverse)]
-    @Published var safariSearch = ""
     var safariPackages: [SUSafariResolved] {
         products.values.compactMap { $0 as? SUSafariResolved }.filter{
-            let search = safariSearch.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+            let search = search.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
             return search.isEmpty
             || $0.basicName.lowercased().contains(search)
             || $0.version.lowercased().starts(with: search)

@@ -41,7 +41,7 @@ struct EVERYTHINGListView: View {
             ForEach(cache.everythingProduts) { item in
                 TableRow(item)
             }
-        }.searchable(text: $cache.everythingSearch, prompt: "swui.search").navigationSubtitle("swui.safaripackages")
+        }.searchable(text: $cache.search, prompt: "swui.search").navigationSubtitle("swui.safaripackages")
     }
     
 }

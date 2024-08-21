@@ -65,7 +65,7 @@ struct MacOSListView: View {
                         }
                     }
             }
-        }.searchable(text: $cache.macOSpackagesSearch, prompt: "swui.search").navigationSubtitle("swui.macospackages")
+        }.searchable(text: $cache.search, prompt: "swui.search").navigationSubtitle("swui.macospackages")
     }
     
 }

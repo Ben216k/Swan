@@ -42,7 +42,7 @@ struct SafariListView: View {
             ForEach(cache.safariPackages) { item in
                 TableRow(item)
             }
-        }.searchable(text: $cache.safariSearch, prompt: "swui.search").navigationSubtitle("swui.safaripackages")
+        }.searchable(text: $cache.search, prompt: "swui.search").navigationSubtitle("swui.safaripackages")
     }
     
 }
