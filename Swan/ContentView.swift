@@ -18,7 +18,7 @@ struct ContentView: View {
     
     @State var columnVisibility = NavigationSplitViewVisibility.all
     @State var selectedProduct: String?
-    @State var listSelection: String? = "macOS"
+    @State var listSelection: String? = "All"
     @State var showDownloadManager = false
 
     var body: some View {
@@ -27,6 +27,7 @@ struct ContentView: View {
                 List(selection: $listSelection) {
                     Section("swui.producttypes") {
                         NavigationLink(value: "All", label: { Text("swui.allproducts") } )
+                        NavigationLink(value: "bridgeOS", label: { Text("swui.bridgeosupdates") } )
                         NavigationLink(value: "macOS", label: { Text("swui.macospackages") } )
                         NavigationLink(value: "Safari", label: { Text("swui.safaripackages") } )
                     }
@@ -42,11 +43,16 @@ struct ContentView: View {
         } content: {
 //            MacOSListView(selection: $selectedProduct)
             Group {
-                switch listSelection {
-                case "All": EVERYTHINGListView(selection: $selectedProduct)
-                case "macOS": MacOSListView(selection: $selectedProduct)
-                case "Safari": SafariListView(selection: $selectedProduct)
-                default: Rectangle().frame(height: 1).opacity(0.000001)
+                if cache.hasSetCaches {
+                    switch listSelection {
+                    case "All": EVERYTHINGListView(selection: $selectedProduct, filterType: nil)
+                    case "bridgeOS": EVERYTHINGListView(selection: $selectedProduct, filterType: .bridgeOS)
+                    case "macOS": MacOSListView(selection: $selectedProduct)
+                    case "Safari": SafariListView(selection: $selectedProduct)
+                    default: Rectangle().frame(height: 1).opacity(0.000001)
+                    }
+                } else {
+                    Rectangle().opacity(0.0000001)
                 }
             }
         } detail: {

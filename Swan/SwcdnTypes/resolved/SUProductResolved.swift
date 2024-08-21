@@ -69,7 +69,21 @@ enum SUProductType: Sendable {
     /// macOS releases with full installers, basically anything later than macOS 11.
     case macOSpackage
     case safari
+    case bridgeOS
     case unknown
+    
+    var localizedKey: LocalizedStringKey {
+        switch self {
+        case .macOSpackage:
+            return "swui.macospackages"
+        case .safari:
+            return "swui.safaripackages"
+        case .bridgeOS:
+            return "swui.bridgeosupdates"
+        case .unknown:
+            return "swui.unknownproductype"
+        }
+    }
 }
 
 // MARK: - Resolving a Product

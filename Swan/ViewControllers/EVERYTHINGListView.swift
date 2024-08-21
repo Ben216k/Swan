@@ -16,6 +16,7 @@ struct EVERYTHINGListView: View {
     @Binding var selection: String?
     @State private var searchText: String = ""
     @State private var showSearchBar = false
+    let filterType: SUProductType?
     
     var body: some View {
         Table(of: SUFakedResolved.self, selection: $selection, sortOrder: $cache.everythingSortOrder) {
@@ -38,10 +39,10 @@ struct EVERYTHINGListView: View {
                 Text($0.postDateFormatted)
             }
         } rows: {
-            ForEach(cache.everythingProduts) { item in
+            ForEach(cache.everythingProduts.filter { $0.type == filterType ?? $0.type }) { item in
                 TableRow(item)
             }
-        }.searchable(text: $cache.search, prompt: "swui.search").navigationSubtitle("swui.safaripackages")
+        }.searchable(text: $cache.search, prompt: "swui.search").navigationSubtitle(filterType?.localizedKey ?? "swui.allproducts")
     }
     
 }

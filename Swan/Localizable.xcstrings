@@ -270,6 +270,16 @@
         }
       }
     },
+    "swui.bridgeosupdates" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BridgeOS Updates"
+          }
+        }
+      }
+    },
     "swui.buildnumber" : {
       "comment" : "macOS build number (ex. \"24A5289g\"). Should be roughly that length if possible.",
       "localizations" : {
@@ -814,6 +824,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Server Metadata"
+          }
+        }
+      }
+    },
+    "swui.unknownproductype" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unidentified Products"
           }
         }
       }

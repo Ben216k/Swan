@@ -16,7 +16,7 @@ struct SUBridgeOSProduct: SUProductResolved {
     let postDate: Date
     let distributions: [String : String]
     var extendedMetaInfo: SUExtendedMetadata?
-    let type: SUProductType = .unknown
+    let type: SUProductType = .bridgeOS
     var insideCatalogs: [String]
     var serverMetadata: SUServerMetadata?
     var releaseType: SUCatalogType = .release
