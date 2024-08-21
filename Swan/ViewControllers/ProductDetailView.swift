@@ -60,19 +60,51 @@ struct ProductDetailView: View {
 
                 // MARK: - Extended Metadata
 
-                if let extendedMetaInfo = product.extendedMetaInfo,
-                   extendedMetaInfo.containsAnythingButInstallAssistant {
-                    Section("swui.extendedmetadata") {
-                        if let productVersion = extendedMetaInfo.productVersion {
-                            FakeTableItem(title: "swui.extendedmetadata.productversion", value: productVersion)
-                        }
-                        if let productType = extendedMetaInfo.productType {
-                            FakeTableItem(title: "swui.extendedmetadata.producttype", value: productType)
-                        }
-                        if let autoUpdate = extendedMetaInfo.autoUpdate {
-                            FakeTableItem(title: "swui.extendedmetadata.autoupdate", value: autoUpdate)
+                if let extendedMetaInfo = product.extendedMetaInfo {
+                    if extendedMetaInfo.containsAnythingButInstallAssistant {
+                        Section("swui.extendedmetadata") {
+                            if let productVersion = extendedMetaInfo.productVersion {
+                                FakeTableItem(title: "swui.extendedmetadata.productversion", value: productVersion)
+                            }
+                            if let productType = extendedMetaInfo.productType {
+                                FakeTableItem(title: "swui.extendedmetadata.producttype", value: productType)
+                            }
+                            if let autoUpdate = extendedMetaInfo.autoUpdate {
+                                FakeTableItem(title: "swui.extendedmetadata.autoupdate", value: autoUpdate)
+                            }
+                            if let autoUpdate = extendedMetaInfo.bridgeOSPredicateProductOrdering {
+                                FakeTableItem(title: "swui.extendedmetadata.bridgeOSPredicateProductOrdering", value: autoUpdate)
+                            }
+                            if let autoUpdate = extendedMetaInfo.bridgeOSSoftwareUpdateEventRecordingServiceURL {
+                                FakeTableItem(title: "swui.extendedmetadata.bridgeOSSoftwareUpdateEventRecordingServiceURL", value: autoUpdate)
+                            }
                         }
                     }
+                    if let installAssistantPackageIdentifiers = extendedMetaInfo.installAssistantPackageIdentifiers {
+                        Section(header: CollapsibleHeader(key: "swui.iapackageidentifiers", isCollapsed: binding(for: "swui.iapackageidentifiers"))) {
+                            if uncollapsedSections.contains("swui.iapackageidentifiers") {
+                                if let buildManifest = installAssistantPackageIdentifiers.buildManifest {
+                                    FakeTableItem(title: "swui.extendedmetadata.buildManifest", value: buildManifest)
+                                }
+                                if let info = installAssistantPackageIdentifiers.info {
+                                    FakeTableItem(title: "swui.extendedmetadata.info", value: info)
+                                }
+                                if let installInfo = installAssistantPackageIdentifiers.installInfo {
+                                    FakeTableItem(title: "swui.extendedmetadata.installInfo", value: installInfo)
+                                }
+                                if let osInstall = installAssistantPackageIdentifiers.osInstall {
+                                    FakeTableItem(title: "swui.extendedmetadata.osInstall", value: osInstall)
+                                }
+                                if let sharedSupport = installAssistantPackageIdentifiers.sharedSupport {
+                                    FakeTableItem(title: "swui.extendedmetadata.sharedSupport", value: sharedSupport)
+                                }
+                                if let updateBrain = installAssistantPackageIdentifiers.updateBrain {
+                                    FakeTableItem(title: "swui.extendedmetadata.updateBrain", value: updateBrain)
+                                }
+                            }
+                        }
+                    }
+                   
                 }
 
                 // MARK: - Distributions (macOS Specific)

@@ -242,17 +242,6 @@
         }
       }
     },
-    "swerror.safari.noversionnumber" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No version number found in Safari product. It could be a tech preview, which isn’t currently supported."
-          }
-        }
-      }
-    },
     "swerror.source.unknown" : {
       "comment" : "This is used in some few cases, typically when the error isn't something I can prepare for like from other libraries (but if I run into it, I may be able to adapt and change it to return something else)",
       "extractionState" : "manual",
@@ -293,66 +282,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Catalog"
-          }
-        }
-      }
-    },
-    "swui.catalog.both" : {
-      "comment" : "It's in both the developer and public beta catalogs. (but not the release)",
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Both Betas"
-          }
-        }
-      }
-    },
-    "swui.catalog.dev" : {
-      "comment" : "It's just in the developer beta catalog, so it's ONLY for developers (not release or public beta)",
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Developer Beta"
-          }
-        }
-      }
-    },
-    "swui.catalog.public" : {
-      "comment" : "It's just in the public beta catalog (probably won't happen, as usually PB and DB are the same).",
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Public Beta"
-          }
-        }
-      }
-    },
-    "swui.catalog.release" : {
-      "comment" : "It's in a release catalog, therefore it is a non-beta version. ",
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Release"
-          }
-        }
-      }
-    },
-    "swui.copy" : {
-      "comment" : "you know what copy means",
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Copy"
           }
         }
       }
@@ -481,6 +410,68 @@
         }
       }
     },
+    "swui.extendedmetadata.bridgeOSPredicateProductOrdering" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predicate Product Ordering"
+          }
+        }
+      }
+    },
+    "swui.extendedmetadata.bridgeOSSoftwareUpdateEventRecordingServiceURL" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S.U. Event Recording URL"
+          }
+        }
+      }
+    },
+    "swui.extendedmetadata.buildManifest" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Build Manifest"
+          }
+        }
+      }
+    },
+    "swui.extendedmetadata.info" : {
+      "comment" : "there's a difference",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Info"
+          }
+        }
+      }
+    },
+    "swui.extendedmetadata.installInfo" : {
+      "comment" : "i promise",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Install Info"
+          }
+        }
+      }
+    },
+    "swui.extendedmetadata.osInstall" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OS Install"
+          }
+        }
+      }
+    },
     "swui.extendedmetadata.producttype" : {
       "localizations" : {
         "en" : {
@@ -501,14 +492,32 @@
         }
       }
     },
-    "swui.fullinstallerposted" : {
-      "comment" : "In table row with post date of full installer in SWCDN catalog.",
-      "extractionState" : "stale",
+    "swui.extendedmetadata.sharedSupport" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Full Installer Posted"
+            "value" : "Shared Support"
+          }
+        }
+      }
+    },
+    "swui.extendedmetadata.updateBrain" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update Brain"
+          }
+        }
+      }
+    },
+    "swui.iapackageidentifiers" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "InstallAssistant.pkg Identifiers"
           }
         }
       }
@@ -539,18 +548,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Loading Catalogs"
-          }
-        }
-      }
-    },
-    "swui.macospackage.linetwo %@ %@" : {
-      "comment" : "Shown under \"macOS Whatever 20.12.1\" in the detail view. %1$@ represents the build number, %2$@ represents the post date",
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Build %1$@, %2$@"
           }
         }
       }
@@ -624,18 +621,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No Product Selected"
-          }
-        }
-      }
-    },
-    "swui.nonmacospackageselected" : {
-      "comment" : "Don't localize GitHub, as it's a brand name. This error is very unlikely, since it checks the product type before loading the view.",
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Error: macOS Package view loaded, but non-macOS package product selected. This is a bug, please report on GitHub."
           }
         }
       }
@@ -773,17 +758,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Release Name"
-          }
-        }
-      }
-    },
-    "swui.safaripackage.linetwo %@ %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "For %1$@, %2$@"
           }
         }
       }
