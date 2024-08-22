@@ -25,6 +25,13 @@ struct SwanApp: App {
             .windowToolbarStyle(.unified)
             .commands {
                 SidebarCommands()
+                CommandGroup(after: .sidebar) {
+                    Divider()
+                    Button(cache.showTableFooter ? "swui.hidestatusbar" : "swui.showstatusbar") {
+                        cache.showTableFooter.toggle()
+                    }.keyboardShortcut("/", modifiers: .command)
+                    Divider()
+                }
             }
     }
 }

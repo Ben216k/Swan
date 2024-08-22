@@ -18,6 +18,7 @@ final class SUCache: ObservableObject {
     @Published var products: [String: any SUProductResolved] = [:]
     @Published var usedCatalogs: [SUCatalogSource] = SUCatalogSource.bestKnownCatalogs
     @Published var rejectedProducts: [(product: SUProduct, error: SWError)] = []
+    @Published var showTableFooter = false
     
     func setCatalog(_ id: String, catalog: SUCatalog) {
         self.catalogs[id] = catalog

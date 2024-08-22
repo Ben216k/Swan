@@ -124,7 +124,9 @@ extension SUProduct {
             resolved = await SUUnresolvedProduct.resolve(from: self)
             
         }
-        
+//        #if DEBUG
+        if resolved.type == .unknown { return resolved }
+//        #endif
         resolved.serverMetadata = try? await self.resolveServerMetadata()
         if !resolved.noOverrideVersion || resolved.version == "N/A" {
             resolved.version = resolved.serverMetadata?.version ?? resolved.version
