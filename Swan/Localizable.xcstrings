@@ -297,6 +297,16 @@
         }
       }
     },
+    "swui.cancel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
     "swui.catalog" : {
       "comment" : "What catalog it's in. Others in this line will be results that can show up in this section.",
       "localizations" : {
@@ -308,12 +318,42 @@
         }
       }
     },
+    "swui.clearlocalcache" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear Local Cache"
+          }
+        }
+      }
+    },
+    "swui.clearlocalcache.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to clear the cache? This will also remove all known deprecated products."
+          }
+        }
+      }
+    },
     "swui.cltools" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Command Line Tools"
+          }
+        }
+      }
+    },
+    "swui.confirm" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm"
           }
         }
       }

@@ -6,6 +6,7 @@
 // 
 
 import Foundation
+import os
 
 @MainActor
 final class SUCache: ObservableObject {
@@ -110,5 +111,21 @@ extension SUCache {
     
     func cacheURL(forKey key: String) -> URL {
         cacheDirectoryURL.appendingPathComponent(key + ".json")
+    }
+    
+    func clearCache() {
+        do {
+            let fileManager = FileManager.default
+            let cacheDirectory = cacheDirectoryURL
+            let files = try fileManager.contentsOfDirectory(atPath: cacheDirectory.path)
+            for file in files {
+                let fileURL = cacheDirectory.appendingPathComponent(file)
+                try fileManager.removeItem(at: fileURL)
+            }
+            os_log("Cache cleared successfully.", log: LogCategory.mainCode.osLog, type: .info)
+        } catch {
+            os_log("Error clearing cache: %@", log: LogCategory.mainCode.osLog, type: .error, error.localizedDescription)
+            // You might want to present an error to the user here.
+        }
     }
 }

@@ -32,6 +32,34 @@ struct SwanApp: App {
                     }.keyboardShortcut("/", modifiers: .command)
                     Divider()
                 }
+                CommandGroup(after: .newItem) {
+                    Divider()
+                    Button("swui.clearlocalcache") {
+                        let alert = NSAlert()
+                            
+                        // Set the alert message and informative text
+                        alert.messageText = NSLocalizedString("swui.clearlocalcache", comment: "")
+                        alert.informativeText = NSLocalizedString("swui.clearlocalcache.description", comment: "")
+                        
+                        // Add buttons
+                        alert.addButton(withTitle: NSLocalizedString("swui.confirm", comment: ""))
+                        alert.addButton(withTitle: NSLocalizedString("swui.cancel", comment: ""))
+                        
+                        // Set the alert style (optional)
+                        alert.alertStyle = .warning
+                        
+                        // Show the alert as a modal dialog and handle the user's response
+                        let response = alert.runModal()
+                        
+                        // Check the response
+                        if response == .alertFirstButtonReturn {
+                            cache.clearCache()
+                        } else {
+                            
+                        }
+                    }.keyboardShortcut("k", modifiers: [.shift, .command])
+                    Divider()
+                }
             }
     }
 }
