@@ -34,6 +34,7 @@ struct SUMacOSPackage: SUProductResolved {
     var releaseType: SUCatalogType = .release
 
     let deferredSUEnablementDate: Date?
+    var deprecated = false
     
     var basicName: String {
         return "macOS " + self.osName

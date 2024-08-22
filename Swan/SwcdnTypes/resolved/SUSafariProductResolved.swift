@@ -26,6 +26,7 @@ struct SUSafariResolved: SUProductResolved {
     var releaseType: SUCatalogType = .release
     var deferredSUEnablementDate: Date?
     let isTechPreivew: Bool
+    var deprecated = false
     
     var basicName: String {
         return isTechPreivew ? "Safari Tech Preview" : "Safari"

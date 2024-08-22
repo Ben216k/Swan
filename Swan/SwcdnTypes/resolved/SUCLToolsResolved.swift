@@ -22,6 +22,7 @@ struct SUCLToolsResolved: SUProductResolved {
     var serverMetadata: SUServerMetadata?
     var releaseType: SUCatalogType = .release
     var deferredSUEnablementDate: Date?
+    var deprecated = false
 
     var version: String
     

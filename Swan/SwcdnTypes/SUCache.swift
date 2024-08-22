@@ -96,7 +96,7 @@ extension SUCache {
         try data.write(to: cacheURL)
     }
 
-    private var cacheDirectoryURL: URL {
+    var cacheDirectoryURL: URL {
         let fileManager = FileManager.default
         let cacheDirectory = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first!
         let swanCacheURL = cacheDirectory.appendingPathComponent("Swan")

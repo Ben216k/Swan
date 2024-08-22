@@ -21,6 +21,7 @@ struct SUUnresolvedProduct: SUProductResolved {
     var serverMetadata: SUServerMetadata?
     var releaseType: SUCatalogType = .release
     var deferredSUEnablementDate: Date?
+    var deprecated = false
     
     var basicName: String {
         serverMetadataURL?.urlLastPathCompenent?.replacingOccurrences(of: ".smd", with: "") ?? packages.biggestPackageName ?? "Unknown Product"

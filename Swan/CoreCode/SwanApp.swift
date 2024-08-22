@@ -34,6 +34,9 @@ struct SwanApp: App {
                 }
                 CommandGroup(after: .newItem) {
                     Divider()
+                    Button("swui.showcacheinfinder") {
+                        NSWorkspace.shared.activateFileViewerSelecting([cache.cacheDirectoryURL])
+                    }
                     Button("swui.clearlocalcache") {
                         let alert = NSAlert()
                             

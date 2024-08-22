@@ -54,11 +54,14 @@ protocol SUProductResolved: Sendable, Codable, Identifiable where ID == String {
     var version: String { get set }
     var basicName: String { get }
     var noOverrideVersion: Bool { get }
+    
+    var deprecated: Bool { get set }
 }
 
 extension SUProductResolved {
     var id: String { key }
     var noOverrideVersion: Bool { false }
+    var deprecatedString: String { "\(deprecated)" }
 }
 
 // MARK: - SUProductType
@@ -272,7 +275,7 @@ extension SUProductResolved {
 
 /// Since protocols can't conform to Identifiable, we need a faked resolved product when trying to use the generic as a type.
 /// This takes any SUProductResolved and fakes it as a SUFakedResolved.
-struct SUFakedResolved: SUProductResolved {    
+struct SUFakedResolved: SUProductResolved {
     
     var _underlying: any SUProductResolved
 
@@ -305,6 +308,10 @@ struct SUFakedResolved: SUProductResolved {
         set { _underlying.version = newValue }
     }
     var basicName: String { _underlying.basicName }
+    var deprecated: Bool {
+        get { _underlying.deprecated }
+        set { _underlying.deprecated = newValue }
+    }
 
     var id: String { _underlying.id }
 

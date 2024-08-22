@@ -135,6 +135,53 @@ extension SUCache {
             
         }
         
+        do {
+            let fileManager = FileManager.default
+            let cachedFileNames = try fileManager.contentsOfDirectory(atPath: cacheDirectoryURL.path)
+                .filter { $0.hasSuffix(".json") }
+                .map { $0.replacingOccurrences(of: ".json", with: "") }
+
+            let deprecatedKeys = Set(cachedFileNames).subtracting(processedProducts.keys)
+            
+            print(deprecatedKeys)
+
+            for deprecatedKey in deprecatedKeys {
+                // Load the deprecated product from the cache
+                guard let data = try? Data(contentsOf: cacheURL(forKey: deprecatedKey)) else { continue }
+
+                // 1. Decode only the product type
+                guard let typeWrapper = try? JSONDecoder().decode(ProductTypeWrapper.self, from: data) else { continue }
+
+                var resolvedProduct: (any SUProductResolved)?
+
+                // 2. Decode based on the specific product type
+                switch typeWrapper.type {
+                case .macOSpackage:
+                    resolvedProduct = try? JSONDecoder().decode(SUMacOSPackage.self, from: data)
+                case .safari:
+                    resolvedProduct = try? JSONDecoder().decode(SUSafariResolved.self, from: data)
+                case .bridgeOS:
+                    resolvedProduct = try? JSONDecoder().decode(SUBridgeOSProduct.self, from: data)
+                case .securityupdate:
+                    resolvedProduct = try? JSONDecoder().decode(SUSecurityUpdateResolved.self, from: data)
+                case .cltools:
+                    resolvedProduct = try? JSONDecoder().decode(SUCLToolsResolved.self, from: data)
+                case .unknown:
+                    resolvedProduct = try? JSONDecoder().decode(SUUnresolvedProduct.self, from: data)
+                }
+
+                // 3. Mark as deprecated and update the products dictionary
+                if var resolvedProduct {
+                    print("made it here with \(resolvedProduct.key)")
+                    resolvedProduct.deprecated = true
+                    processedProducts[resolvedProduct.key] = processedProducts[resolvedProduct.key] ?? resolvedProduct
+                }
+            }
+
+        } catch {
+            // ... (Your error handling code) ...
+        }
+
         self.products = processedProducts
     }
 }

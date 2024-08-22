@@ -400,6 +400,16 @@
         }
       }
     },
+    "swui.deprecated" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deprecated"
+          }
+        }
+      }
+    },
     "swui.distributions" : {
       "localizations" : {
         "en" : {
@@ -687,6 +697,17 @@
         }
       }
     },
+    "swui.no" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No"
+          }
+        }
+      }
+    },
     "swui.nocurrentdownloads" : {
       "localizations" : {
         "en" : {
@@ -801,6 +822,16 @@
         }
       }
     },
+    "swui.present" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Present"
+          }
+        }
+      }
+    },
     "swui.productid" : {
       "comment" : "The product ID of the macOS version, kinda strange and niche. It's just how it's stored in the catalog basically. ",
       "localizations" : {
@@ -874,6 +905,16 @@
         }
       }
     },
+    "swui.showcacheinfinder" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Cache in Finder"
+          }
+        }
+      }
+    },
     "swui.showdownloads" : {
       "localizations" : {
         "en" : {
@@ -914,6 +955,16 @@
         }
       }
     },
+    "swui.status" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Status"
+          }
+        }
+      }
+    },
     "swui.unknownproductype" : {
       "localizations" : {
         "en" : {
@@ -930,6 +981,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Version"
+          }
+        }
+      }
+    },
+    "swui.yes" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yes"
           }
         }
       }

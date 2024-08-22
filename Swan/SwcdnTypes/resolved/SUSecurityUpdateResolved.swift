@@ -32,6 +32,7 @@ struct SUSecurityUpdateResolved: SUProductResolved {
 
     var image: Image { Image(imageName) }
     var imageName: String { "\(macOSVersion.replacingOccurrences(of: " ", with: ""))SecurityCircle" }
+    var deprecated = false
 }
 
 // MARK: - Resolving Security Updates
