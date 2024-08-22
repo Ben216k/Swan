@@ -41,6 +41,7 @@
 		76F0602D2C75339D003D698B /* EVERYTHINGListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0602C2C753395003D698B /* EVERYTHINGListView.swift */; };
 		76F0602F2C769AA9003D698B /* SUBridgeOSProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0602E2C769A9D003D698B /* SUBridgeOSProduct.swift */; };
 		76F060322C76AE91003D698B /* SUCLToolsResolved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060312C76AE91003D698B /* SUCLToolsResolved.swift */; };
+		76F060342C76D24F003D698B /* SUSecurityUpdateResolved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060332C76D24F003D698B /* SUSecurityUpdateResolved.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		76F0602C2C753395003D698B /* EVERYTHINGListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVERYTHINGListView.swift; sourceTree = "<group>"; };
 		76F0602E2C769A9D003D698B /* SUBridgeOSProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUBridgeOSProduct.swift; sourceTree = "<group>"; };
 		76F060312C76AE91003D698B /* SUCLToolsResolved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUCLToolsResolved.swift; sourceTree = "<group>"; };
+		76F060332C76D24F003D698B /* SUSecurityUpdateResolved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUSecurityUpdateResolved.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 		7645693F2C5F1E2300FC6865 /* resolved */ = {
 			isa = PBXGroup;
 			children = (
+				76F060332C76D24F003D698B /* SUSecurityUpdateResolved.swift */,
 				76F060312C76AE91003D698B /* SUCLToolsResolved.swift */,
 				76F0602E2C769A9D003D698B /* SUBridgeOSProduct.swift */,
 				76F0602A2C752B6D003D698B /* SUUnresolvedProduct.swift */,
@@ -351,6 +354,7 @@
 				76EF317B2C66CF1F009D07DA /* Initialization.swift in Sources */,
 				76EF31812C681DE4009D07DA /* PackagePieces.swift in Sources */,
 				764569412C5F1E2300FC6865 /* SUProductResolved.swift in Sources */,
+				76F060342C76D24F003D698B /* SUSecurityUpdateResolved.swift in Sources */,
 				760258AC2C6AF1B200D07B70 /* SUSafariProductResolved.swift in Sources */,
 				760258AE2C6AF93300D07B70 /* SafariListView.swift in Sources */,
 				76EF31852C685E0F009D07DA /* DownloadManagerView.swift in Sources */,

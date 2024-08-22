@@ -71,6 +71,7 @@ enum SUProductType: Sendable {
     case safari
     case bridgeOS
     case cltools
+    case securityupdate
     case unknown
     
     var localizedKey: LocalizedStringKey {
@@ -83,6 +84,8 @@ enum SUProductType: Sendable {
             return "swui.bridgeosupdates"
         case .cltools:
             return "swui.cltools"
+        case .securityupdate:
+            return "swui.securityupdates"
         case .unknown:
             return "swui.unknownproductype"
         }
@@ -109,6 +112,8 @@ extension SUProduct {
                 resolved = await SUBridgeOSProduct.resolve(from: self)
             }  else if serverMetadataURL?.contains("CLTools") == true {
                 resolved = try await SUCLToolsResolved.resolve(from: self)
+            } else if serverMetadataURL?.contains("SecUpd") == true {
+                resolved = try await SUSecurityUpdateResolved.resolve(from: self)
             } else {
                 // Otherwise, it's an unknown product, which isn't supported
                 throw SWError(source: "SUProduct", id: "swerror.product.unknown")
@@ -127,6 +132,8 @@ extension SUProduct {
         
         if let betaNumber = (resolved as? SUCLToolsResolved)?.betaNumber {
             resolved.version += " beta \(betaNumber)"
+        } else if let securityUpdate = resolved as? SUSecurityUpdateResolved, securityUpdate.securityUpdateID != "N/A" {
+            resolved.version += " \(securityUpdate.securityUpdateID)"
         }
         
         if insideCatalogs.contains(where: { !$0.contains("seed") && !$0.contains("beta") }) {

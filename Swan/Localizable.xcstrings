@@ -808,6 +808,16 @@
         }
       }
     },
+    "swui.securityupdates" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Security Updates"
+          }
+        }
+      }
+    },
     "swui.showdownloads" : {
       "localizations" : {
         "en" : {

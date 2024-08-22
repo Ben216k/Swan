@@ -31,6 +31,7 @@ struct ContentView: View {
                         NavigationLink(value: "bridgeOS", label: { Text("swui.bridgeosupdates") } )
                         NavigationLink(value: "macOS", label: { Text("swui.macospackages") } )
                         NavigationLink(value: "Safari", label: { Text("swui.safaripackages") } )
+                        NavigationLink(value: "SecUpd", label: { Text("swui.securityupdates") } )
                     }
                 }.listStyle(.sidebar)
                 Spacer()
@@ -51,6 +52,7 @@ struct ContentView: View {
                     case "bridgeOS": EVERYTHINGListView(selection: $selectedProduct, filterType: .bridgeOS)
                     case "macOS": MacOSListView(selection: $selectedProduct)
                     case "Safari": SafariListView(selection: $selectedProduct)
+                    case "SecUpd": EVERYTHINGListView(selection: $selectedProduct, filterType: .securityupdate)
                     default: Rectangle().frame(height: 1).opacity(0.000001)
                     }
                 } else {

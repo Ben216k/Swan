@@ -37,7 +37,6 @@ struct SUCLToolsResolved: SUProductResolved {
 
     var betaNumber: String? {
         guard let title = serverMetadata?.localizations["English"]?.title else { return nil }
-        print(title)
 
         // Define the regex pattern to capture the beta number
         let pattern = #"beta (\d+)"#
