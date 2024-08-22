@@ -24,7 +24,7 @@ struct SUUnresolvedProduct: SUProductResolved {
     var deprecated = false
     
     var basicName: String {
-        serverMetadataURL?.urlLastPathCompenent?.replacingOccurrences(of: ".smd", with: "") ?? packages.biggestPackageName ?? "Unknown Product"
+        serverMetadata?.localizations["English"]?.title ?? serverMetadataURL?.urlLastPathCompenent?.replacingOccurrences(of: ".smd", with: "") ?? packages.biggestPackageName ?? "Unknown Product"
     }
     
     var downloadTitleText: String {
