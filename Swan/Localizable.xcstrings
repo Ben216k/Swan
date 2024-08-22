@@ -276,6 +276,9 @@
         }
       }
     },
+    "swui.bootcamp" : {
+
+    },
     "swui.bridgeosupdates" : {
       "localizations" : {
         "en" : {
@@ -853,6 +856,9 @@
         }
       }
     },
+    "swui.provideoformat" : {
+
+    },
     "swui.refreshlist" : {
       "comment" : "Hover tooltip text for refresh icon. ",
       "extractionState" : "manual",
@@ -904,6 +910,9 @@
           }
         }
       }
+    },
+    "swui.sfsymbols" : {
+
     },
     "swui.showcacheinfinder" : {
       "localizations" : {

@@ -24,7 +24,12 @@ struct SUUnresolvedProduct: SUProductResolved {
     var deprecated = false
     
     var basicName: String {
-        serverMetadata?.localizations["English"]?.title ?? serverMetadataURL?.urlLastPathCompenent?.replacingOccurrences(of: ".smd", with: "") ?? packages.biggestPackageName ?? "Unknown Product"
+        if let serverMetadataURL, serverMetadataURL.contains("BootCamp") {
+            let baseName = "Boot Camp"
+            return serverMetadataURL.contains("ESD") ? "\(baseName) ESD" : baseName
+        } else {
+            return serverMetadata?.localizations["English"]?.title ?? serverMetadataURL?.urlLastPathCompenent?.replacingOccurrences(of: ".smd", with: "") ?? packages.biggestPackageName ?? "Unknown Product"
+        }
     }
     
     var downloadTitleText: String {
@@ -35,7 +40,17 @@ struct SUUnresolvedProduct: SUProductResolved {
     var version: String = "N/A"
     
     var image: Image { Image(imageName) }
-    var imageName: String { "UnknownProductCircle" }
+    var imageName: String {
+        if let serverMetadataURL, serverMetadataURL.contains("SFSymbols") {
+            return "SFSymbolsCircle"
+        } else if let serverMetadataURL, serverMetadataURL.contains("ProVideoFormats") {
+            return "ProViewFormatsCircle"
+        } else if let serverMetadataURL, serverMetadataURL.contains("BootCamp") {
+            return "BootcampCircle"
+        } else {
+            return "UnknownProductCircle"
+        }
+    }
     
 }
 

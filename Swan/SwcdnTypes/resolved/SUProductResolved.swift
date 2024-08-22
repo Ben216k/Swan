@@ -35,7 +35,7 @@ protocol SUProductResolved: Sendable, Codable, Identifiable where ID == String {
     var extendedMetaInfo: SUExtendedMetadata? { get }
     
     /// Type of product
-    var type: SUProductType { get }
+    var type: SUProductType { get set }
     
     var insideCatalogs: [String] { get }
     
@@ -75,6 +75,9 @@ enum SUProductType: String, Sendable, Codable {
     case bridgeOS
     case cltools
     case securityupdate
+    case sfsymbols
+    case provideoformat
+    case bootcamp
     case unknown
     
     var localizedKey: LocalizedStringKey {
@@ -89,6 +92,12 @@ enum SUProductType: String, Sendable, Codable {
             return "swui.cltools"
         case .securityupdate:
             return "swui.securityupdates"
+        case .sfsymbols:
+            return "swui.sfsymbols"
+        case .provideoformat:
+            return "swui.provideoformat"
+        case .bootcamp:
+            return "swui.bootcamp"
         case .unknown:
             return "swui.unknownproductype"
         }
@@ -121,6 +130,15 @@ extension SUProduct {
                 resolved = try await SUCLToolsResolved.resolve(from: self)
             } else if serverMetadataURL?.contains("SecUpd") == true {
                 resolved = try await SUSecurityUpdateResolved.resolve(from: self)
+            } else if serverMetadataURL?.contains("SFSymbols") == true {
+                resolved = await SUUnresolvedProduct.resolve(from: self)
+                resolved.type = .sfsymbols // Set the correct product type
+            } else if serverMetadataURL?.contains("ProVideoFormats") == true {
+                resolved = await SUUnresolvedProduct.resolve(from: self)
+                resolved.type = .provideoformat
+            } else if serverMetadataURL?.contains("BootCamp") == true {
+                resolved = await SUUnresolvedProduct.resolve(from: self)
+                resolved.type = .bootcamp
             } else {
                 // Otherwise, it's an unknown product, which isn't supported
                 throw SWError(source: "SUProduct", id: "swerror.product.unknown")
@@ -210,7 +228,7 @@ extension SUProduct {
             resolved = try? JSONDecoder().decode(SUSecurityUpdateResolved.self, from: data)
         case .cltools:
             resolved = try? JSONDecoder().decode(SUCLToolsResolved.self, from: data)
-        case .unknown:
+        case .unknown, .sfsymbols, .bootcamp, .provideoformat:
             resolved = try? JSONDecoder().decode(SUUnresolvedProduct.self, from: data)
         }
 
@@ -288,7 +306,10 @@ struct SUFakedResolved: SUProductResolved {
     var postDate: Date { _underlying.postDate }
     var distributions: [String: String] { _underlying.distributions }
     var extendedMetaInfo: SUExtendedMetadata? { _underlying.extendedMetaInfo }
-    var type: SUProductType { _underlying.type }
+    var type: SUProductType {
+        get { _underlying.type }
+        set { _underlying.type = newValue }
+    }
     var insideCatalogs: [String] { _underlying.insideCatalogs }
     var serverMetadata: SUServerMetadata? {
         get { _underlying.serverMetadata }
