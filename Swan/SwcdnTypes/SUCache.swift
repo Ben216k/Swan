@@ -82,3 +82,33 @@ final class SUCache: ObservableObject {
     }
     
 }
+
+extension SUCache {
+    func storeResolvedProduct(_ product: any SUProductResolved) throws {
+        let encoder = JSONEncoder()
+        let data = try encoder.encode(product)
+        try storeProductData(data, forKey: product.key)
+    }
+
+    private func storeProductData(_ data: Data, forKey key: String) throws {
+        let cacheURL = cacheDirectoryURL.appendingPathComponent(key + ".json")
+        try data.write(to: cacheURL)
+    }
+
+    private var cacheDirectoryURL: URL {
+        let fileManager = FileManager.default
+        let cacheDirectory = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first!
+        let swanCacheURL = cacheDirectory.appendingPathComponent("Swan")
+
+        // Create the Swan cache directory if it doesn't exist
+        if !fileManager.fileExists(atPath: swanCacheURL.path) {
+            try? fileManager.createDirectory(at: swanCacheURL, withIntermediateDirectories: true)
+        }
+        
+        return swanCacheURL
+    }
+    
+    func cacheURL(forKey key: String) -> URL {
+        cacheDirectoryURL.appendingPathComponent(key + ".json")
+    }
+}

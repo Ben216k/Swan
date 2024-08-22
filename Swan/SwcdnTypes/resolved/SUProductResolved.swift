@@ -13,7 +13,7 @@ import SwiftUI
 // MARK: - SUProductResolved
 
 /// A product that has been resolved to a specific version
-protocol SUProductResolved: Sendable, Identifiable where ID == String {
+protocol SUProductResolved: Sendable, Codable, Identifiable where ID == String {
     
     var key: String { get }
     
@@ -64,7 +64,7 @@ extension SUProductResolved {
 // MARK: - SUProductType
 
 /// The type of product
-enum SUProductType: Sendable {
+enum SUProductType: String, Sendable, Codable {
 
     /// macOS releases with full installers, basically anything later than macOS 11.
     case macOSpackage
@@ -95,9 +95,13 @@ enum SUProductType: Sendable {
 // MARK: - Resolving a Product
 
 extension SUProduct {
-
+    
     /// Resolves the product to a specific version
     func resolve() async -> any SUProductResolved {
+        
+        if let cachedProduct = try? await resolveFromCache() {
+            return cachedProduct
+        }
         
         var resolved: any SUProductResolved
         
@@ -124,9 +128,7 @@ extension SUProduct {
             resolved = await SUUnresolvedProduct.resolve(from: self)
             
         }
-//        #if DEBUG
-        if resolved.type == .unknown { return resolved }
-//        #endif
+        
         resolved.serverMetadata = try? await self.resolveServerMetadata()
         if !resolved.noOverrideVersion || resolved.version == "N/A" {
             resolved.version = resolved.serverMetadata?.version ?? resolved.version
@@ -157,9 +159,81 @@ extension SUProduct {
             }
         }
         
+        Task {
+            do {
+                try await SUCache.shared.storeResolvedProduct(resolved)
+            } catch {
+                print("Failed to store \(resolved.id) to cache.", error)
+            }
+        }
+        
         return resolved
     }
+    
+    
+}
 
+// MARK: - Resolve from Cache
+
+struct ProductTypeWrapper: Decodable {
+    let type: SUProductType
+}
+
+extension SUProduct {
+    private func resolveFromCache() async throws -> (any SUProductResolved)? {
+        
+        guard let data = try? await Data(contentsOf: SUCache.shared.cacheURL(forKey: key)) else {
+            print("Data not found for \(self.key) in cache")
+            return nil
+        }
+
+        // 1. Decode only the product type
+        guard let typeWrapper = try? JSONDecoder().decode(ProductTypeWrapper.self, from: data) else {
+            print("Couldn't unravel the type")
+            return nil
+        }
+
+        var resolved: (any SUProductResolved)?
+
+        // 2. Decode based on the specific product type
+        switch typeWrapper.type {
+        case .macOSpackage:
+            resolved = try? JSONDecoder().decode(SUMacOSPackage.self, from: data)
+        case .safari:
+            resolved = try? JSONDecoder().decode(SUSafariResolved.self, from: data)
+        case .bridgeOS:
+            resolved = try? JSONDecoder().decode(SUBridgeOSProduct.self, from: data)
+        case .securityupdate:
+            resolved = try? JSONDecoder().decode(SUSecurityUpdateResolved.self, from: data)
+        case .cltools:
+            resolved = try? JSONDecoder().decode(SUCLToolsResolved.self, from: data)
+        case .unknown:
+            resolved = try? JSONDecoder().decode(SUUnresolvedProduct.self, from: data)
+        }
+
+        // 3. Preserve SMD from cache if the URL hasn't changed
+        if let resolved, serverMetadataURL == resolved.serverMetadataURL {
+            // No need to refetch SMD data
+        } else if var resolved {
+            // Refetch SMD data here
+            resolved.serverMetadata = try? await self.resolveServerMetadata()
+            if !resolved.noOverrideVersion || resolved.version == "N/A" {
+                resolved.version = resolved.serverMetadata?.version ?? resolved.version
+            }
+            // Append securityUpdateID to version for SUSecurityUpdateResolved
+            if let securityUpdate = resolved as? SUSecurityUpdateResolved {
+                resolved.version += " \(securityUpdate.securityUpdateID)"
+            }
+            if let clToolsProduct = resolved as? SUCLToolsResolved,
+               let betaNumber = clToolsProduct.betaNumber {
+                resolved.version += " beta \(betaNumber)"
+            }
+        } else {
+            print("Tis not resolved")
+        }
+
+        return resolved
+    }
 }
 
 // MARK: - SwiftUI Stuff
@@ -237,4 +311,13 @@ struct SUFakedResolved: SUProductResolved {
     init(_ underlying: any SUProductResolved) {
         self._underlying = underlying
     }
+    
+    init(from decoder: any Decoder) throws {
+        throw SWError(source: "SUFakedResolved.init(from:)", id: "swerror.negative.faked")
+    }
+    
+    func encode(to encoder: any Encoder) throws {
+        throw SWError(source: "SUFakedResolved.encode(to:)", id: "swerror.negative.faked")
+    }
 }
+

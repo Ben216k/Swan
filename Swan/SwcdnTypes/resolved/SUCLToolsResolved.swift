@@ -17,7 +17,7 @@ struct SUCLToolsResolved: SUProductResolved {
     let postDate: Date
     let distributions: [String : String]
     let extendedMetaInfo: SUExtendedMetadata?
-    let type: SUProductType = .cltools
+    var type: SUProductType = .cltools
     var insideCatalogs: [String]
     var serverMetadata: SUServerMetadata?
     var releaseType: SUCatalogType = .release

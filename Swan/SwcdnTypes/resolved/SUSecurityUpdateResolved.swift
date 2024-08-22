@@ -15,7 +15,7 @@ struct SUSecurityUpdateResolved: SUProductResolved {
     let postDate: Date
     let distributions: [String : String]
     let extendedMetaInfo: SUExtendedMetadata?
-    let type: SUProductType = .securityupdate
+    var type: SUProductType = .securityupdate
     var insideCatalogs: [String]
     var serverMetadata: SUServerMetadata?
     var releaseType: SUCatalogType = .release

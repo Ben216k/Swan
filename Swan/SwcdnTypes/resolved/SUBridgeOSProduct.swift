@@ -16,13 +16,13 @@ struct SUBridgeOSProduct: SUProductResolved {
     let postDate: Date
     let distributions: [String : String]
     var extendedMetaInfo: SUExtendedMetadata?
-    let type: SUProductType = .bridgeOS
+    var type: SUProductType = .bridgeOS
     var insideCatalogs: [String]
     var serverMetadata: SUServerMetadata?
     var releaseType: SUCatalogType = .release
     var deferredSUEnablementDate: Date?
     
-    let basicName: String = "bridgeOS"
+    var basicName: String = "bridgeOS"
     
     var downloadTitleText: String {
         "\(basicName) \(version)"
@@ -30,10 +30,10 @@ struct SUBridgeOSProduct: SUProductResolved {
     var downloadSubtitleText: String { return "For T and M chips" }
     
     var version: String = "N/A"
-    let noOverrideVersion: Bool = true
+    var noOverrideVersion: Bool { true }
     
     var image: Image { Image(imageName) }
-    let imageName = "BridgeOSCircle"
+    var imageName: String { "BridgeOSCircle" }
     
 }
 

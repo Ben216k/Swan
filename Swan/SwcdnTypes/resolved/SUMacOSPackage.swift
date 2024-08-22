@@ -21,7 +21,7 @@ struct SUMacOSPackage: SUProductResolved {
     let postDate: Date
     let distributions: [String: String]
     let extendedMetaInfo: SUExtendedMetadata?
-    let type: SUProductType = .macOSpackage
+    var type: SUProductType = .macOSpackage
 
     // HAVE TO FETCH FROM A SECOND LINK (in the distrubutions, just check English, cause they're all the same and the others aren't always there)
     var version: String

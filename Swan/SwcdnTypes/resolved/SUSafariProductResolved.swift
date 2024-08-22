@@ -19,7 +19,7 @@ struct SUSafariResolved: SUProductResolved {
     let postDate: Date
     let distributions: [String : String]
     let extendedMetaInfo: SUExtendedMetadata?
-    let type: SUProductType = .safari
+    var type: SUProductType = .safari
     var version: String
     let macOSVersion: String
     let insideCatalogs: [String]

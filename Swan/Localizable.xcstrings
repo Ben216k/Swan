@@ -94,6 +94,9 @@
         }
       }
     },
+    "swerror.negative.faked" : {
+
+    },
     "swerror.product.unknown" : {
       "localizations" : {
         "en" : {

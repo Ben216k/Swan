@@ -16,7 +16,7 @@ struct SUUnresolvedProduct: SUProductResolved {
     let postDate: Date
     let distributions: [String : String]
     var extendedMetaInfo: SUExtendedMetadata?
-    let type: SUProductType = .unknown
+    var type: SUProductType = .unknown
     var insideCatalogs: [String]
     var serverMetadata: SUServerMetadata?
     var releaseType: SUCatalogType = .release
@@ -34,7 +34,7 @@ struct SUUnresolvedProduct: SUProductResolved {
     var version: String = "N/A"
     
     var image: Image { Image(imageName) }
-    let imageName = "UnknownProductCircle"
+    var imageName: String { "UnknownProductCircle" }
     
 }
 
