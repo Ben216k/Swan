@@ -20,6 +20,7 @@ final class SUCache: ObservableObject {
     @Published var usedCatalogs: [SUCatalogSource] = SUCatalogSource.bestKnownCatalogs
     @Published var rejectedProducts: [(product: SUProduct, error: SWError)] = []
     @Published var showTableFooter = false
+    @Published var showUnformattedName = false
     
     func setCatalog(_ id: String, catalog: SUCatalog) {
         self.catalogs[id] = catalog
@@ -51,6 +52,7 @@ final class SUCache: ObservableObject {
             return search.isEmpty
             || $0.version.starts(with: search)
             || $0.basicName.lowercased().contains(search)
+            || $0.unformattedName.lowercased().contains(search)
             || $0.key.lowercased().starts(with: search)
             || String(localized: $0.releaseType.name).lowercased().contains(search)
         }.sorted(using: everythingSortOrder)

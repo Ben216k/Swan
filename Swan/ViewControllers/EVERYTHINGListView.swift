@@ -29,8 +29,11 @@ struct EVERYTHINGListView: View {
                         .cornerRadius(100)
                 }.width(35)
                 TableColumn("swui.name", value: \.basicName) { item in
-                    Text(item.basicName)
-                        .foregroundStyle(item.deprecated ? .secondary : .primary)
+                    if cache.showUnformattedName {
+                        Text(item.unformattedName).foregroundStyle(item.deprecated ? .secondary : .primary)
+                    } else {
+                        Text(item.basicName).foregroundStyle(item.deprecated ? .secondary : .primary)
+                    }
                 }
                 TableColumn("swui.version", value: \.version) { item in
                     Text(item.version)

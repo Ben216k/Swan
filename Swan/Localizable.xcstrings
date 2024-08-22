@@ -276,6 +276,9 @@
         }
       }
     },
+    "swui.beats" : {
+
+    },
     "swui.bootcamp" : {
 
     },
@@ -412,6 +415,9 @@
           }
         }
       }
+    },
+    "swui.devicesupport" : {
+
     },
     "swui.distributions" : {
       "localizations" : {
@@ -607,6 +613,16 @@
         }
       }
     },
+    "swui.hideunformattedname" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hide Unformatted Name"
+          }
+        }
+      }
+    },
     "swui.iapackageidentifiers" : {
       "localizations" : {
         "en" : {
@@ -637,6 +653,9 @@
         }
       }
     },
+    "swui.itunes" : {
+
+    },
     "swui.loadingcatalogs" : {
       "localizations" : {
         "en" : {
@@ -646,6 +665,9 @@
           }
         }
       }
+    },
+    "swui.logicapps" : {
+
     },
     "swui.macospackages" : {
       "comment" : "Referring to any product in any product in a catalog that has either a \"InstallAssistant.pkg\" or \"InstallAssistantAuto.pkg\" inside it, which contains a macOS full installer, to be used to upgrade/reinstall macOS or create a recovery USB.",
@@ -857,7 +879,14 @@
       }
     },
     "swui.provideoformat" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro Video Format"
+          }
+        }
+      }
     },
     "swui.refreshlist" : {
       "comment" : "Hover tooltip text for refresh icon. ",
@@ -912,7 +941,14 @@
       }
     },
     "swui.sfsymbols" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SF Symbols"
+          }
+        }
+      }
     },
     "swui.showcacheinfinder" : {
       "localizations" : {
@@ -940,6 +976,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Show Status Bar"
+          }
+        }
+      }
+    },
+    "swui.showunformattedname" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Unformatted Name"
           }
         }
       }

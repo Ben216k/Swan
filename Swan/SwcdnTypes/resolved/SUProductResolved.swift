@@ -78,6 +78,10 @@ enum SUProductType: String, Sendable, Codable {
     case sfsymbols
     case provideoformat
     case bootcamp
+    case devicesupport
+    case itunes
+    case logicpro
+    case beats
     case unknown
     
     var localizedKey: LocalizedStringKey {
@@ -98,6 +102,14 @@ enum SUProductType: String, Sendable, Codable {
             return "swui.provideoformat"
         case .bootcamp:
             return "swui.bootcamp"
+        case .devicesupport:
+            return "swui.devicesupport"
+        case .itunes:
+            return "swui.itunes"
+        case .logicpro:
+            return "swui.logicapps"
+        case .beats:
+            return "swui.beats"
         case .unknown:
             return "swui.unknownproductype"
         }
@@ -139,6 +151,18 @@ extension SUProduct {
             } else if serverMetadataURL?.contains("BootCamp") == true {
                 resolved = await SUUnresolvedProduct.resolve(from: self)
                 resolved.type = .bootcamp
+            } else if serverMetadataURL?.contains("MobileDevice") == true {
+                resolved = await SUUnresolvedProduct.resolve(from: self)
+                resolved.type = .devicesupport
+            } else if serverMetadataURL?.contains("iTunes") == true {
+                resolved = await SUUnresolvedProduct.resolve(from: self)
+                resolved.type = .itunes
+            } else if serverMetadataURL?.contains("Logic") == true {
+                resolved = await SUUnresolvedProduct.resolve(from: self)
+                resolved.type = .logicpro
+            } else if serverMetadataURL?.contains("Beats") == true {
+                resolved = await SUUnresolvedProduct.resolve(from: self)
+                resolved.type = .beats
             } else {
                 // Otherwise, it's an unknown product, which isn't supported
                 throw SWError(source: "SUProduct", id: "swerror.product.unknown")
@@ -228,7 +252,7 @@ extension SUProduct {
             resolved = try? JSONDecoder().decode(SUSecurityUpdateResolved.self, from: data)
         case .cltools:
             resolved = try? JSONDecoder().decode(SUCLToolsResolved.self, from: data)
-        case .unknown, .sfsymbols, .bootcamp, .provideoformat:
+        case .unknown, .sfsymbols, .bootcamp, .provideoformat, .devicesupport, .itunes, .beats, .logicpro:
             resolved = try? JSONDecoder().decode(SUUnresolvedProduct.self, from: data)
         }
 
@@ -286,6 +310,10 @@ extension SUProductResolved {
         formatter.dateStyle = .long
         formatter.timeStyle = .short
         return formatter.string(from: date)
+    }
+    
+    var unformattedName: String {
+        serverMetadataURL?.urlLastPathCompenent?.replacingOccurrences(of: ".smd", with: "") ?? packages.biggestPackageName ?? "Unknown Product"
     }
 }
 

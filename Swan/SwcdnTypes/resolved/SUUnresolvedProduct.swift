@@ -47,6 +47,14 @@ struct SUUnresolvedProduct: SUProductResolved {
             return "ProViewFormatsCircle"
         } else if let serverMetadataURL, serverMetadataURL.contains("BootCamp") {
             return "BootcampCircle"
+        } else if let serverMetadataURL, serverMetadataURL.contains("MobileDevice") {
+            return "DeviceSupportCircle"
+        } else if let serverMetadataURL, serverMetadataURL.contains("iTunes") {
+            return "iTunesCircle"
+        } else if let serverMetadataURL, serverMetadataURL.contains("Logic") {
+            return "LogicCircle"
+        } else if let serverMetadataURL, serverMetadataURL.contains("Beats") {
+            return "BeatsCircle"
         } else {
             return "UnknownProductCircle"
         }

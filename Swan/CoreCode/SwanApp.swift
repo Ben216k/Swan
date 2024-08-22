@@ -30,6 +30,9 @@ struct SwanApp: App {
                     Button(cache.showTableFooter ? "swui.hidestatusbar" : "swui.showstatusbar") {
                         cache.showTableFooter.toggle()
                     }.keyboardShortcut("/", modifiers: .command)
+                    Button(cache.showUnformattedName ? "swui.hideunformattedname" : "swui.showunformattedname") {
+                        cache.showUnformattedName.toggle()
+                    }.keyboardShortcut(".", modifiers: [.command, .shift])
                     Divider()
                 }
                 CommandGroup(after: .newItem) {
