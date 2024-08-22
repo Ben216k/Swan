@@ -27,6 +27,7 @@ struct ContentView: View {
                 List(selection: $listSelection) {
                     Section("swui.producttypes") {
                         NavigationLink(value: "All", label: { Text("swui.allproducts") } )
+                        NavigationLink(value: "CLTools", label: { Text("swui.cltools") } )
                         NavigationLink(value: "bridgeOS", label: { Text("swui.bridgeosupdates") } )
                         NavigationLink(value: "macOS", label: { Text("swui.macospackages") } )
                         NavigationLink(value: "Safari", label: { Text("swui.safaripackages") } )
@@ -46,6 +47,7 @@ struct ContentView: View {
                 if cache.hasSetCaches {
                     switch listSelection {
                     case "All": EVERYTHINGListView(selection: $selectedProduct, filterType: nil)
+                    case "CLTools": EVERYTHINGListView(selection: $selectedProduct, filterType: .cltools)
                     case "bridgeOS": EVERYTHINGListView(selection: $selectedProduct, filterType: .bridgeOS)
                     case "macOS": MacOSListView(selection: $selectedProduct)
                     case "Safari": SafariListView(selection: $selectedProduct)

@@ -40,6 +40,7 @@
 		76F0602B2C752B73003D698B /* SUUnresolvedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0602A2C752B6D003D698B /* SUUnresolvedProduct.swift */; };
 		76F0602D2C75339D003D698B /* EVERYTHINGListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0602C2C753395003D698B /* EVERYTHINGListView.swift */; };
 		76F0602F2C769AA9003D698B /* SUBridgeOSProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0602E2C769A9D003D698B /* SUBridgeOSProduct.swift */; };
+		76F060322C76AE91003D698B /* SUCLToolsResolved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060312C76AE91003D698B /* SUCLToolsResolved.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		76F0602A2C752B6D003D698B /* SUUnresolvedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUUnresolvedProduct.swift; sourceTree = "<group>"; };
 		76F0602C2C753395003D698B /* EVERYTHINGListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVERYTHINGListView.swift; sourceTree = "<group>"; };
 		76F0602E2C769A9D003D698B /* SUBridgeOSProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUBridgeOSProduct.swift; sourceTree = "<group>"; };
+		76F060312C76AE91003D698B /* SUCLToolsResolved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUCLToolsResolved.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 		7645693F2C5F1E2300FC6865 /* resolved */ = {
 			isa = PBXGroup;
 			children = (
+				76F060312C76AE91003D698B /* SUCLToolsResolved.swift */,
 				76F0602E2C769A9D003D698B /* SUBridgeOSProduct.swift */,
 				76F0602A2C752B6D003D698B /* SUUnresolvedProduct.swift */,
 				760258AB2C6AF1B200D07B70 /* SUSafariProductResolved.swift */,
@@ -354,6 +357,7 @@
 				764569322C5F103C00FC6865 /* SUCatalog.swift in Sources */,
 				7645693C2C5F1D7100FC6865 /* DownloadCatalog.swift in Sources */,
 				764568FF2C5EFEE400FC6865 /* SwanApp.swift in Sources */,
+				76F060322C76AE91003D698B /* SUCLToolsResolved.swift in Sources */,
 				76F060262C743050003D698B /* DistributionRow.swift in Sources */,
 				764569432C5F301800FC6865 /* HardcodedCatalogs.swift in Sources */,
 				764569342C5F105900FC6865 /* SUCache.swift in Sources */,

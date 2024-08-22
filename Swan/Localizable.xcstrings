@@ -302,6 +302,16 @@
         }
       }
     },
+    "swui.cltools" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Command Line Tools"
+          }
+        }
+      }
+    },
     "swui.copy.dump" : {
       "localizations" : {
         "en" : {

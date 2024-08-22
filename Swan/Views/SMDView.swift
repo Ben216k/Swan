@@ -57,18 +57,18 @@ struct SMDFullView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("swui.smd.titleformatted \(localization.title) \(serverMetadata.version)")
-                .font(.headline)
+                .font(.headline).textSelection(.enabled)
             Text(localization.serverComment)
-                .font(.subheadline)
+                .font(.subheadline).textSelection(.enabled)
             if let descriptionHTML = localization.descriptionHTML {
                 HTMLRenderer(htmlString: descriptionHTML)
                     .frame(height: 200)
             }
             if let client = serverMetadata.platforms.client {
-                Text("Client Platforms: \(client.joined(separator: ", "))")
+                Text("Client Platforms: \(client.joined(separator: ", "))").textSelection(.enabled)
             }
             if let server = serverMetadata.platforms.server {
-                Text("Server Platforms: \(server.joined(separator: ", "))")
+                Text("Server Platforms: \(server.joined(separator: ", "))").textSelection(.enabled)
             }
             
         }.padding(15).frame(width: 400)

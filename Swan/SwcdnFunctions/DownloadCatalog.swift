@@ -122,7 +122,7 @@ extension SUCache {
         await withTaskGroup(of: (any SUProductResolved)?.self) { group in
             for (_, product) in uniqueProducts {
                 group.addTask {
-                    return try? await product.resolve()
+                    return await product.resolve()
                 }
             }
             
