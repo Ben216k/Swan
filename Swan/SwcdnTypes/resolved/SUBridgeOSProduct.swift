@@ -28,7 +28,7 @@ struct SUBridgeOSProduct: SUProductResolved {
     var downloadTitleText: String {
         "\(basicName) \(version)"
     }
-    var downloadSubtitleText: String { return "For T and M chips" }
+    var downloadSubtitleText: String { return "For T-series chips" }
     
     var version: String = "N/A"
     var noOverrideVersion: Bool { true }
