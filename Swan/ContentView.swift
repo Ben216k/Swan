@@ -27,9 +27,10 @@ struct ContentView: View {
                 List(selection: $listSelection) {
                     Section("swui.producttypes") {
                         NavigationLink(value: "All", label: { Text("swui.allproducts") } )
-                        NavigationLink(value: "CLTools", label: { Text("swui.cltools") } )
-                        NavigationLink(value: "bridgeOS", label: { Text("swui.bridgeosupdates") } )
                         NavigationLink(value: "macOS", label: { Text("swui.macospackages") } )
+                        NavigationLink(value: "bridgeOS", label: { Text("swui.bridgeosupdates") } )
+                        NavigationLink(value: "BootCamp", label: { Text("swui.bootcamp") } )
+                        NavigationLink(value: "CLTools", label: { Text("swui.cltools") } )
                         NavigationLink(value: "Safari", label: { Text("swui.safaripackages") } )
                         NavigationLink(value: "Voices", label: { Text("swui.voiceupdate") } )
                     }
@@ -48,9 +49,10 @@ struct ContentView: View {
                 if cache.hasSetCaches {
                     switch listSelection {
                     case "All": EVERYTHINGListView(selection: $selectedProduct, filterType: nil)
+                    case "macOS": EVERYTHINGListView(selection: $selectedProduct, filterType: .macOSpackage)
                     case "CLTools": EVERYTHINGListView(selection: $selectedProduct, filterType: .cltools)
                     case "bridgeOS": EVERYTHINGListView(selection: $selectedProduct, filterType: .bridgeOS)
-                    case "macOS": EVERYTHINGListView(selection: $selectedProduct, filterType: .macOSpackage)
+                    case "BootCamp": EVERYTHINGListView(selection: $selectedProduct, filterType: .bootcamp)
                     case "Safari": EVERYTHINGListView(selection: $selectedProduct, filterType: .safari)
                     case "SecUpd": EVERYTHINGListView(selection: $selectedProduct, filterType: .securityupdate)
                     case "Voices": EVERYTHINGListView(selection: $selectedProduct, filterType: .voiceupdate)
