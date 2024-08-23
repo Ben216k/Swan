@@ -1,7 +1,7 @@
 // 
-//  SafariListView.swift - Swan
-//
-//  Created by Ben216k on 8/12/24
+//  MacOSTableView.swift - Swan
+// 
+//  Created by Ben216k on 8/7/24
 //  Copyright (c) Ben216k (under 216k License)
 // 
 
@@ -9,10 +9,9 @@ import SwiftUI
 import os
 
 @MainActor
-struct SafariListView: View {
+struct MacOSListView: View {
     
     @EnvironmentObject var cache: SUCache
-    
     @Binding var selection: String?
     
     var body: some View {
@@ -37,8 +36,8 @@ struct SafariListView: View {
             }
             .width(min: 90, ideal: 100, max: 140)
             
-            TableColumn("swui.macosversion", value: \.macOSVersion) { item in
-                Text(item.macOSVersion)
+            TableColumn("swui.buildnumber", value: \.buildNumber) { item in
+                Text(item.buildNumber)
                     .foregroundStyle(item.deprecated ? .secondary : .primary)
             }
             
@@ -60,8 +59,29 @@ struct SafariListView: View {
                     .foregroundStyle(item.deprecated ? .secondary : .primary)
             }.width(min: 80, ideal: 80, max: 80)
         } rows: {
-            ForEach(cache.everythingProduts.filter { $0.type == .safari }) { item in
+            ForEach(cache.everythingProduts.filter { $0.type == .macOSpackage }) { item in
                 TableRow(item)
+                    .contextMenu {
+                        if let iaLink = item.packages.first(where: { $0.url.contains("InstallAssistant.pkg") })?.url {
+                            Button {
+                                SwanApp.copyString(iaLink)
+                            } label: {
+                                Text("swui.copy.installassistantlink")
+                            }
+                        }
+                        Button {
+                            SwanApp.copyString("\(item)")
+                        } label: {
+                            Text("swui.copy.dump")
+                        }
+                        if let htmlDescription = item.serverMetadata?.localizations["English"]?.descriptionHTML {
+                            Button {
+                                SwanApp.copyString(htmlDescription)
+                            } label: {
+                                Text("swui.copy.htmlservermetadata")
+                            }
+                        }
+                    }
             }
         }
     }

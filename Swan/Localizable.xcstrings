@@ -747,6 +747,7 @@
     },
     "swui.majorversion" : {
       "comment" : "macOS Major Version (ex. \"macOS Monterey\", \"macOS Big Sur\"). Should be roughly that length if possible.",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -758,6 +759,7 @@
     },
     "swui.minorversion" : {
       "comment" : "macOS minor version (ex. \"12.0.4\", \"10.15.7\"). Should be roughly that length if possible.",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -773,17 +775,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Name"
-          }
-        }
-      }
-    },
-    "swui.no" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No"
           }
         }
       }
@@ -1075,6 +1066,9 @@
         }
       }
     },
+    "swui.unformattedname" : {
+
+    },
     "swui.unknownproductype" : {
       "localizations" : {
         "en" : {
@@ -1101,17 +1095,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Voice Updates"
-          }
-        }
-      }
-    },
-    "swui.yes" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Yes"
           }
         }
       }

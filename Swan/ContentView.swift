@@ -50,8 +50,8 @@ struct ContentView: View {
                     case "All": EVERYTHINGListView(selection: $selectedProduct, filterType: nil)
                     case "CLTools": EVERYTHINGListView(selection: $selectedProduct, filterType: .cltools)
                     case "bridgeOS": EVERYTHINGListView(selection: $selectedProduct, filterType: .bridgeOS)
-                    case "macOS": MacOSListView(selection: $selectedProduct)
-                    case "Safari": SafariListView(selection: $selectedProduct)
+                    case "macOS": EVERYTHINGListView(selection: $selectedProduct, filterType: .macOSpackage)
+                    case "Safari": EVERYTHINGListView(selection: $selectedProduct, filterType: .safari)
                     case "SecUpd": EVERYTHINGListView(selection: $selectedProduct, filterType: .securityupdate)
                     default: Rectangle().frame(height: 1).opacity(0.000001)
                     }

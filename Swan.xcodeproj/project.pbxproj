@@ -24,7 +24,7 @@
 		764569402C5F1E2300FC6865 /* SUMacOSPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645693D2C5F1E2300FC6865 /* SUMacOSPackage.swift */; };
 		764569412C5F1E2300FC6865 /* SUProductResolved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645693E2C5F1E2300FC6865 /* SUProductResolved.swift */; };
 		764569432C5F301800FC6865 /* HardcodedCatalogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764569422C5F301800FC6865 /* HardcodedCatalogs.swift */; };
-		76A28F752C645C5800238999 /* MacOSListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A28F742C645C5200238999 /* MacOSListView.swift */; };
+		76A28F752C645C5800238999 /* MacOSTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A28F742C645C5200238999 /* MacOSTableView.swift */; };
 		76EF317B2C66CF1F009D07DA /* Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF317A2C66CF13009D07DA /* Initialization.swift */; };
 		76EF317F2C6722E5009D07DA /* FakeTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF317E2C6722E2009D07DA /* FakeTableItem.swift */; };
 		76EF31812C681DE4009D07DA /* PackagePieces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF31802C681DD9009D07DA /* PackagePieces.swift */; };
@@ -43,6 +43,7 @@
 		76F060322C76AE91003D698B /* SUCLToolsResolved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060312C76AE91003D698B /* SUCLToolsResolved.swift */; };
 		76F060342C76D24F003D698B /* SUSecurityUpdateResolved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060332C76D24F003D698B /* SUSecurityUpdateResolved.swift */; };
 		76F060362C780DAF003D698B /* SUVoiceUpdateResolved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060352C780DAF003D698B /* SUVoiceUpdateResolved.swift */; };
+		76F060382C781E7F003D698B /* SUFakedResolved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F060372C781E7F003D698B /* SUFakedResolved.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +77,7 @@
 		7645693D2C5F1E2300FC6865 /* SUMacOSPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUMacOSPackage.swift; sourceTree = "<group>"; };
 		7645693E2C5F1E2300FC6865 /* SUProductResolved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUProductResolved.swift; sourceTree = "<group>"; };
 		764569422C5F301800FC6865 /* HardcodedCatalogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardcodedCatalogs.swift; sourceTree = "<group>"; };
-		76A28F742C645C5200238999 /* MacOSListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSListView.swift; sourceTree = "<group>"; };
+		76A28F742C645C5200238999 /* MacOSTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSTableView.swift; sourceTree = "<group>"; };
 		76EF317A2C66CF13009D07DA /* Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initialization.swift; sourceTree = "<group>"; };
 		76EF317E2C6722E2009D07DA /* FakeTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableItem.swift; sourceTree = "<group>"; };
 		76EF31802C681DD9009D07DA /* PackagePieces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagePieces.swift; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 		76F060312C76AE91003D698B /* SUCLToolsResolved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUCLToolsResolved.swift; sourceTree = "<group>"; };
 		76F060332C76D24F003D698B /* SUSecurityUpdateResolved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUSecurityUpdateResolved.swift; sourceTree = "<group>"; };
 		76F060352C780DAF003D698B /* SUVoiceUpdateResolved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUVoiceUpdateResolved.swift; sourceTree = "<group>"; };
+		76F060372C781E7F003D698B /* SUFakedResolved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUFakedResolved.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 		7645693F2C5F1E2300FC6865 /* resolved */ = {
 			isa = PBXGroup;
 			children = (
+				76F060372C781E7F003D698B /* SUFakedResolved.swift */,
 				76F060352C780DAF003D698B /* SUVoiceUpdateResolved.swift */,
 				76F060332C76D24F003D698B /* SUSecurityUpdateResolved.swift */,
 				76F060312C76AE91003D698B /* SUCLToolsResolved.swift */,
@@ -222,7 +225,7 @@
 				76F060222C742F49003D698B /* ProductDetailView.swift */,
 				76F060202C73E788003D698B /* HTMLRenderer.swift */,
 				760258AF2C6AFDA300D07B70 /* SWErrorTotalView.swift */,
-				76A28F742C645C5200238999 /* MacOSListView.swift */,
+				76A28F742C645C5200238999 /* MacOSTableView.swift */,
 				760258AD2C6AF93300D07B70 /* SafariListView.swift */,
 				76F0602C2C753395003D698B /* EVERYTHINGListView.swift */,
 			);
@@ -371,9 +374,10 @@
 				764569362C5F15A000FC6865 /* SWError.swift in Sources */,
 				7645692F2C5F012100FC6865 /* Logger.swift in Sources */,
 				76F060362C780DAF003D698B /* SUVoiceUpdateResolved.swift in Sources */,
-				76A28F752C645C5800238999 /* MacOSListView.swift in Sources */,
+				76A28F752C645C5800238999 /* MacOSTableView.swift in Sources */,
 				76F060232C742F4C003D698B /* ProductDetailView.swift in Sources */,
 				76F0601B2C73DA3D003D698B /* SMDResolve.swift in Sources */,
+				76F060382C781E7F003D698B /* SUFakedResolved.swift in Sources */,
 				76F060212C73E788003D698B /* HTMLRenderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
