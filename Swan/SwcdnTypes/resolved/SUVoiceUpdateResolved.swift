@@ -104,7 +104,7 @@ extension SUVoiceUpdateResolved {
             resolved.local = parts[1] + "_" + parts[2]
         }
         if parts.count >= 4 {
-            resolved.personName = parts[3].capitalized
+            resolved.personName = parts[3].replacingOccurrences(of: ".smd", with: "").capitalized
         }
         resolved.isLegacy = serverMetadataURL.contains("Legacy")
 
