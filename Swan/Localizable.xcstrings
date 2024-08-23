@@ -745,30 +745,6 @@
         }
       }
     },
-    "swui.majorversion" : {
-      "comment" : "macOS Major Version (ex. \"macOS Monterey\", \"macOS Big Sur\"). Should be roughly that length if possible.",
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Major Version"
-          }
-        }
-      }
-    },
-    "swui.minorversion" : {
-      "comment" : "macOS minor version (ex. \"12.0.4\", \"10.15.7\"). Should be roughly that length if possible.",
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Minor"
-          }
-        }
-      }
-    },
     "swui.name" : {
       "localizations" : {
         "en" : {
@@ -1067,7 +1043,14 @@
       }
     },
     "swui.unformattedname" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unformatted Name"
+          }
+        }
+      }
     },
     "swui.unknownproductype" : {
       "localizations" : {
