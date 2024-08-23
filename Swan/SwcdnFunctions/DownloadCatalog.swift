@@ -166,6 +166,8 @@ extension SUCache {
                     resolvedProduct = try? JSONDecoder().decode(SUSecurityUpdateResolved.self, from: data)
                 case .cltools:
                     resolvedProduct = try? JSONDecoder().decode(SUCLToolsResolved.self, from: data)
+                case .voiceupdate:
+                    resolvedProduct = try? JSONDecoder().decode(SUVoiceUpdateResolved.self, from: data)
                 case .unknown, .sfsymbols, .bootcamp, .provideoformat, .devicesupport, .itunes, .beats, .logicpro:
                     resolvedProduct = try? JSONDecoder().decode(SUUnresolvedProduct.self, from: data)
                 }

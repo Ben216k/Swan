@@ -82,6 +82,7 @@ enum SUProductType: String, Sendable, Codable {
     case itunes
     case logicpro
     case beats
+    case voiceupdate
     case unknown
     
     var localizedKey: LocalizedStringKey {
@@ -110,6 +111,8 @@ enum SUProductType: String, Sendable, Codable {
             return "swui.logicapps"
         case .beats:
             return "swui.beats"
+        case .voiceupdate:
+            return "swui.voiceupdate"
         case .unknown:
             return "swui.unknownproductype"
         }
@@ -163,6 +166,8 @@ extension SUProduct {
             } else if serverMetadataURL?.contains("Beats") == true {
                 resolved = await SUUnresolvedProduct.resolve(from: self)
                 resolved.type = .beats
+            } else if serverMetadataURL?.contains("CustomVoice") == true || serverMetadataURL?.contains("MLV") == true || serverMetadataURL?.contains("MultiLingualVoice") == true || serverMetadataURL?.contains("SpeechVoice") == true {
+                resolved = try await SUVoiceUpdateResolved.resolve(from: self)
             } else {
                 // Otherwise, it's an unknown product, which isn't supported
                 throw SWError(source: "SUProduct", id: "swerror.product.unknown")
@@ -185,6 +190,17 @@ extension SUProduct {
             resolved.version += " \(securityUpdate.securityUpdateID)"
         }
         
+        if var newResolved = resolved as? SUVoiceUpdateResolved {
+            if let title = newResolved.serverMetadata?.localizations["English"]?.title {
+                let nameParts = title.components(separatedBy: "-")
+                if nameParts.count >= 2 {
+                    let personName = nameParts[1].trimmingCharacters(in: .whitespacesAndNewlines)
+                    newResolved.personName = !personName.contains("Lingual") ? personName : newResolved.personName
+                    resolved = newResolved
+                }
+            }
+        }
+        
         if insideCatalogs.contains(where: { !$0.contains("seed") && !$0.contains("beta") }) {
             resolved.releaseType = .release
         } else if insideCatalogs.contains(where: { $0.contains("beta") }) {
@@ -192,6 +208,7 @@ extension SUProduct {
         } else {
             resolved.releaseType = .seed
         }
+        
         
         // Sort packages alphabetically by name, with bias for names starting with "InstallAssistant"
         resolved.packages.sort { (package1, package2) in
@@ -252,6 +269,8 @@ extension SUProduct {
             resolved = try? JSONDecoder().decode(SUSecurityUpdateResolved.self, from: data)
         case .cltools:
             resolved = try? JSONDecoder().decode(SUCLToolsResolved.self, from: data)
+        case .voiceupdate:
+            resolved = try? JSONDecoder().decode(SUVoiceUpdateResolved.self, from: data)
         case .unknown, .sfsymbols, .bootcamp, .provideoformat, .devicesupport, .itunes, .beats, .logicpro:
             resolved = try? JSONDecoder().decode(SUUnresolvedProduct.self, from: data)
         }

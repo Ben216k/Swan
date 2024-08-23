@@ -277,10 +277,24 @@
       }
     },
     "swui.beats" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beats Updates"
+          }
+        }
+      }
     },
     "swui.bootcamp" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boot Camp"
+          }
+        }
+      }
     },
     "swui.bridgeosupdates" : {
       "localizations" : {
@@ -340,6 +354,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Are you sure you want to clear the cache? This will also remove all known deprecated products."
+          }
+        }
+      }
+    },
+    "swui.clearunknowncache" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear Unknown Cache"
+          }
+        }
+      }
+    },
+    "swui.clearunknowncache.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This will clear all of the cache of the “Unknown” type then reload the catalog. This will remove any deprecated products under that type."
           }
         }
       }
@@ -417,7 +451,14 @@
       }
     },
     "swui.devicesupport" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Device Support"
+          }
+        }
+      }
     },
     "swui.distributions" : {
       "localizations" : {
@@ -654,7 +695,14 @@
       }
     },
     "swui.itunes" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iTunes"
+          }
+        }
+      }
     },
     "swui.loadingcatalogs" : {
       "localizations" : {
@@ -667,7 +715,14 @@
       }
     },
     "swui.logicapps" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logic Apps"
+          }
+        }
+      }
     },
     "swui.macospackages" : {
       "comment" : "Referring to any product in any product in a catalog that has either a \"InstallAssistant.pkg\" or \"InstallAssistantAuto.pkg\" inside it, which contains a macOS full installer, to be used to upgrade/reinstall macOS or create a recovery USB.",
@@ -1036,6 +1091,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Version"
+          }
+        }
+      }
+    },
+    "swui.voiceupdate" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voice Updates"
           }
         }
       }

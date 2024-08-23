@@ -130,4 +130,35 @@ extension SUCache {
             // You might want to present an error to the user here.
         }
     }
+    
+    func clearUnknownCache() {
+            do {
+                let fileManager = FileManager.default
+                let cacheDirectory = cacheDirectoryURL
+                let files = try fileManager.contentsOfDirectory(atPath: cacheDirectory.path)
+
+                for file in files where file.hasSuffix(".json") {
+                    let fileURL = cacheDirectory.appendingPathComponent(file)
+                    let data = try Data(contentsOf: fileURL)
+
+                    // Decode only the product type
+                    guard let typeWrapper = try? JSONDecoder().decode(ProductTypeWrapper.self, from: data),
+                          typeWrapper.type == .unknown else { continue }
+
+                    // Delete the cached file for unknown products
+                    try fileManager.removeItem(at: fileURL)
+                }
+
+                os_log("Unknown product cache cleared successfully.", log: LogCategory.mainCode.osLog, type: .info)
+
+                // Reload the SUCache (you'll need to implement this)
+                Task {
+                    await self.beginFillingCache()
+                }
+
+            } catch {
+                os_log("Error clearing unknown product cache: %@", log: LogCategory.mainCode.osLog, type: .error, error.localizedDescription)
+                // Handle the error (e.g., present an alert to the user)
+            }
+        }
 }

@@ -60,12 +60,41 @@ struct SwanApp: App {
                         // Check the response
                         if response == .alertFirstButtonReturn {
                             cache.clearCache()
+                            cache.clearCatalogs()
+                            Task {
+                                await cache.beginFillingCache()
+                            }
                         } else {
                             
                         }
                     }.keyboardShortcut("k", modifiers: [.shift, .command])
+                    Button("swui.clearunknowncache") {
+                        let alert = NSAlert()
+                            
+                        // Set the alert message and informative text
+                        alert.messageText = NSLocalizedString("swui.clearunknowncache", comment: "")
+                        alert.informativeText = NSLocalizedString("swui.clearunknowncache.description", comment: "")
+                        
+                        // Add buttons
+                        alert.addButton(withTitle: NSLocalizedString("swui.confirm", comment: ""))
+                        alert.addButton(withTitle: NSLocalizedString("swui.cancel", comment: ""))
+                        
+                        // Set the alert style (optional)
+                        alert.alertStyle = .warning
+                        
+                        // Show the alert as a modal dialog and handle the user's response
+                        let response = alert.runModal()
+                        
+                        // Check the response
+                        if response == .alertFirstButtonReturn {
+                            cache.clearUnknownCache()
+                        } else {
+                            
+                        }
+                    }.keyboardShortcut("k", modifiers: [.shift, .command, .option])
                     Divider()
                 }
+                
             }
     }
 }
