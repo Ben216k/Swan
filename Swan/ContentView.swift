@@ -34,6 +34,15 @@ struct ContentView: View {
                         NavigationLink(value: "Safari", label: { Text("swui.safaripackages") } )
                         NavigationLink(value: "Voices", label: { Text("swui.voiceupdate") } )
                     }
+                    // Will be back <3
+//                    Section("swui.ipswtypes") {
+//                        NavigationLink(value: "AllIPSW", label: { Text("swui.allipsws") } )
+//                        NavigationLink(value: "iOSIPSW", label: { Text("swui.ios") } )
+//                        NavigationLink(value: "iPadOSIPSW", label: { Text("swui.ipados") } )
+////                        NavigationLink(value: "TVIPSW", label: { Text("swui.tvOS") } )
+//                        NavigationLink(value: "AUDIOIPSW", label: { Text("swui.audioOS") } )
+//                        NavigationLink(value: "WATCHIPSW", label: { Text("swui.watchOS") } )
+//                    }
                 }.listStyle(.sidebar)
                 Spacer()
                 HStack {
@@ -56,6 +65,11 @@ struct ContentView: View {
                     case "Safari": EVERYTHINGListView(selection: $selectedProduct, filterType: .safari)
                     case "SecUpd": EVERYTHINGListView(selection: $selectedProduct, filterType: .securityupdate)
                     case "Voices": EVERYTHINGListView(selection: $selectedProduct, filterType: .voiceupdate)
+                    case "AllIPSW": IPSWListView(selection: $selectedProduct, filterType: nil)
+                    case "iOSIPSW": IPSWListView(selection: $selectedProduct, filterType: .iOS)
+                    case "iPadOSIPSW": IPSWListView(selection: $selectedProduct, filterType: .iPadOS)
+                    case "AUDIOIPSW": IPSWListView(selection: $selectedProduct, filterType: .audioOS)
+                    case "WATCHIPSW": IPSWListView(selection: $selectedProduct, filterType: .watchOS)
                     default: Rectangle().frame(height: 1).opacity(0.000001)
                     }
                 } else {

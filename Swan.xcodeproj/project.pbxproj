@@ -24,6 +24,10 @@
 		764569402C5F1E2300FC6865 /* SUMacOSPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645693D2C5F1E2300FC6865 /* SUMacOSPackage.swift */; };
 		764569412C5F1E2300FC6865 /* SUProductResolved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645693E2C5F1E2300FC6865 /* SUProductResolved.swift */; };
 		764569432C5F301800FC6865 /* HardcodedCatalogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764569422C5F301800FC6865 /* HardcodedCatalogs.swift */; };
+		769EE3E32C83BF5100F3F317 /* IPSWReleasesRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EE3E22C83BF5100F3F317 /* IPSWReleasesRaw.swift */; };
+		769EE3E52C83C1A700F3F317 /* IPSWRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EE3E42C83C1A700F3F317 /* IPSWRelease.swift */; };
+		769EE3EA2C83C23C00F3F317 /* FetchIPSW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EE3E92C83C23900F3F317 /* FetchIPSW.swift */; };
+		769EE3EC2C83C35D00F3F317 /* IPSWListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EE3EB2C83C35A00F3F317 /* IPSWListView.swift */; };
 		76A28F752C645C5800238999 /* MacOSTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A28F742C645C5200238999 /* MacOSTableView.swift */; };
 		76EF317B2C66CF1F009D07DA /* Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF317A2C66CF13009D07DA /* Initialization.swift */; };
 		76EF317F2C6722E5009D07DA /* FakeTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF317E2C6722E2009D07DA /* FakeTableItem.swift */; };
@@ -77,6 +81,10 @@
 		7645693D2C5F1E2300FC6865 /* SUMacOSPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUMacOSPackage.swift; sourceTree = "<group>"; };
 		7645693E2C5F1E2300FC6865 /* SUProductResolved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUProductResolved.swift; sourceTree = "<group>"; };
 		764569422C5F301800FC6865 /* HardcodedCatalogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardcodedCatalogs.swift; sourceTree = "<group>"; };
+		769EE3E22C83BF5100F3F317 /* IPSWReleasesRaw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPSWReleasesRaw.swift; sourceTree = "<group>"; };
+		769EE3E42C83C1A700F3F317 /* IPSWRelease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPSWRelease.swift; sourceTree = "<group>"; };
+		769EE3E92C83C23900F3F317 /* FetchIPSW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchIPSW.swift; sourceTree = "<group>"; };
+		769EE3EB2C83C35A00F3F317 /* IPSWListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPSWListView.swift; sourceTree = "<group>"; };
 		76A28F742C645C5200238999 /* MacOSTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSTableView.swift; sourceTree = "<group>"; };
 		76EF317A2C66CF13009D07DA /* Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initialization.swift; sourceTree = "<group>"; };
 		76EF317E2C6722E2009D07DA /* FakeTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableItem.swift; sourceTree = "<group>"; };
@@ -144,6 +152,8 @@
 				76A28F732C645C4D00238999 /* ViewControllers */,
 				7645693A2C5F174600FC6865 /* SwcdnFunctions */,
 				764569302C5F101C00FC6865 /* SwcdnTypes */,
+				769EE3E62C83C1F700F3F317 /* IPSWFunctions */,
+				769EE3E12C83BEB500F3F317 /* IPSWTypes */,
 				7645692D2C5EFFF200FC6865 /* CoreCode */,
 				764569002C5EFEE400FC6865 /* ContentView.swift */,
 				764569042C5EFEE600FC6865 /* Assets.xcassets */,
@@ -173,6 +183,7 @@
 		7645692D2C5EFFF200FC6865 /* CoreCode */ = {
 			isa = PBXGroup;
 			children = (
+				764569332C5F105800FC6865 /* SUCache.swift */,
 				764569352C5F159F00FC6865 /* SWError.swift */,
 				7645692E2C5F011E00FC6865 /* Logger.swift */,
 				764568FE2C5EFEE400FC6865 /* SwanApp.swift */,
@@ -184,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				7645693F2C5F1E2300FC6865 /* resolved */,
-				764569332C5F105800FC6865 /* SUCache.swift */,
 				764569312C5F103A00FC6865 /* SUCatalog.swift */,
 				764569422C5F301800FC6865 /* HardcodedCatalogs.swift */,
 				76F060182C73D865003D698B /* SUServerMetaData.swift */,
@@ -219,15 +229,41 @@
 			path = resolved;
 			sourceTree = "<group>";
 		};
-		76A28F732C645C4D00238999 /* ViewControllers */ = {
+		769EE3E12C83BEB500F3F317 /* IPSWTypes */ = {
 			isa = PBXGroup;
 			children = (
-				76F060222C742F49003D698B /* ProductDetailView.swift */,
-				76F060202C73E788003D698B /* HTMLRenderer.swift */,
-				760258AF2C6AFDA300D07B70 /* SWErrorTotalView.swift */,
+				769EE3E42C83C1A700F3F317 /* IPSWRelease.swift */,
+				769EE3E22C83BF5100F3F317 /* IPSWReleasesRaw.swift */,
+			);
+			path = IPSWTypes;
+			sourceTree = "<group>";
+		};
+		769EE3E62C83C1F700F3F317 /* IPSWFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				769EE3E92C83C23900F3F317 /* FetchIPSW.swift */,
+			);
+			path = IPSWFunctions;
+			sourceTree = "<group>";
+		};
+		769EE3ED2C83C6C600F3F317 /* SWCDN */ = {
+			isa = PBXGroup;
+			children = (
 				76A28F742C645C5200238999 /* MacOSTableView.swift */,
 				760258AD2C6AF93300D07B70 /* SafariListView.swift */,
 				76F0602C2C753395003D698B /* EVERYTHINGListView.swift */,
+			);
+			path = SWCDN;
+			sourceTree = "<group>";
+		};
+		76A28F732C645C4D00238999 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				769EE3ED2C83C6C600F3F317 /* SWCDN */,
+				769EE3EB2C83C35A00F3F317 /* IPSWListView.swift */,
+				76F060222C742F49003D698B /* ProductDetailView.swift */,
+				76F060202C73E788003D698B /* HTMLRenderer.swift */,
+				760258AF2C6AFDA300D07B70 /* SWErrorTotalView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -361,6 +397,7 @@
 				76EF31812C681DE4009D07DA /* PackagePieces.swift in Sources */,
 				764569412C5F1E2300FC6865 /* SUProductResolved.swift in Sources */,
 				76F060342C76D24F003D698B /* SUSecurityUpdateResolved.swift in Sources */,
+				769EE3EA2C83C23C00F3F317 /* FetchIPSW.swift in Sources */,
 				760258AC2C6AF1B200D07B70 /* SUSafariProductResolved.swift in Sources */,
 				760258AE2C6AF93300D07B70 /* SafariListView.swift in Sources */,
 				76EF31852C685E0F009D07DA /* DownloadManagerView.swift in Sources */,
@@ -373,10 +410,13 @@
 				764569342C5F105900FC6865 /* SUCache.swift in Sources */,
 				764569362C5F15A000FC6865 /* SWError.swift in Sources */,
 				7645692F2C5F012100FC6865 /* Logger.swift in Sources */,
+				769EE3EC2C83C35D00F3F317 /* IPSWListView.swift in Sources */,
+				769EE3E52C83C1A700F3F317 /* IPSWRelease.swift in Sources */,
 				76F060362C780DAF003D698B /* SUVoiceUpdateResolved.swift in Sources */,
 				76A28F752C645C5800238999 /* MacOSTableView.swift in Sources */,
 				76F060232C742F4C003D698B /* ProductDetailView.swift in Sources */,
 				76F0601B2C73DA3D003D698B /* SMDResolve.swift in Sources */,
+				769EE3E32C83BF5100F3F317 /* IPSWReleasesRaw.swift in Sources */,
 				76F060382C781E7F003D698B /* SUFakedResolved.swift in Sources */,
 				76F060212C73E788003D698B /* HTMLRenderer.swift in Sources */,
 			);
@@ -530,7 +570,7 @@
 				CODE_SIGN_ENTITLEMENTS = Swan/Swan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Swan/Preview Content\"";
 				DEVELOPMENT_TEAM = ZAB2ZHZQFK;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -561,7 +601,7 @@
 				CODE_SIGN_ENTITLEMENTS = Swan/Swan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Swan/Preview Content\"";
 				DEVELOPMENT_TEAM = ZAB2ZHZQFK;
 				ENABLE_HARDENED_RUNTIME = YES;

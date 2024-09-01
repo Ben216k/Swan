@@ -22,6 +22,8 @@ final class SUCache: ObservableObject {
     @Published var showTableFooter = false
     @Published var showUnformattedName = false
     
+    @Published var ipswReleases: [IPSWRelease] = []
+    
     func setCatalog(_ id: String, catalog: SUCatalog) {
         self.catalogs[id] = catalog
     }
@@ -58,30 +60,16 @@ final class SUCache: ObservableObject {
         }.sorted(using: everythingSortOrder)
     }
     
-    @Published var macOSpackagesSortOrder = [KeyPathComparator(\SUMacOSPackage.buildNumber, order: .reverse)]
-    var macOSpackages: [SUMacOSPackage] {
-        products.values.compactMap { $0 as? SUMacOSPackage }.filter{
+    @Published var ipswSortOrder = [KeyPathComparator(\IPSWRelease.postDateForSorting, order: .reverse)]
+    @Published var ipswSearch = ""
+    var ipsws: [IPSWRelease] {
+        ipswReleases.filter{
             let search = search.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
             return search.isEmpty
-            || $0.osName.lowercased().starts(with: search)
             || $0.version.starts(with: search)
-            || $0.buildNumber.lowercased().starts(with: search)
-            || $0.key.lowercased().starts(with: search)
-            || String(localized: $0.releaseType.name).lowercased().contains(search)
-        }.sorted(using: macOSpackagesSortOrder)
-    }
-
-    @Published var safariSortOrder = [KeyPathComparator(\SUSafariResolved.version, order: .reverse)]
-    var safariPackages: [SUSafariResolved] {
-        products.values.compactMap { $0 as? SUSafariResolved }.filter{
-            let search = search.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-            return search.isEmpty
-            || $0.basicName.lowercased().contains(search)
-            || $0.version.lowercased().starts(with: search)
-            || $0.key.lowercased().starts(with: search)
-            || $0.macOSVersion.lowercased().starts(with: search)
-            || String(localized: $0.releaseType.name).lowercased().contains(search)
-        }.sorted(using: safariSortOrder)
+            || $0.name.lowercased().contains(search)
+            || $0.buildNumber.lowercased().contains(search)
+        }.sorted(using: ipswSortOrder)
     }
     
 }
@@ -132,33 +120,33 @@ extension SUCache {
     }
     
     func clearUnknownCache() {
-            do {
-                let fileManager = FileManager.default
-                let cacheDirectory = cacheDirectoryURL
-                let files = try fileManager.contentsOfDirectory(atPath: cacheDirectory.path)
+        do {
+            let fileManager = FileManager.default
+            let cacheDirectory = cacheDirectoryURL
+            let files = try fileManager.contentsOfDirectory(atPath: cacheDirectory.path)
 
-                for file in files where file.hasSuffix(".json") {
-                    let fileURL = cacheDirectory.appendingPathComponent(file)
-                    let data = try Data(contentsOf: fileURL)
+            for file in files where file.hasSuffix(".json") {
+                let fileURL = cacheDirectory.appendingPathComponent(file)
+                let data = try Data(contentsOf: fileURL)
 
-                    // Decode only the product type
-                    guard let typeWrapper = try? JSONDecoder().decode(ProductTypeWrapper.self, from: data),
-                          typeWrapper.type == .unknown else { continue }
+                // Decode only the product type
+                guard let typeWrapper = try? JSONDecoder().decode(ProductTypeWrapper.self, from: data),
+                      typeWrapper.type == .unknown else { continue }
 
-                    // Delete the cached file for unknown products
-                    try fileManager.removeItem(at: fileURL)
-                }
-
-                os_log("Unknown product cache cleared successfully.", log: LogCategory.mainCode.osLog, type: .info)
-
-                // Reload the SUCache (you'll need to implement this)
-                Task {
-                    await self.beginFillingCache()
-                }
-
-            } catch {
-                os_log("Error clearing unknown product cache: %@", log: LogCategory.mainCode.osLog, type: .error, error.localizedDescription)
-                // Handle the error (e.g., present an alert to the user)
+                // Delete the cached file for unknown products
+                try fileManager.removeItem(at: fileURL)
             }
+
+            os_log("Unknown product cache cleared successfully.", log: LogCategory.mainCode.osLog, type: .info)
+
+            // Reload the SUCache (you'll need to implement this)
+            Task {
+                await self.beginFillingCache()
+            }
+
+        } catch {
+            os_log("Error clearing unknown product cache: %@", log: LogCategory.mainCode.osLog, type: .error, error.localizedDescription)
+            // Handle the error (e.g., present an alert to the user)
         }
+    }
 }

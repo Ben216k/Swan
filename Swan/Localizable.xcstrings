@@ -94,6 +94,12 @@
         }
       }
     },
+    "swerror.ipsw.httpError" : {
+
+    },
+    "swerror.ipsw.invalidurl" : {
+
+    },
     "swerror.negative.faked" : {
 
     },
@@ -266,6 +272,16 @@
         }
       }
     },
+    "swui.allipsws" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All IPSWs"
+          }
+        }
+      }
+    },
     "swui.allproducts" : {
       "localizations" : {
         "en" : {
@@ -275,6 +291,9 @@
           }
         }
       }
+    },
+    "swui.audioOS" : {
+
     },
     "swui.beats" : {
       "localizations" : {
@@ -694,6 +713,72 @@
         }
       }
     },
+    "swui.ios" : {
+
+    },
+    "swui.ipados" : {
+
+    },
+    "swui.ipswtype.audioos" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AudioOS IPSWs"
+          }
+        }
+      }
+    },
+    "swui.ipswtype.ios" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iOS IPSWs"
+          }
+        }
+      }
+    },
+    "swui.ipswtype.ipados" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPadOS IPSWs"
+          }
+        }
+      }
+    },
+    "swui.ipswtype.tvos" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tvOS IPSWs"
+          }
+        }
+      }
+    },
+    "swui.ipswtype.watchos" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "watchOS IPSWs"
+          }
+        }
+      }
+    },
+    "swui.ipswtypes" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IPSW Types"
+          }
+        }
+      }
+    },
     "swui.itunes" : {
       "localizations" : {
         "en" : {
@@ -1081,6 +1166,9 @@
           }
         }
       }
+    },
+    "swui.watchOS" : {
+
     }
   },
   "version" : "1.0"
