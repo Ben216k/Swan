@@ -1,0 +1,34 @@
+216K LICENSE
+VERSION 1.0 - APRIL 18, 2024
+
+Copyright (c) 2024 Ben216k
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of these software development files and the compiled versions (the "Software"),
+to use the Software for personal purposes and in ways that are materially consistent
+with its intended function. This includes the rights to use, modify, and merge
+the Software under the following conditions:
+
+1. Restrictions:
+   - Publishing, redistributing, selling, or otherwise making available copies of the
+     Software without explicit prior written permission from the copyright holder is prohibited.
+   - Redistributing the Software as part of an open-source contribution is permitted exclusively
+     via direct forks on GitHub. Such forks must clearly link back to the original repository of
+     the Software, prominently displayed at the top of the README file or designated using GitHub’s
+     standard fork repository feature.
+
+2. Notice Requirement:
+   - All copies of the Software, modified or unmodified, are to include a conspicuous notice of these
+     licensing terms and a link to the original Software’s GitHub page.
+
+3. Reservation of Rights:
+   - Except as expressly provided herein, no other rights are granted, either express or implied. All rights not
+     expressly granted by the copyright holder herein are reserved. This includes any rights in a legal gray area
+     or otherwise unintended by the copyright holder.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+OR OTHER DEALINGS IN THE SOFTWARE.

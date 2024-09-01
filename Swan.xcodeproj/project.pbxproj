@@ -85,6 +85,7 @@
 		769EE3E42C83C1A700F3F317 /* IPSWRelease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPSWRelease.swift; sourceTree = "<group>"; };
 		769EE3E92C83C23900F3F317 /* FetchIPSW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchIPSW.swift; sourceTree = "<group>"; };
 		769EE3EB2C83C35A00F3F317 /* IPSWListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPSWListView.swift; sourceTree = "<group>"; };
+		769EE3EF2C85285E00F3F317 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		76A28F742C645C5200238999 /* MacOSTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSTableView.swift; sourceTree = "<group>"; };
 		76EF317A2C66CF13009D07DA /* Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initialization.swift; sourceTree = "<group>"; };
 		76EF317E2C6722E2009D07DA /* FakeTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableItem.swift; sourceTree = "<group>"; };
@@ -133,6 +134,7 @@
 				764569112C5EFEE600FC6865 /* SwanTests */,
 				76F0601C2C73E2D3003D698B /* .gitignore */,
 				764568FC2C5EFEE400FC6865 /* Products */,
+				769EE3EF2C85285E00F3F317 /* LICENSE */,
 			);
 			sourceTree = "<group>";
 		};
