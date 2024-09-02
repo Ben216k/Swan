@@ -8,6 +8,7 @@
 import SwiftUI
 import WebKit
 
+#if os(macOS)
 struct HTMLRenderer: NSViewRepresentable {
     let htmlString: String
 
@@ -21,3 +22,18 @@ struct HTMLRenderer: NSViewRepresentable {
         // No updates needed for static HTML content 
     }
 }
+#elseif os(iOS)
+struct HTMLRenderer: UIViewRepresentable {
+    let htmlString: String
+
+    func makeUIView(context: Context) -> WKWebView {
+        let webView = WKWebView()
+        webView.loadHTMLString(htmlString, baseURL: nil)
+        return webView
+    }
+
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        // No updates needed for static HTML content
+    }
+}
+#endif

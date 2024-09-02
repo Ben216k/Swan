@@ -11,6 +11,8 @@ import SwiftData
 
 @main
 struct SwanApp: App {
+    @Environment(\.openWindow) private var openWindow
+    
     @StateObject var cache = SUCache.shared
     @StateObject var downloadManager = DownloadManager.shared
     
@@ -19,10 +21,15 @@ struct SwanApp: App {
             ContentView()
                 .environmentObject(cache)
                 .environmentObject(downloadManager)
+            #if os(macOS)
                 .frame(minWidth: 500, idealWidth: 800, maxWidth: .infinity, minHeight: 500, idealHeight: 700, maxHeight: .infinity)
                 .presentedWindowToolbarStyle(.unified)
-        }.windowResizability(WindowResizability.contentSize)
+            #endif
+        }
+            #if os(macOS)
+        .windowResizability(WindowResizability.contentSize)
             .windowToolbarStyle(.unified)
+            #endif
             .commands {
                 SidebarCommands()
                 CommandGroup(after: .sidebar) {
@@ -37,6 +44,7 @@ struct SwanApp: App {
                 }
                 CommandGroup(after: .newItem) {
                     Divider()
+                    #if os(macOS)
                     Button("swui.showcacheinfinder") {
                         NSWorkspace.shared.activateFileViewerSelecting([cache.cacheDirectoryURL])
                     }
@@ -92,21 +100,40 @@ struct SwanApp: App {
                             
                         }
                     }.keyboardShortcut("k", modifiers: [.shift, .command, .option])
+                    #endif
                     Divider()
+                    
+                }
+                CommandGroup(replacing: .appInfo) {
+                    Button("About Swan") { openWindow(id: "about-swan") }
                 }
                 
             }
+        
+        #if os(macOS)
+        Window("About Swan", id: "about-swan") {
+            AboutSwanView()
+        }.windowResizability(WindowResizability.contentSize)
+        #endif
     }
 }
 
 extension SwanApp {
     
+    #if os(macOS)
     static var pasteboard = NSPasteboard.general
     
     static func copyString(_ string: String) {
         SwanApp.pasteboard.declareTypes([.string], owner: nil)
         SwanApp.pasteboard.setString(string, forType: .string)
     }
+    #elseif os(iOS)
+    static var pasteboard = UIPasteboard.general
+        
+    static func copyString(_ string: String) {
+        SwanApp.pasteboard.string = string
+    }
+    #endif
     
     static let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
     static let build = Int(Bundle.main.infoDictionary!["CFBundleVersion"] as! String)!

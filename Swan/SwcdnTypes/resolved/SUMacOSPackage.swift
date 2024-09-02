@@ -89,9 +89,9 @@ extension SUMacOSPackage {
             os_log(
                 "When attempting to process the products, the URLSession returned a non-HTTP response (which is horrendously unexpected). Contexts:\n%@",
                 log: LogCategory.swcanReader.osLog, type: .error,
-                "Response Class: \(response.className)\n"
-                + "Response Class Description \(response.classDescription)\n"
-                + "Product: \(product.key)\n"
+//                "Response Class: \(response.className)\n"
+//                "Response Class Description \(response.classDescription)\n"
+                "Product: \(product.key)\n"
                 + "Response Description: \(response.description)\n"
                 + "Data as UTF8 String (if possible): \(String(data: data, encoding: .utf8) ?? "It was not possible")"
             )

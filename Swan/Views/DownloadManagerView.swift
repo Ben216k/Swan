@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+#if os(macOS)
 struct DownloadManagerView: View {
     @EnvironmentObject var cache: SUCache
     @EnvironmentObject var downloadManager: DownloadManager
@@ -81,3 +82,4 @@ struct DownloadManagerView: View {
 //            .padding(.horizontal, 5)
     }
 }
+#endif

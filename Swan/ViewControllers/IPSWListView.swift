@@ -45,14 +45,19 @@ struct IPSWListView: View {
             if cache.showTableFooter {
                 Divider()
                 ZStack {
+                    #if os(macOS)
                     Rectangle().foregroundStyle(Color(NSColor.controlBackgroundColor))
+#endif
                     Text("\(cache.ipsws.filter { $0.type == filterType ?? $0.type }.count) items.")
                         .padding(5).padding(.horizontal, 2.5).padding(.bottom, 1)
                         .foregroundStyle(.secondary)
                         .font(.caption)
                 }.fixedSize(horizontal: false, vertical: true)
             }
-        }.searchable(text: $cache.search, prompt: "swui.search").navigationSubtitle(filterType?.localizedKey ?? "swui.allipsws")
+        }.searchable(text: $cache.search, prompt: "swui.search")
+        #if os(macOS)
+            .navigationSubtitle(filterType?.localizedKey ?? "swui.allipsws")
+        #endif
     }
     
 }

@@ -12,7 +12,16 @@
       "comment" : "216k Labs is a brand name, therefore should not be localized.",
       "shouldTranslate" : false
     },
+    "About Swan" : {
+
+    },
     "Client Platforms: %@" : {
+
+    },
+    "Currently, Swan is in private beta. Please expect bugs, so that you can report those bugs! Thanks for helping build this app into what it isn't quite yet today!" : {
+
+    },
+    "Preferences" : {
 
     },
     "Server Platforms: %@" : {
@@ -47,6 +56,9 @@
           }
         }
       }
+    },
+    "Swan" : {
+
     },
     "swerror.foundation.noinstallassistant" : {
       "comment" : "You got this. :D",
@@ -291,9 +303,6 @@
           }
         }
       }
-    },
-    "swui.audioOS" : {
-
     },
     "swui.beats" : {
       "localizations" : {
@@ -713,12 +722,6 @@
         }
       }
     },
-    "swui.ios" : {
-
-    },
-    "swui.ipados" : {
-
-    },
     "swui.ipswtype.audioos" : {
       "localizations" : {
         "en" : {
@@ -770,6 +773,7 @@
       }
     },
     "swui.ipswtypes" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1167,8 +1171,15 @@
         }
       }
     },
-    "swui.watchOS" : {
-
+    "v%@ (%lld)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "v%1$@ (%2$lld)"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

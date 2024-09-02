@@ -28,6 +28,9 @@
 		769EE3E52C83C1A700F3F317 /* IPSWRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EE3E42C83C1A700F3F317 /* IPSWRelease.swift */; };
 		769EE3EA2C83C23C00F3F317 /* FetchIPSW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EE3E92C83C23900F3F317 /* FetchIPSW.swift */; };
 		769EE3EC2C83C35D00F3F317 /* IPSWListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EE3EB2C83C35A00F3F317 /* IPSWListView.swift */; };
+		769EE3F12C85299300F3F317 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EE3F02C85298F00F3F317 /* Preferences.swift */; };
+		769EE3F32C852AA100F3F317 /* AboutSwanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EE3F22C852A9D00F3F317 /* AboutSwanView.swift */; };
+		769EE3F52C853F0C00F3F317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 769EE3F42C853EF000F3F317 /* LaunchScreen.storyboard */; };
 		76A28F752C645C5800238999 /* MacOSTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A28F742C645C5200238999 /* MacOSTableView.swift */; };
 		76EF317B2C66CF1F009D07DA /* Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF317A2C66CF13009D07DA /* Initialization.swift */; };
 		76EF317F2C6722E5009D07DA /* FakeTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF317E2C6722E2009D07DA /* FakeTableItem.swift */; };
@@ -86,6 +89,9 @@
 		769EE3E92C83C23900F3F317 /* FetchIPSW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchIPSW.swift; sourceTree = "<group>"; };
 		769EE3EB2C83C35A00F3F317 /* IPSWListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPSWListView.swift; sourceTree = "<group>"; };
 		769EE3EF2C85285E00F3F317 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		769EE3F02C85298F00F3F317 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		769EE3F22C852A9D00F3F317 /* AboutSwanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSwanView.swift; sourceTree = "<group>"; };
+		769EE3F42C853EF000F3F317 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76A28F742C645C5200238999 /* MacOSTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSTableView.swift; sourceTree = "<group>"; };
 		76EF317A2C66CF13009D07DA /* Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initialization.swift; sourceTree = "<group>"; };
 		76EF317E2C6722E2009D07DA /* FakeTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableItem.swift; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 				764569042C5EFEE600FC6865 /* Assets.xcassets */,
 				764569092C5EFEE600FC6865 /* Swan.entitlements */,
 				764569062C5EFEE600FC6865 /* Preview Content */,
+				769EE3F42C853EF000F3F317 /* LaunchScreen.storyboard */,
 				764569372C5F160500FC6865 /* Localizable.xcstrings */,
 			);
 			path = Swan;
@@ -261,6 +268,8 @@
 		76A28F732C645C4D00238999 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				769EE3F22C852A9D00F3F317 /* AboutSwanView.swift */,
+				769EE3F02C85298F00F3F317 /* Preferences.swift */,
 				769EE3ED2C83C6C600F3F317 /* SWCDN */,
 				769EE3EB2C83C35A00F3F317 /* IPSWListView.swift */,
 				76F060222C742F49003D698B /* ProductDetailView.swift */,
@@ -365,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				764569082C5EFEE600FC6865 /* Preview Assets.xcassets in Resources */,
+				769EE3F52C853F0C00F3F317 /* LaunchScreen.storyboard in Resources */,
 				764569052C5EFEE600FC6865 /* Assets.xcassets in Resources */,
 				764569382C5F160500FC6865 /* Localizable.xcstrings in Resources */,
 			);
@@ -394,6 +404,7 @@
 				76F0602F2C769AA9003D698B /* SUBridgeOSProduct.swift in Sources */,
 				76F0602D2C75339D003D698B /* EVERYTHINGListView.swift in Sources */,
 				760258B02C6AFDAD00D07B70 /* SWErrorTotalView.swift in Sources */,
+				769EE3F12C85299300F3F317 /* Preferences.swift in Sources */,
 				76F0601E2C73E491003D698B /* SMDView.swift in Sources */,
 				76EF317B2C66CF1F009D07DA /* Initialization.swift in Sources */,
 				76EF31812C681DE4009D07DA /* PackagePieces.swift in Sources */,
@@ -415,6 +426,7 @@
 				769EE3EC2C83C35D00F3F317 /* IPSWListView.swift in Sources */,
 				769EE3E52C83C1A700F3F317 /* IPSWRelease.swift in Sources */,
 				76F060362C780DAF003D698B /* SUVoiceUpdateResolved.swift in Sources */,
+				769EE3F32C852AA100F3F317 /* AboutSwanView.swift in Sources */,
 				76A28F752C645C5800238999 /* MacOSTableView.swift in Sources */,
 				76F060232C742F4C003D698B /* ProductDetailView.swift in Sources */,
 				76F0601B2C73DA3D003D698B /* SMDResolve.swift in Sources */,
@@ -581,6 +593,8 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSDownloadsFolderUsageDescription = "Swan needs to use your downloads folder to download files from Apple's catalogs to.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "216k License";
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -589,8 +603,11 @@
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.ben216k.Swan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -612,6 +629,8 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSDownloadsFolderUsageDescription = "Swan needs to use your downloads folder to download files from Apple's catalogs to.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "216k License";
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -620,8 +639,11 @@
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.ben216k.Swan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

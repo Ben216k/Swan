@@ -101,9 +101,12 @@ struct ContentView: View {
                         }
                     }
                         .help("swui.showdownloads")
-                }.popover(isPresented: $showDownloadManager) {
+                }
+                #if os(macOS)
+                .popover(isPresented: $showDownloadManager) {
                     DownloadManagerView().frame(width: 350)
                 }
+                #endif
             }
             ToolbarItem {
                 Button {
