@@ -11,6 +11,8 @@ import SwiftData
 
 @main
 struct SwanApp: App {
+    @Environment(\.openWindow) private var openWindow
+    
     @StateObject var cache = SUCache.shared
     @StateObject var downloadManager = DownloadManager.shared
     
@@ -95,7 +97,15 @@ struct SwanApp: App {
                     Divider()
                 }
                 
+                CommandGroup(replacing: .appInfo) {
+                    Button("About Swan") { openWindow(id: "about-swan") }
+                }
+                
             }
+        
+        Window("About Swan", id: "about-swan") {
+            AboutSwanView()
+        }.windowResizability(WindowResizability.contentSize)
     }
 }
 

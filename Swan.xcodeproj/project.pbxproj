@@ -28,6 +28,7 @@
 		769EE3E52C83C1A700F3F317 /* IPSWRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EE3E42C83C1A700F3F317 /* IPSWRelease.swift */; };
 		769EE3EA2C83C23C00F3F317 /* FetchIPSW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EE3E92C83C23900F3F317 /* FetchIPSW.swift */; };
 		769EE3EC2C83C35D00F3F317 /* IPSWListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EE3EB2C83C35A00F3F317 /* IPSWListView.swift */; };
+		769EE3F72C85419A00F3F317 /* AboutSwanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EE3F62C85419A00F3F317 /* AboutSwanView.swift */; };
 		76A28F752C645C5800238999 /* MacOSTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A28F742C645C5200238999 /* MacOSTableView.swift */; };
 		76EF317B2C66CF1F009D07DA /* Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF317A2C66CF13009D07DA /* Initialization.swift */; };
 		76EF317F2C6722E5009D07DA /* FakeTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF317E2C6722E2009D07DA /* FakeTableItem.swift */; };
@@ -86,6 +87,7 @@
 		769EE3E92C83C23900F3F317 /* FetchIPSW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchIPSW.swift; sourceTree = "<group>"; };
 		769EE3EB2C83C35A00F3F317 /* IPSWListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPSWListView.swift; sourceTree = "<group>"; };
 		769EE3EF2C85285E00F3F317 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		769EE3F62C85419A00F3F317 /* AboutSwanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSwanView.swift; sourceTree = "<group>"; };
 		76A28F742C645C5200238999 /* MacOSTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSTableView.swift; sourceTree = "<group>"; };
 		76EF317A2C66CF13009D07DA /* Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initialization.swift; sourceTree = "<group>"; };
 		76EF317E2C6722E2009D07DA /* FakeTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableItem.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				76F060222C742F49003D698B /* ProductDetailView.swift */,
 				76F060202C73E788003D698B /* HTMLRenderer.swift */,
 				760258AF2C6AFDA300D07B70 /* SWErrorTotalView.swift */,
+				769EE3F62C85419A00F3F317 /* AboutSwanView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				760258AC2C6AF1B200D07B70 /* SUSafariProductResolved.swift in Sources */,
 				760258AE2C6AF93300D07B70 /* SafariListView.swift in Sources */,
 				76EF31852C685E0F009D07DA /* DownloadManagerView.swift in Sources */,
+				769EE3F72C85419A00F3F317 /* AboutSwanView.swift in Sources */,
 				764569322C5F103C00FC6865 /* SUCatalog.swift in Sources */,
 				7645693C2C5F1D7100FC6865 /* DownloadCatalog.swift in Sources */,
 				764568FF2C5EFEE400FC6865 /* SwanApp.swift in Sources */,
