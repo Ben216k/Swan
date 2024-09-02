@@ -18,9 +18,6 @@
     "Client Platforms: %@" : {
 
     },
-    "Currently, Swan is in private beta. Please expect bugs, so that you can report those bugs! Thanks for helping build this app into what it isn't quite yet today!" : {
-
-    },
     "Server Platforms: %@" : {
 
     },
@@ -277,6 +274,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "An unknown error occurred, coming from an unknown source. <DATA>"
+          }
+        }
+      }
+    },
+    "swui.about.betadisclaimer" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Currently, Swan is in private beta. Please expect bugs, so that you can report those bugs! Thanks for helping build this app into what it isn't quite yet today!"
           }
         }
       }

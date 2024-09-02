@@ -13,6 +13,9 @@ struct AboutSwanView: View {
     var body: some View {
         VStack {
             HStack {
+                Image("SwanIcon")
+                    .resizable()
+                    .frame(width: 60, height: 60)
                 VStack() {
                     Text("Swan")
                         .font(Font.title2.bold())
@@ -20,7 +23,7 @@ struct AboutSwanView: View {
                         .font(.subheadline)
                 }
             }.padding(.bottom, 10)
-            Text("Currently, Swan is in private beta. Please expect bugs, so that you can report those bugs! Thanks for helping build this app into what it isn't quite yet today!")
+            Text("swui.about.betadisclaimer")
                 .multilineTextAlignment(.center)
         }.padding().padding(.horizontal, 15)
             .frame(width: 425, height: 225)
