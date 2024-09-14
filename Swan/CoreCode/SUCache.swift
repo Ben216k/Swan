@@ -6,7 +6,9 @@
 // 
 
 import Foundation
+import SwiftUI
 import os
+import Combine
 
 @MainActor
 final class SUCache: ObservableObject {
@@ -19,8 +21,50 @@ final class SUCache: ObservableObject {
     @Published var products: [String: any SUProductResolved] = [:]
     @Published var usedCatalogs: [SUCatalogSource] = SUCatalogSource.bestKnownCatalogs
     @Published var rejectedProducts: [(product: SUProduct, error: SWError)] = []
-    @Published var showTableFooter = false
-    @Published var showUnformattedName = false
+    @Published var showTableFooter: Bool = false
+    @Published var showUnformattedName: Bool = false
+    private var cancellables = Set<AnyCancellable>()
+    @Published var sidebarOptions: [String: Bool] = [:]
+    
+    // MARK: Sidebar Stuff
+    
+    static let defaultSidebarOptions: [String: Bool] = [
+        "All": true,
+        "macOS": true,
+        "CLTools": true,
+        "bridgeOS": true,
+        "BootCamp": true,
+        "Safari": true,
+        "Voices": true,
+        "SecUpd": true
+    ]
+    
+    // MARK: BREAK
+    private func synchronizeWithUserDefaults() {
+        let userDefaultConfigs: [(key: String, defaultValue: Bool, keyPath: ReferenceWritableKeyPath<SUCache, Bool>)] = [
+            ("showTableFooter", false, \.showTableFooter),
+            ("showUnformattedName", false, \.showUnformattedName)
+        ]
+
+        for config in userDefaultConfigs {
+            // Initialize property from UserDefaults or use default value
+            let storedValue = UserDefaults.standard.object(forKey: config.key) as? Bool
+            self[keyPath: config.keyPath] = storedValue ?? config.defaultValue
+            
+            // Set up a subscriber to update UserDefaults when the property changes
+            self.$showTableFooter
+                .sink { newValue in
+                    UserDefaults.standard.set(newValue, forKey: config.key)
+                }
+                .store(in: &cancellables)
+            
+            self.$showUnformattedName
+                .sink { newValue in
+                    UserDefaults.standard.set(newValue, forKey: config.key)
+                }
+                .store(in: &cancellables)
+        }
+    }
     
     @Published var ipswReleases: [IPSWRelease] = []
     
@@ -41,6 +85,9 @@ final class SUCache: ObservableObject {
     }
     
     init() {
+        synchronizeWithUserDefaults()
+        loadSidebarOptions()
+        
         Task {
             await self.beginFillingCache()
         }
@@ -70,6 +117,39 @@ final class SUCache: ObservableObject {
             || $0.name.lowercased().contains(search)
             || $0.buildNumber.lowercased().contains(search)
         }.sorted(using: ipswSortOrder)
+    }
+    
+    // MARK: - Sidebar Options Management
+    private func loadSidebarOptions() {
+        if let stored = UserDefaults.standard.dictionary(forKey: "sidebarOptions") as? [String: Bool] {
+            // Merge stored options with defaults to include any new sidebar IDs
+            var merged = SUCache.defaultSidebarOptions
+            for (key, value) in stored {
+                merged[key] = value
+            }
+            self.sidebarOptions = merged
+        } else {
+            self.sidebarOptions = SUCache.defaultSidebarOptions
+        }
+    }
+    
+    /// Checks if a sidebar option is enabled.
+    /// - Parameter id: The unique identifier for the sidebar option.
+    /// - Returns: `true` if enabled, `false` otherwise.
+    func isSidebarOptionEnabled(id: String) -> Bool {
+        return sidebarOptions[id] ?? SUCache.defaultSidebarOptions[id] ?? false
+    }
+    
+    /// Provides a Binding for a sidebar option's enabled state.
+    /// - Parameter id: The unique identifier for the sidebar option.
+    /// - Returns: A `Binding<Bool>` representing the option's enabled state.
+    func bindingForSidebarOption(id: String) -> Binding<Bool> {
+        Binding<Bool>(
+            get: { self.isSidebarOptionEnabled(id: id) },
+            set: { newValue in
+                self.sidebarOptions[id] = newValue
+            }
+        )
     }
     
 }

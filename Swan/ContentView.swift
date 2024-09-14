@@ -26,13 +26,20 @@ struct ContentView: View {
             VStack {
                 List(selection: $listSelection) {
                     Section("swui.producttypes") {
-                        NavigationLink(value: "All", label: { Text("swui.allproducts") } )
-                        NavigationLink(value: "macOS", label: { Text("swui.macospackages") } )
-                        NavigationLink(value: "bridgeOS", label: { Text("swui.bridgeosupdates") } )
-                        NavigationLink(value: "BootCamp", label: { Text("swui.bootcamp") } )
-                        NavigationLink(value: "CLTools", label: { Text("swui.cltools") } )
-                        NavigationLink(value: "Safari", label: { Text("swui.safaripackages") } )
-                        NavigationLink(value: "Voices", label: { Text("swui.voiceupdate") } )
+                        if cache.isSidebarOptionEnabled(id: "All")
+                            { NavigationLink(value: "All", label: { Label("swui.allproducts", systemImage: "circle.grid.3x3.fill") } ) }
+                        if cache.isSidebarOptionEnabled(id: "macOS")
+                            { NavigationLink(value: "macOS", label: { Label("swui.macospackages", systemImage: "shippingbox") } ) }
+                        if cache.isSidebarOptionEnabled(id: "bridgeOS")
+                            { NavigationLink(value: "bridgeOS", label: { Label("swui.bridgeosupdates", systemImage: "cpu") } ) }
+                        if cache.isSidebarOptionEnabled(id: "BootCamp")
+                            { NavigationLink(value: "BootCamp", label: { Label("swui.bootcamp", systemImage: "window.vertical.closed") } ) }
+                        if cache.isSidebarOptionEnabled(id: "CLTools")
+                            { NavigationLink(value: "CLTools", label: { Label("swui.cltools", systemImage: "apple.terminal") } ) }
+                        if cache.isSidebarOptionEnabled(id: "Safari")
+                            { NavigationLink(value: "Safari", label: { Label("swui.safaripackages", systemImage: "safari") } ) }
+                        if cache.isSidebarOptionEnabled(id: "Voices")
+                            { NavigationLink(value: "Voices", label: { Label("swui.voiceupdate", systemImage: "person.wave.2") } ) }
                     }
                     // Will be back <3
 //                    Section("swui.ipswtypes") {

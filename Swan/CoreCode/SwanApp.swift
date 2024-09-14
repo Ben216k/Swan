@@ -106,6 +106,11 @@ struct SwanApp: App {
         Window("About Swan", id: "about-swan") {
             AboutSwanView()
         }.windowResizability(WindowResizability.contentSize)
+        
+        Settings {
+            PreferencesView()
+                .environmentObject(cache)
+        }.windowResizability(WindowResizability.contentSize)
     }
 }
 

@@ -29,7 +29,9 @@
 		769EE3EA2C83C23C00F3F317 /* FetchIPSW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EE3E92C83C23900F3F317 /* FetchIPSW.swift */; };
 		769EE3EC2C83C35D00F3F317 /* IPSWListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EE3EB2C83C35A00F3F317 /* IPSWListView.swift */; };
 		769EE3F72C85419A00F3F317 /* AboutSwanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EE3F62C85419A00F3F317 /* AboutSwanView.swift */; };
+		769EE3F92C855C6400F3F317 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EE3F82C855C5F00F3F317 /* PreferencesView.swift */; };
 		76A28F752C645C5800238999 /* MacOSTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A28F742C645C5200238999 /* MacOSTableView.swift */; };
+		76B509762C94999F00B4C317 /* UserDefaultPublished.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B509752C94999F00B4C317 /* UserDefaultPublished.swift */; };
 		76EF317B2C66CF1F009D07DA /* Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF317A2C66CF13009D07DA /* Initialization.swift */; };
 		76EF317F2C6722E5009D07DA /* FakeTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF317E2C6722E2009D07DA /* FakeTableItem.swift */; };
 		76EF31812C681DE4009D07DA /* PackagePieces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF31802C681DD9009D07DA /* PackagePieces.swift */; };
@@ -88,7 +90,9 @@
 		769EE3EB2C83C35A00F3F317 /* IPSWListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPSWListView.swift; sourceTree = "<group>"; };
 		769EE3EF2C85285E00F3F317 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		769EE3F62C85419A00F3F317 /* AboutSwanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSwanView.swift; sourceTree = "<group>"; };
+		769EE3F82C855C5F00F3F317 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		76A28F742C645C5200238999 /* MacOSTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSTableView.swift; sourceTree = "<group>"; };
+		76B509752C94999F00B4C317 /* UserDefaultPublished.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultPublished.swift; sourceTree = "<group>"; };
 		76EF317A2C66CF13009D07DA /* Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initialization.swift; sourceTree = "<group>"; };
 		76EF317E2C6722E2009D07DA /* FakeTableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTableItem.swift; sourceTree = "<group>"; };
 		76EF31802C681DD9009D07DA /* PackagePieces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagePieces.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 		7645692D2C5EFFF200FC6865 /* CoreCode */ = {
 			isa = PBXGroup;
 			children = (
+				76B509752C94999F00B4C317 /* UserDefaultPublished.swift */,
 				764569332C5F105800FC6865 /* SUCache.swift */,
 				764569352C5F159F00FC6865 /* SWError.swift */,
 				7645692E2C5F011E00FC6865 /* Logger.swift */,
@@ -269,6 +274,7 @@
 				76F060202C73E788003D698B /* HTMLRenderer.swift */,
 				760258AF2C6AFDA300D07B70 /* SWErrorTotalView.swift */,
 				769EE3F62C85419A00F3F317 /* AboutSwanView.swift */,
+				769EE3F82C855C5F00F3F317 /* PreferencesView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -403,6 +409,7 @@
 				764569412C5F1E2300FC6865 /* SUProductResolved.swift in Sources */,
 				76F060342C76D24F003D698B /* SUSecurityUpdateResolved.swift in Sources */,
 				769EE3EA2C83C23C00F3F317 /* FetchIPSW.swift in Sources */,
+				769EE3F92C855C6400F3F317 /* PreferencesView.swift in Sources */,
 				760258AC2C6AF1B200D07B70 /* SUSafariProductResolved.swift in Sources */,
 				760258AE2C6AF93300D07B70 /* SafariListView.swift in Sources */,
 				76EF31852C685E0F009D07DA /* DownloadManagerView.swift in Sources */,
@@ -419,6 +426,7 @@
 				769EE3EC2C83C35D00F3F317 /* IPSWListView.swift in Sources */,
 				769EE3E52C83C1A700F3F317 /* IPSWRelease.swift in Sources */,
 				76F060362C780DAF003D698B /* SUVoiceUpdateResolved.swift in Sources */,
+				76B509762C94999F00B4C317 /* UserDefaultPublished.swift in Sources */,
 				76A28F752C645C5800238999 /* MacOSTableView.swift in Sources */,
 				76F060232C742F4C003D698B /* ProductDetailView.swift in Sources */,
 				76F0601B2C73DA3D003D698B /* SMDResolve.swift in Sources */,

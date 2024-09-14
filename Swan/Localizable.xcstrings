@@ -21,6 +21,18 @@
     "Server Platforms: %@" : {
 
     },
+    "Show Status Bar" : {
+
+    },
+    "Show Unformatted Names" : {
+
+    },
+    "Shown Items" : {
+
+    },
+    "Sidebar" : {
+
+    },
     "sucatalog.type.beta" : {
       "localizations" : {
         "en" : {
@@ -52,6 +64,9 @@
       }
     },
     "Swan" : {
+
+    },
+    "Swan Preferences" : {
 
     },
     "swerror.foundation.noinstallassistant" : {
@@ -1174,6 +1189,9 @@
           }
         }
       }
+    },
+    "Table" : {
+
     },
     "v%@ (%lld)" : {
       "localizations" : {
