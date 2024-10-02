@@ -18,6 +18,14 @@
     "Client Platforms: %@" : {
 
     },
+    "iTunes" : {
+      "comment" : "iTunes is a brand name, therefore should not be localized.",
+      "shouldTranslate" : false
+    },
+    "Logic Pro" : {
+      "comment" : "Logic Pro is brand name, therefore should not be localized.",
+      "shouldTranslate" : false
+    },
     "Server Platforms: %@" : {
 
     },
@@ -1018,6 +1026,16 @@
         }
       }
     },
+    "swui.provideoformats" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro Video Formats"
+          }
+        }
+      }
+    },
     "swui.refreshlist" : {
       "comment" : "Hover tooltip text for refresh icon. ",
       "extractionState" : "manual",
@@ -1160,6 +1178,16 @@
         }
       }
     },
+    "swui.unknown" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown"
+          }
+        }
+      }
+    },
     "swui.unknownproductype" : {
       "localizations" : {
         "en" : {
@@ -1191,7 +1219,14 @@
       }
     },
     "Table" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Table"
+          }
+        }
+      }
     },
     "v%@ (%lld)" : {
       "localizations" : {

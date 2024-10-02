@@ -40,6 +40,22 @@ struct ContentView: View {
                             { NavigationLink(value: "Safari", label: { Label("swui.safaripackages", systemImage: "safari") } ) }
                         if cache.isSidebarOptionEnabled(id: "Voices")
                             { NavigationLink(value: "Voices", label: { Label("swui.voiceupdate", systemImage: "person.wave.2") } ) }
+                        
+                        if cache.isSidebarOptionEnabled(id: "Beats")
+                            { NavigationLink(value: "Beats", label: { Label("swui.beats", systemImage: "beats.powerbeatspro.chargingcase") } ) }
+                        if cache.isSidebarOptionEnabled(id: "DeviceSupport")
+                            { NavigationLink(value: "DeviceSupport", label: { Label("swui.devicesupport", systemImage: "iphone.circle") } ) }
+                        if cache.isSidebarOptionEnabled(id: "iTunes")
+                            { NavigationLink(value: "iTunes", label: { Label("iTunes", systemImage: "music.quarternote.3") } ) }
+                        if cache.isSidebarOptionEnabled(id: "iTunes")
+                            { NavigationLink(value: "ProVideo", label: { Label("swui.provideoformats", systemImage: "video") } ) }
+                        if cache.isSidebarOptionEnabled(id: "LogicPro")
+                            { NavigationLink(value: "LogicPro", label: { Label("Logic Pro", systemImage: "record.circle.fill") } ) }
+                        if cache.isSidebarOptionEnabled(id: "SFSymbols")
+                            { NavigationLink(value: "SFSymbols", label: { Label("swui.sfsymbols", systemImage: "star") } ) }
+                        if cache.isSidebarOptionEnabled(id: "Unknown")
+                            { NavigationLink(value: "Unknown", label: { Label("swui.unknown", systemImage: "questionmark.app.dashed") } ) }
+                        
                     }
                     // Will be back <3
 //                    Section("swui.ipswtypes") {
@@ -72,6 +88,15 @@ struct ContentView: View {
                     case "Safari": EVERYTHINGListView(selection: $selectedProduct, filterType: .safari)
                     case "SecUpd": EVERYTHINGListView(selection: $selectedProduct, filterType: .securityupdate)
                     case "Voices": EVERYTHINGListView(selection: $selectedProduct, filterType: .voiceupdate)
+                        
+                    case "Beats": EVERYTHINGListView(selection: $selectedProduct, filterType: SUProductType.beats)
+                    case "DeviceSupport": EVERYTHINGListView(selection: $selectedProduct, filterType: SUProductType.devicesupport)
+                    case "iTunes": EVERYTHINGListView(selection: $selectedProduct, filterType: SUProductType.itunes)
+                    case "LogicPro": EVERYTHINGListView(selection: $selectedProduct, filterType: SUProductType.logicpro)
+                    case "ProVideo": EVERYTHINGListView(selection: $selectedProduct, filterType: SUProductType.provideoformat)
+                    case "SFSymbols": EVERYTHINGListView(selection: $selectedProduct, filterType: SUProductType.sfsymbols)
+                    case "Unknown": EVERYTHINGListView(selection: $selectedProduct, filterType: SUProductType.unknown)
+                        
                     case "AllIPSW": IPSWListView(selection: $selectedProduct, filterType: nil)
                     case "iOSIPSW": IPSWListView(selection: $selectedProduct, filterType: .iOS)
                     case "iPadOSIPSW": IPSWListView(selection: $selectedProduct, filterType: .iPadOS)

@@ -20,7 +20,7 @@ struct PreferencesView: View {
                 .tabItem {
                     Label("Table", systemImage: "tablecells.badge.ellipsis")
                 }
-        }.frame(width: 500, height: 400)
+        }.frame(width: 500, height: 600)
             .navigationTitle(Text("Swan Preferences"))
     }
 }
@@ -55,6 +55,14 @@ struct SidebarSettings: View {
                 Toggle(isOn: cache.bindingForSidebarOption(id: "CLTools")) { Label("swui.cltools", systemImage: "apple.terminal") }
                 Toggle(isOn: cache.bindingForSidebarOption(id: "Safari")) { Label("swui.safaripackages", systemImage: "safari") }
                 Toggle(isOn: cache.bindingForSidebarOption(id: "Voices")) { Label("swui.voiceupdate", systemImage: "person.wave.2") }
+                
+                Toggle(isOn: cache.bindingForSidebarOption(id: "Beats")) { Label("swui.beats", systemImage: "beats.powerbeatspro.chargingcase") }
+                Toggle(isOn: cache.bindingForSidebarOption(id: "DeviceSupport")) { Label("swui.devicesupport", systemImage: "iphone.circle") }
+                Toggle(isOn: cache.bindingForSidebarOption(id: "iTunes")) { Label("iTunes", systemImage: "music.quarternote.3") }
+                Toggle(isOn: cache.bindingForSidebarOption(id: "ProVideo")) { Label("swui.provideoformats", systemImage: "video") }
+                Toggle(isOn: cache.bindingForSidebarOption(id: "LogicPro")) { Label("Logic Pro", systemImage: "record.circle.fill") }
+                Toggle(isOn: cache.bindingForSidebarOption(id: "SFSymbols")) { Label("swui.sfsymbols", systemImage: "star") }
+                Toggle(isOn: cache.bindingForSidebarOption(id: "Unknown")) { Label("swui.unknown", systemImage: "questionmark.app.dashed") }
             }
         }.formStyle(.grouped)
     }

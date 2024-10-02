@@ -23,6 +23,7 @@ final class SUCache: ObservableObject {
     @Published var rejectedProducts: [(product: SUProduct, error: SWError)] = []
     @Published var showTableFooter: Bool = false
     @Published var showUnformattedName: Bool = false
+    @Published var showProductIcons: Bool = false
     private var cancellables = Set<AnyCancellable>()
     @Published var sidebarOptions: [String: Bool] = [:]
     
@@ -36,33 +37,53 @@ final class SUCache: ObservableObject {
         "BootCamp": true,
         "Safari": true,
         "Voices": true,
-        "SecUpd": true
+        "SecUpd": true,
+        "Beats": false,
+        "DeviceSupport": false,
+        "iTunes": false,
+        "ProVideo": false,
+        "LogicPro": false,
+        "SFSymbols": false,
+        "Unknown": false
     ]
     
     // MARK: BREAK
     private func synchronizeWithUserDefaults() {
         let userDefaultConfigs: [(key: String, defaultValue: Bool, keyPath: ReferenceWritableKeyPath<SUCache, Bool>)] = [
             ("showTableFooter", false, \.showTableFooter),
-            ("showUnformattedName", false, \.showUnformattedName)
+            ("showUnformattedName", false, \.showUnformattedName),
+            ("showProductIcons", true, \.showProductIcons)
         ]
 
         for config in userDefaultConfigs {
             // Initialize property from UserDefaults or use default value
             let storedValue = UserDefaults.standard.object(forKey: config.key) as? Bool
             self[keyPath: config.keyPath] = storedValue ?? config.defaultValue
-            
+
             // Set up a subscriber to update UserDefaults when the property changes
-            self.$showTableFooter
-                .sink { newValue in
-                    UserDefaults.standard.set(newValue, forKey: config.key)
-                }
-                .store(in: &cancellables)
-            
-            self.$showUnformattedName
-                .sink { newValue in
-                    UserDefaults.standard.set(newValue, forKey: config.key)
-                }
-                .store(in: &cancellables)
+            // Access the publisher using dynamic key paths is not straightforward, so we handle each property separately
+            switch config.keyPath {
+            case \.showTableFooter:
+                self.$showTableFooter
+                    .sink { newValue in
+                        UserDefaults.standard.set(newValue, forKey: config.key)
+                    }
+                    .store(in: &cancellables)
+            case \.showUnformattedName:
+                self.$showUnformattedName
+                    .sink { newValue in
+                        UserDefaults.standard.set(newValue, forKey: config.key)
+                    }
+                    .store(in: &cancellables)
+            case \.showProductIcons:
+                self.$showProductIcons
+                    .sink { newValue in
+                        UserDefaults.standard.set(newValue, forKey: config.key)
+                    }
+                    .store(in: &cancellables)
+            default:
+                break
+            }
         }
     }
     
@@ -131,6 +152,12 @@ final class SUCache: ObservableObject {
         } else {
             self.sidebarOptions = SUCache.defaultSidebarOptions
         }
+        
+        $sidebarOptions
+            .sink { newOptions in
+                UserDefaults.standard.set(newOptions, forKey: "sidebarOptions")
+            }
+            .store(in: &cancellables)
     }
     
     /// Checks if a sidebar option is enabled.
