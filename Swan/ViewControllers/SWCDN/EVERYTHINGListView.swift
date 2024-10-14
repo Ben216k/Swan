@@ -86,6 +86,7 @@ struct EVERYTHINGListView: View {
                         .font(.caption)
                 }.fixedSize(horizontal: false, vertical: true)
             }
+            
         }.searchable(text: $cache.search, prompt: "swui.search").navigationSubtitle(filterType?.localizedKey ?? "swui.allproducts")
     }
     
