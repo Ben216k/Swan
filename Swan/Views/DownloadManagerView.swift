@@ -64,8 +64,8 @@ struct DownloadManagerView: View {
                     if task.destinationURL == nil {
                         
                         ZStack(alignment: .leading) {
+                            Rectangle().frame(width: 316, height: 3).foregroundColor(.secondary).opacity(0.5)
                             Rectangle().frame(width: CGFloat(min(task.progress * 316, 316)), height: 3).foregroundColor(.accentColor)
-                            Rectangle().frame(width: 316, height: 3).foregroundColor(.secondary)
                         }.cornerRadius(10).padding(1)
                         HStack {
                             //                    Text("12 MB/s")
