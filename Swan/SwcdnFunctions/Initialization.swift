@@ -16,7 +16,7 @@ extension SUCache {
         self.rejectedProducts = []
         do {
             try await self.downloadUsedCatalogs()
-            self.ipswReleases = try await fetchIPSWReleases()
+            // self.ipswReleases = try await fetchIPSWReleases()
         } catch {
             self.lifeSucks = error
             return
