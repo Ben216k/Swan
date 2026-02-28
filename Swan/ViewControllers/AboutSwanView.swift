@@ -5,8 +5,6 @@
 //  Copyright (c) Ben216k (under 216k License)
 // 
 
-
-
 import SwiftUI
 
 struct AboutSwanView: View {
@@ -16,12 +14,12 @@ struct AboutSwanView: View {
                 Image("SwanIcon")
                     .resizable()
                     .frame(width: 60, height: 60)
-                VStack() {
+                VStack(alignment: .leading) {
                     Text("Swan")
                         .font(Font.title2.bold())
                     Text("v\(SwanApp.version) (\(SwanApp.build))")
                         .font(.subheadline)
-                }
+                }.padding(.leading, 5)
             }.padding(.bottom, 10)
             Text("swui.about.betadisclaimer")
                 .multilineTextAlignment(.center)

@@ -124,6 +124,6 @@ extension SwanApp {
     }
     
     static let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-    static let build = Int(Bundle.main.infoDictionary!["CFBundleVersion"] as! String)!
+    static let build = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
     
 }
