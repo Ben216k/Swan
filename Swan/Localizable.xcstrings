@@ -306,7 +306,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Currently, Swan is in private beta. Please expect bugs, so that you can report those bugs! Thanks for helping build this app into what it isn't quite yet today!"
+            "value" : "Currently, Swan is in public alpha. Please expect bugs, so that you can report those bugs! Thanks for helping build this app into what it isn't quite yet today!"
           }
         }
       }
