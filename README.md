@@ -4,7 +4,7 @@ Swan is a modern browser of macOS's SWCDN (Software Content Delievery Network). 
 
 This is in public alpha. It was started a while ago, and has been floating around in private beta for a while, so I decided to make it public. It doesn't have everything I've wanted for it (ex. IPSW browsing), but it's a solid start and works for what it does right now. I would love to know if this becomes useful to anyone. If anyone has suggestions or bug reports, I will look into it.
 
-![App Screenshot](https://raw.githubusercontent.com/Ben216k/Swan/main/assets/alpha1screenshot.png)
+![App Screenshot](https://github.com/Ben216k/Swan/blob/main/assets/alpha1screenshot.png?raw=true)
 
 ## Installation
 
