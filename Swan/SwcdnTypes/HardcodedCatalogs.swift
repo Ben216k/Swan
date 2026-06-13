@@ -11,6 +11,38 @@ import Foundation
 
 extension SUCatalogSource {
 
+    static let goldenGateSeed = SUCatalogSource(
+        url: URL(string: "https://swscan.apple.com/content/catalogs/others/index-27seed-27-26-15-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz")!,
+        name: "macOS 27 Golden Gate Developer Beta", type: .seed, id: "27seed"
+    )
+    
+    /// unused until macOS Golden Gate Public Beta is released
+    static let goldenGateBeta = SUCatalogSource(
+        url: URL(string: "https://swscan.apple.com/content/catalogs/others/index-27beta-27-26-15-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz")!,
+        name: "macOS 27 Golden Gate Public Beta", type: .beta, id: "27beta"
+    )
+    
+    /// unused until macOS Golden Gate is fully released
+    static let goldenGateRelease = SUCatalogSource(
+        url: URL(string: "https://swscan.apple.com/content/catalogs/others/index-27-26-15-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz")!,
+        name: "macOS 27 Golden Gate", type: .release, id: "27"
+    )
+    
+    static let tahoeSeed = SUCatalogSource(
+        url: URL(string: "https://swscan.apple.com/content/catalogs/others/index-26seed-26-15-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz")!,
+        name: "macOS 26 Tahoe Developer Beta", type: .seed, id: "26seed"
+    )
+    
+    static let tahoeBeta = SUCatalogSource(
+        url: URL(string: "https://swscan.apple.com/content/catalogs/others/index-26beta-26-15-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz")!,
+        name: "macOS 26 Tahoe Public Beta", type: .beta, id: "26beta"
+    )
+    
+    static let tahoeRelease = SUCatalogSource(
+        url: URL(string: "https://swscan.apple.com/content/catalogs/others/index-26-15-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz")!,
+        name: "macOS 26 Tahoe", type: .release, id: "26"
+    )
+    
     static let sequoiaSeed = SUCatalogSource(
         url: URL(string: "https://swscan.apple.com/content/catalogs/others/index-15seed-15-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz")!,
         name: "macOS 15 Sequoia Developer Beta", type: .seed, id: "15seed"
@@ -92,8 +124,8 @@ extension SUCatalogSource {
     )
 
     /// All stored default catalogs
-    static let allKnownCatalogs = [sequoiaSeed, sequoiaBeta, sequoiaRelease, sonomaRelease, bigSurSeed, bigSurBeta, bigSurRelease, montereySeed, montereyBeta, montereyRelease, venturaSeed, venturaBeta, venturaRelease, catalinaRelease]
+    static let allKnownCatalogs = [goldenGateSeed, tahoeSeed, tahoeBeta, tahoeRelease, sequoiaSeed, sequoiaBeta, sequoiaRelease, sonomaRelease, bigSurSeed, bigSurBeta, bigSurRelease, montereySeed, montereyBeta, montereyRelease, venturaSeed, venturaBeta, venturaRelease, catalinaRelease]
 
     /// Best to use in current day (currently macOS 15 Sequoia is in both betas, but has not been released)
-    static let bestKnownCatalogs = [sequoiaSeed, sequoiaBeta, sonomaRelease, bigSurSeed, bigSurBeta, montereySeed, montereyBeta, venturaSeed, venturaBeta]
+    static let bestKnownCatalogs = [goldenGateSeed, tahoeSeed, tahoeBeta, tahoeRelease, sequoiaSeed, sequoiaBeta, sonomaRelease, bigSurBeta, montereySeed, montereyBeta, venturaSeed, venturaBeta]
 }

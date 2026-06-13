@@ -234,6 +234,8 @@ extension SUMacOSPackage {
             return "Sequoia"
         case 26:
             return "Tahoe"
+        case 27:
+            return "Golden Gate"
         default:
             return "Unknown"
         }

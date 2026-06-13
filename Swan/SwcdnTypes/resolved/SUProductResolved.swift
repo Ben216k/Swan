@@ -221,12 +221,10 @@ extension SUProduct {
             }
         }
         
-        Task {
-            do {
-                try await SUCache.shared.storeResolvedProduct(resolved)
-            } catch {
-                print("Failed to store \(resolved.id) to cache.", error)
-            }
+        do {
+            try await SUCache.shared.storeResolvedProduct(resolved)
+        } catch {
+            print("Failed to store \(resolved.id) to cache.", error)
         }
         
         return resolved
