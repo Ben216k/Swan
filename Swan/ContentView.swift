@@ -39,7 +39,7 @@ struct ContentView: View {
                         if cache.isSidebarOptionEnabled(id: "Safari")
                             { NavigationLink(value: "Safari", label: { Label("swui.safaripackages", systemImage: "safari") } ) }
                         if cache.isSidebarOptionEnabled(id: "SecUpd")
-                            { NavigationLink(value: "SecUpd", label: { Label("swui.securityupdates", systemImage: "shield.checkmark") } ) }
+                            { NavigationLink(value: "SecUpd", label: { Label("swui.securityupdates", systemImage: "checkmark.shield") } ) }
                         if cache.isSidebarOptionEnabled(id: "Voices")
                             { NavigationLink(value: "Voices", label: { Label("swui.voiceupdate", systemImage: "person.wave.2") } ) }
                         
